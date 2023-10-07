@@ -1,0 +1,715 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="ctl00_HgnrHead"><meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta http-equiv="Content-Script-Type" content="text/javascript" /><title>
+	機関詳細情報（府民向け） | 大阪府医療機関情報システム
+</title><link rel="stylesheet" href="../../css/font_family.css" /><link rel="stylesheet" href="../../css/ap_renew_normal.css" />
+    <script type="text/javascript" src="../../js/renew/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../js/renew/common_normal.js"></script>
+
+<script language="javascript" type="text/javascript">
+<!--
+var blnStatus = false;
+window.onpageshow = function() { blnStatus = false; }
+-->
+</script>
+<link href="../../App_Themes/PWResponsiveNormal/PWResponsiveNormal.css" type="text/css" rel="stylesheet" /><link href="/ap/co/WebCoParts/UserControl.css" type="text/css" rel="stylesheet" /><link href="/ap/qq/dtl/pwdetaillt.css" type="text/css" rel="stylesheet" /><script language="javascript" src="/ap/qq/dtl/pwdetaillt_002.js" type="text/javascript"></script></head>
+<body id="ctl00_HgnrBody">
+    <table class="NoScriptTable" id="noscript">
+    <tr>
+    <td>
+    このサイトでは、JavaScript を使用しています。<br />
+    ブラウザの設定で JavaScript を有効にするか、JavaScript に対応したブラウザをお使いください。
+    </td>
+    </tr>
+    </table>
+    <script>
+        var noscript = document.getElementById('noscript');
+        noscript.parentNode.removeChild(noscript);
+    </script>
+    
+    <form name="aspnetForm" method="post" action="./pwdetaillt01_002.aspx?serviceid=pwdetaillt&amp;chosanendo=2022&amp;chosano=1&amp;kikankbn=3&amp;qrcodeflg=False&amp;regist=1&amp;category=4&amp;kikancd=3270093270" id="aspnetForm" onkeydown="if(event.keyCode==13){  if((event.srcElement||event.target).type!=&#39;submit&#39; &amp;&amp;     (event.srcElement||event.target).type!=&#39;textarea&#39;){      return false;   }}">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="396F5E8A" />
+<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="Cu3xhPOSYFE7rLwFNyLy43BgW2raNbmNvjfH2wZfP5b/1tOsZVZL08LtMjuLfe5Br83wKyFa7V2eNPPNS6+GglG7uTrAW9a/VojTkRD2smoH2c+OeqBGvXIFp/QKLWlUHVi3g6eEpTFaoo4w+pE1biDOlxsrAl4eZYxlD6D28xHf8n/3DDzAtLXG7ysD25h+DdyoEW8hN4VbS0XwvOsqQAgjDroEdsYko2h196y20CejbehAjBPu38mWnN/b6q99YFy61zVTeXFpnRyKzisLB6ycr3uwuvIRgYTOCaup4N9U2MNQdTjpBpX4G9SRVoBMtxqvhSw0k1p95hDt46NX3A==" />
+    <a id="wtop"></a>
+    <!-- WebSV[2] --> 
+    <!-- Header Start -->
+    <header id="ctl00_tagHeader" class="site_header">
+        <div class="head_wrapper">
+            <div class="head_box">
+                <h1><a id="ctl00_hypHeaderTitle" href="http://www.mfis.pref.osaka.jp">大阪府医療機関情報システム</a></h1>
+                <h1 class="en">Osaka Medical Facilities Information System</h1>
+            </div>
+        </div>
+        <div id="renewal">
+            <div id="wrapper">
+                <!--パンくずリスト_START-->
+                <div id="breadcrumbs">
+                    <ul>
+                        
+                        <li id="ctl00_liService01" class="undefined__item">機関詳細情報（府民向け）</li>
+                    </ul>
+                </div>
+                <!--パンくずリスト_END-->
+            </div>
+        </div>
+    </header>
+    <!-- Header END -->
+    <div id="ctl00_pnlBody" class="NormalBody">
+	
+    <div id="ctl00_pnlContents">
+		
+    <!-- Contents Start -->
+    
+    <div id="ctl00_pnlPlaceholder">
+			
+    <!-- Placeholder Start -->
+    <br />
+    <table id="HtblBaseTable" class="BaseTable">
+    <tr>
+    <td id="ctl00_HtdBaseCell" class="BaseNormal" align="center">
+    
+    <!-- 機関詳細情報 -->
+    <div id="ctl00_cphdrBody_pnlKikanDetail">
+				
+        <div class="ArrangeLeft">
+            <!-- ボタンエリア -->
+            <table width="750" cellpadding="3" summary="ボタン">
+                <tr>
+                    <td class="ArrangeLeft">
+                        <input type="image" name="ctl00$cphdrBody$ibtnKakaritsuke" id="ctl00_cphdrBody_ibtnKakaritsuke" src="/ap/qq/image/ir_btn_01.gif" alt="かかりつけ医一覧に登録" border="0" />
+                        
+                        
+                        <input type="image" name="ctl00$cphdrBody$ibtnPrint" id="ctl00_cphdrBody_ibtnPrint" src="/ap/qq/image/ir_btn_03.gif" alt="印刷" onclick="return open_PrintImage(&#39;2022&#39;,&#39;1&#39;,&#39;3&#39;,&#39;3270093270&#39;);" border="0" />
+                    </td>
+                    <td class="ArrangeRight">
+                        <input type="image" name="ctl00$cphdrBody$ibtnClose" id="ctl00_cphdrBody_ibtnClose" src="/ap/qq/image/ir_btn_04.gif" alt="閉じる" onclick="window.close(); return false;" border="0" />
+                    </td>
+                </tr>
+            </table>
+            <!-- 機関基礎情報 -->
+            <table width="750" cellpadding="0" cellspacing="0" summary="機関基礎情報">
+                <tr>
+                    <td class="ImgWakuTL"></td>
+                    <td class="ImgWakuTC"></td>
+                    <td class="ImgWakuTR"></td>
+                </tr>
+                <tr>
+                    <td class="ImgWakuML"></td>
+                    <td class="ImgWakuMC">
+                        <table width="100%" style="table-layout: fixed;" cellpadding="5" summary=" ">
+                            <tr>
+                                <td class="FontSize120p ArrangeLeft StrongCell">
+                                    <span id="ctl00_cphdrBody_lblKikanRname">医療法人　大阪エアポート歯科</span></td>
+                                	
+
+                                    <td class="FontSize80p ArrangeRight" colspan="2" style="width: 36%;">医療機関最終報告日
+                                    
+                                    <span id="ctl00_cphdrBody_lblLastUpdate">2023/04/18 09:40</span></td>
+                            </tr>
+                            
+                            
+                            
+                            
+
+                            
+                            
+                            
+                            
+                            <tr>
+                                <td class="ListLine" colspan="3"></td>
+                            </tr>
+                            <tr>
+                                <td class="FontSize80p ArrangeLeft" colspan="2">
+                                    <img src="/ap/qq/image/icon_06.gif" height="13" width="14" style="border: 0; margin-left: 3; margin-right: 3" alt="" />
+                                    <span id="ctl00_cphdrBody_lblKikanLocation">560-0036 豊中市蛍池西町三丁目５５５番地　大阪国際空港ターミナルビル中央１階</span>
+                                    <br />
+                                    <img src="/ap/qq/image/icon_07.gif" height="13" width="15" style="border: 0; margin-left: 3; margin-right: 3" alt="" />
+                                    <span id="ctl00_cphdrBody_lblTel">（昼）06-6856-7484</span>
+                                </td>
+                                <td class="FontSize80p ArrangeRight" style="width: 8%;">
+                                    <a id="ctl00_cphdrBody_hypMap" href="/ap/qq/sho/pwsurmaplt01_001.aspx?chosanendo=2022&amp;chosano=1&amp;kikancd=3270093270&amp;gengokbn=J" target="_blank"><img src="/ap/qq/image/ico_map.gif" height="19" width="40" alt="周辺の地図" /></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="ImgWakuMR"></td>
+                </tr>
+                <tr>
+                    <td class="ImgWakuBL"></td>
+                    <td class="ImgWakuBC"></td>
+                    <td class="ImgWakuBR"></td>
+                </tr>
+            </table>
+            <br />
+            
+            <!-- リンクタブ -->
+            <table id="ctl00_cphdrBody_tblLinkTab" cellspacing="0" cellpadding="0" border="0" width="750">
+					<tr>
+						<td class="LinkTabOffTL"></td><td class="LinkTabOffTC"></td><td class="LinkTabOffTR"></td><td class="LinkTabOffTL"></td><td class="LinkTabOffTC"></td><td class="LinkTabOffTR"></td><td class="LinkTabOffTL"></td><td class="LinkTabOffTC"></td><td class="LinkTabOffTR"></td><td class="LinkTabOnTL"></td><td class="LinkTabOnTC"></td><td class="LinkTabOnTR"></td>
+					</tr><tr>
+						<td class="LinkTabOffML"></td><td class="LinkTabOffMC"><a href="/ap/qq/dtl/pwdetaillt01_002.aspx?serviceid=pwdetaillt&amp;chosanendo=2022&amp;chosano=1&amp;kikankbn=3&amp;kikancd=3270093270&amp;qrcodeflg=False&amp;regist=1&amp;category=1">基本情報</a></td><td class="LinkTabOffMR"></td><td class="LinkTabOffML"></td><td class="LinkTabOffMC"><a href="/ap/qq/dtl/pwdetaillt01_002.aspx?serviceid=pwdetaillt&amp;chosanendo=2022&amp;chosano=1&amp;kikankbn=3&amp;kikancd=3270093270&amp;qrcodeflg=False&amp;regist=1&amp;category=2">診療情報</a></td><td class="LinkTabOffMR"></td><td class="LinkTabOffML"></td><td class="LinkTabOffMC"><a href="/ap/qq/dtl/pwdetaillt01_002.aspx?serviceid=pwdetaillt&amp;chosanendo=2022&amp;chosano=1&amp;kikankbn=3&amp;kikancd=3270093270&amp;qrcodeflg=False&amp;regist=1&amp;category=3">医療機能情報</a></td><td class="LinkTabOffMR"></td><td class="LinkTabOnML"></td><td class="LinkTabOnMC">医療サービス情報</td><td class="LinkTabOnMR"></td>
+					</tr><tr>
+						<td class="LinkLine" colspan="21"></td>
+					</tr>
+				</table>
+
+            <!-- 病院・診療所 -->
+            
+
+            <!-- 歯科診療所 -->
+            <div id="ctl00_cphdrBody_pnlDentalKikan">
+					
+                <!-- 基本情報 -->
+                
+                <!-- 診療情報 -->
+                
+                <!-- 医療機能情報 -->
+                
+                <!-- 医療サービス情報 -->
+                <div id="ctl00_cphdrBody_pnlDentalKikan04">
+						
+                    <table class="IryoTable" width="750" cellpadding="3" summary="費用負担等">
+                        <tr>
+                            <td class="HeaderLinkBody">&nbsp;
+                        &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0508">在宅医療・看護</a>
+                                &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0302">院内処方、院外処方</a>
+                                &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0304">障がい者に対するサービス内容</a>
+                                <br />&nbsp;&nbsp;&nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0305">車椅子利用者に対するサービス内容</a>
+                                &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0307">受動喫煙防止対策</a>
+                                &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0301">医療相談窓口</a>
+                                
+                                &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0308">外国語対応</a>
+                                
+                                <br />&nbsp;&nbsp;&nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0506">健康診断、健康相談の実施</a>
+                                &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0601">医療機関の人員配置</a>
+                                
+                                
+                                &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0614">患者数</a>
+                                
+                                &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0605">医療安全対策</a>
+                                &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0606">院内感染対策</a>
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="IryoTable">
+                                <br />
+                                <div id="ctl00_cphdrBody_uclDetailZaitakuIryo4_pnlZaitakuiryo">
+							
+    <div id="ctl00_cphdrBody_uclDetailZaitakuIryo4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0508"><span id="ctl00_cphdrBody_uclDetailZaitakuIryo4_lblTitle" class="FontSize120p"><b><font color="#333333">在宅医療・看護</font></b></span></a>
+        <br />    
+    
+							</div>
+    <!-- 在宅医療 -->
+    <div id="ctl00_cphdrBody_uclDetailZaitakuIryo4_pnlZaitakuiryo01">
+								 
+    <div class="Indent01">
+        <div id="ctl00_cphdrBody_uclDetailZaitakuIryo4_pnlTyousahyou">
+									
+            <span id="ctl00_cphdrBody_uclDetailZaitakuIryo4_lblZaitakuiryo01"><b><font color="#333333">在宅医療</font></b></span>
+            <br />        
+        
+								</div>
+        <table id="ctl00_cphdrBody_uclDetailZaitakuIryo4_tblZaitakuiryo01" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610" style="border:0">
+									<tr>
+										<td class="Waku01 ArrangeLeft" width="50%">歯科訪問診療の実施</td><td class="Waku01 ArrangeLeft" width="50%">訪問歯科衛生指導</td>
+									</tr><tr>
+										<td class="Waku01 ArrangeLeft" width="50%">歯科疾患在宅療養管理</td><td class="Waku01 ArrangeLeft" width="50%">在宅患者歯科治療時医療管理</td>
+									</tr>
+								</table>
+    </div>
+    
+							</div>
+    <!-- 在宅療養指導 -->
+    
+    
+    
+    
+    <!-- 診療内容 -->
+    
+    <!-- 他の施設との連携の有無 -->
+    <div id="ctl00_cphdrBody_uclDetailZaitakuIryo4_pnlZaitakuiryo04">
+								 
+    <div class="Indent01">
+        <span id="ctl00_cphdrBody_uclDetailZaitakuIryo4_lblZaitakuiryo04"><b><font color="#333333">連携の有無</font></b></span>
+        <br />
+        <table id="ctl00_cphdrBody_uclDetailZaitakuIryo4_tblZaitakuiryo04" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610" style="border:0">
+									<tr>
+										<td class="Waku01 ArrangeLeft" width="50%">病院との連携</td><td class="Waku01 ArrangeLeft" width="50%">診療所との連携</td>
+									</tr>
+								</table>
+    </div>
+    
+							</div>
+
+						</div>
+                                <div id="ctl00_cphdrBody_uclDetailShohou4_pnlShohou">
+							
+    <div id="ctl00_cphdrBody_uclDetailShohou4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0302"><span id="ctl00_cphdrBody_uclDetailShohou4_lblTitle" class="FontSize120p"><b><font color="#333333">院内処方、院外処方</font></b></span></a>
+        <br />    
+    
+							</div>
+    <!-- 院内処方の有無 -->
+    <div class="Indent01">
+        <table id="ctl00_cphdrBody_uclDetailShohou4_tblShohou" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610">
+								<tr>
+									<td class="Waku01Color" align="left" width="42%"><span id="ctl00_cphdrBody_uclDetailShohou4_lblIryoServiceName0">院内処方</span></td><td class="Waku01" align="center" width="8%"><span id="ctl00_cphdrBody_uclDetailShohou4_lblIryoServiceNaiyo0">有り</span></td><td class="Waku01Color" width="42%"></td><td class="Waku01" width="8%"></td>
+								</tr>
+							</table>
+    </div>
+
+						</div> 
+                                <div id="ctl00_cphdrBody_uclDetailShogaisha4_pnlShogaisha">
+							
+    <div id="ctl00_cphdrBody_uclDetailShogaisha4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0304"><span id="ctl00_cphdrBody_uclDetailShogaisha4_lblTitle" class="FontSize120p"><b><font color="#333333">障がい者に対するサービス内容</font></b></span></a>
+        <br />    
+    
+							</div>
+    <!-- 障害者に対するサービス内容 -->
+    <div id="ctl00_cphdrBody_uclDetailShogaisha4_pnlShogaishaService">
+								
+    <div class="Indent01">
+        <table id="ctl00_cphdrBody_uclDetailShogaisha4_tblShogaisha" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610">
+									<tr>
+										<td class="Waku01Color ArrangeLeft" width="42%">視覚障がい者への配慮（音声による情報の伝達）</td><td class="Waku01 ArrangeCenter" width="8%">有り</td><td class="Waku01Color ArrangeLeft" width="42%">聴覚障がい者への配慮（施設内の情報の表示）</td><td class="Waku01 ArrangeCenter" width="8%">有り</td>
+									</tr>
+								</table>
+    </div>
+    
+							</div>
+    <!-- 特記事項 -->
+    <div class="Indent01">
+    
+    </div>
+
+						</div>
+                                <div id="ctl00_cphdrBody_uclDetailWheel4_pnlWheel">
+							
+    <div id="ctl00_cphdrBody_uclDetailWheel4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0305"><span id="ctl00_cphdrBody_uclDetailWheel4_lblTitle" class="FontSize120p"><b><font color="#333333">車椅子利用者に対するサービス内容</font></b></span></a>
+        <br />    
+    
+							</div>
+    <!-- 車椅子利用者に対するサービス内容 -->
+    <div id="ctl00_cphdrBody_uclDetailWheel4_pnlWheelHairyo">
+								 
+    <div class="Indent01">
+        <table id="ctl00_cphdrBody_uclDetailWheel4_tblWheelHairyo" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610">
+									<tr>
+										<td class="Waku01Color ArrangeLeft" width="42%">車椅子等利用者用駐車施設の有無</td><td class="Waku01 ArrangeCenter" width="8%">有り</td><td class="Waku01Color ArrangeLeft" width="42%">車椅子対応トイレ</td><td class="Waku01 ArrangeCenter" width="8%">有り</td>
+									</tr><tr>
+										<td class="Waku01Color ArrangeLeft" width="42%">多機能トイレの設置</td><td class="Waku01 ArrangeCenter" width="8%">有り</td><td class="Waku01Color" align="left" width="42%"></td><td class="Waku01" align="left" width="8%"></td>
+									</tr>
+								</table>
+    </div>
+    
+							</div>
+    <!-- 車椅子対応トイレ -->
+    
+
+						</div>
+                                <div id="ctl00_cphdrBody_uclDetailJyudoKitsuen4_pnlJyudoKitsuen">
+							
+    <div id="ctl00_cphdrBody_uclDetailJyudoKitsuen4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0307"><span id="ctl00_cphdrBody_uclDetailJyudoKitsuen4_lblTitle" class="FontSize120p"><b><font color="#333333">受動喫煙防止対策</font></b></span></a>
+        <br />
+    
+							</div>
+    <div id="ctl00_cphdrBody_uclDetailJyudoKitsuen4_pnlJyudoKitsuenJyoho">
+								
+    <div class="Indent01">
+        <table id="ctl00_cphdrBody_uclDetailJyudoKitsuen4_tblJyudoKitsuenJyoho" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610" style="border:0">
+									<tr>
+										<td class="Waku01Color" align="left" width="42%"><span id="ctl00_cphdrBody_uclDetailJyudoKitsuen4_lblIryoServiceName0">施設内における全面禁煙の実施</span></td><td class="Waku01" align="center" width="8%"><span id="ctl00_cphdrBody_uclDetailJyudoKitsuen4_lblIryoServiceNaiyo0">有り</span></td><td class="Waku01Color" align="left" width="42%"></td><td class="Waku01" align="left" width="8%"></td>
+									</tr>
+								</table>
+    </div>
+    
+							</div>
+    
+
+						</div>
+                                <div id="ctl00_cphdrBody_uclDetailIryoSodanNaiyo4_pnlIryoSodanNaiyo">
+							
+    <div id="ctl00_cphdrBody_uclDetailIryoSodanNaiyo4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0301"><span id="ctl00_cphdrBody_uclDetailIryoSodanNaiyo4_lblTitle" class="FontSize120p"><b><font color="#333333">医療相談窓口</font></b></span></a>
+        <br />    
+    
+							</div>
+    <!-- 医療相談窓口 -->
+    <div id="ctl00_cphdrBody_uclDetailIryoSodanNaiyo4_pnlIryoSodan">
+								
+    <div class="Indent01">
+        <table id="ctl00_cphdrBody_uclDetailIryoSodanNaiyo4_tblIryoSodan" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610">
+									<tr id="ctl00_cphdrBody_uclDetailIryoSodanNaiyo4_trSodaninMadoguti">
+										<td class="Waku01Color" width="77%"><span id="ctl00_cphdrBody_uclDetailIryoSodanNaiyo4_lblSodaninMadogutiTitle">医療相談（患者相談）対応窓口の設置</span></td><td class="Waku01 ArrangeCenter" width="23%"><span id="ctl00_cphdrBody_uclDetailIryoSodanNaiyo4_lblSodaninMadoguti">有り</span></td>
+									</tr><tr id="ctl00_cphdrBody_uclDetailIryoSodanNaiyo4_trSodaninSu">
+										<td class="Waku01Color" width="77%"><span id="ctl00_cphdrBody_uclDetailIryoSodanNaiyo4_lblSodaninSuTitle">医療相談（患者相談）対応窓口相談員の人数</span></td><td class="Waku01 ArrangeRight" width="23%"><span id="ctl00_cphdrBody_uclDetailIryoSodanNaiyo4_lblSodaninSu">1人</span></td>
+									</tr>
+								</table>
+    </div>
+    
+							</div>
+
+
+						</div> 
+                                
+                                <div id="ctl00_cphdrBody_uclDetailGengo4_pnlGengo">
+							
+    <div id="ctl00_cphdrBody_uclDetailGengo4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0308"><span id="ctl00_cphdrBody_uclDetailGengo4_lblTitle" class="FontSize120p"><b><font color="#333333">外国人患者の受入れの可否</font></b></span></a>
+        <br />    
+    
+							</div>
+    <!-- *↓*Add*2019/10/23* -->
+    
+    <div id="ctl00_cphdrBody_uclDetailGengo4_pnlGengoKahi">
+								 
+    <div class="Indent01">
+        <table id="ctl00_cphdrBody_uclDetailGengo4_tblGengoKahi" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="350" style="border:0">
+									<tr>
+										<td class="Waku01Color ArrangeCenter" width="80%">項目名</td><td class="Waku01Color ArrangeCenter" width="20%">該当</td>
+									</tr><tr>
+										<td class="Waku01Color ArrangeLeft" width="80%">外国人患者の受入れ</td><td class="Waku01 ArrangeCenter" width="20%"><span id="ctl00_cphdrBody_uclDetailGengo4_lblGengoKahi">○</span></td>
+									</tr><tr>
+										<td class="Waku01Color ArrangeLeft" width="80%">外国人患者の受入に関するサポート体制の整備</td><td class="Waku01 ArrangeCenter" width="20%"><span id="ctl00_cphdrBody_uclDetailGengo4_lblGengoSupport">○</span></td>
+									</tr>
+								</table>
+    </div>
+    
+							</div>
+    <div id="ctl00_cphdrBody_uclDetailGengo4_pnlTitleBamen">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0308_2"><span id="ctl00_cphdrBody_uclDetailGengo4_lblTitleBamen" class="FontSize120p"><b><font color="#333333">外国人患者受入れ対応可能場面</font></b></span></a>
+        <br />    
+    
+							</div>
+    
+    <div id="ctl00_cphdrBody_uclDetailGengo4_pnlGengoBamen">
+								 
+    <div class="Indent01">
+        
+        <table id="ctl00_cphdrBody_uclDetailGengo4_tblGengoBamen" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="350" style="border:0">
+									<tr>
+										<td class="Waku01Color ArrangeCenter" width="80%">項目名</td><td class="Waku01Color ArrangeCenter" width="20%">該当</td>
+									</tr><tr>
+										<td class="Waku01Color ArrangeLeft" width="80%">電話対応</td><td class="Waku01 ArrangeCenter" width="20%"><span id="ctl00_cphdrBody_uclDetailGengo4_lblGengoBamen1">○</span></td>
+									</tr><tr>
+										<td class="Waku01Color ArrangeLeft" width="80%">受付・会計時</td><td class="Waku01 ArrangeCenter" width="20%"><span id="ctl00_cphdrBody_uclDetailGengo4_lblGengoBamen2">○</span></td>
+									</tr><tr>
+										<td class="Waku01Color ArrangeLeft" width="80%">診療時</td><td class="Waku01 ArrangeCenter" width="20%"><span id="ctl00_cphdrBody_uclDetailGengo4_lblGengoBamen3">○</span></td>
+									</tr>
+								</table>
+    </div>
+    
+							</div>
+    <div id="ctl00_cphdrBody_uclDetailGengo4_pnlTitleJyoho">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0308_4"><span id="ctl00_cphdrBody_uclDetailGengo4_lblTitleJyoho" class="FontSize120p"><b><font color="#333333">対応することができる外国語の種類及び診療科目</font></b></span></a>
+        <br />    
+    
+							</div>
+    
+    <!-- *↑*Add*2019/10/23* -->
+
+     
+
+    <!-- *↓*Add*2019/10/23* -->
+    
+    <!-- *↑*Add*2019/10/23* -->
+
+    
+    <div id="ctl00_cphdrBody_uclDetailGengo4_pnlGengoJyoho">
+								 
+    <div class="Indent01">
+        <!-- 通常表示時 -->
+        <table id="ctl00_cphdrBody_uclDetailGengo4_tblGengoJyoho" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610" style="border:0">
+									<tr id="ctl00_cphdrBody_uclDetailGengo4_trGengoJyoho0">
+										<td class="Waku01Color" align="left" width="23%"><span id="ctl00_cphdrBody_uclDetailGengo4_lblGengoName0">英語</span></td><td class="Waku01" align="left" width="77%"><span id="ctl00_cphdrBody_uclDetailGengo4_lblLevelKbn0">日常会話程度の会話力ではあるが対応が可能</span></td>
+									</tr>
+								</table>
+        <!-- 全表示時 -->
+        
+    </div>
+    
+							</div> 
+    
+    <!-- *↓*Add*2019/10/23* -->
+    
+    
+    <div id="ctl00_cphdrBody_uclDetailGengo4_pnlGengoShinryo">
+								
+    <div class="Indent01">
+        
+        <table id="ctl00_cphdrBody_uclDetailGengo4_tblGengoShinryo" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610">
+									<tr id="ctl00_cphdrBody_uclDetailGengo4_trGengoShinryo0">
+										<td class="Waku01Color" height="100" width="80%"></td><td class="Waku01Color" align="center" width="20%"><span class="WritingModeRL" style="display:inline-block;">英語</span></td>
+									</tr><tr id="ctl00_cphdrBody_uclDetailGengo4_trGengoShinryo1">
+										<td id="ctl00_cphdrBody_uclDetailGengo4_tdKamoku_1_35" class="Waku01Color" align="left" width="80%">歯科</td><td class="Waku01Color" align="center" width="20%">○</td>
+									</tr>
+								</table>
+    </div>
+    
+							</div>
+    
+    
+    <!-- *↑*Add*2019/10/23* -->
+    <div id="ctl00_cphdrBody_uclDetailGengo4_pnlGengoMemo">
+								 
+        <div class="Indent01">
+            <span id="ctl00_cphdrBody_uclDetailGengo4_lblGengoMemoTitle"><b>特記事項</b></span>
+            
+            <table id="ctl00_cphdrBody_uclDetailGengo4_tblGengoMemo" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610" style="border:0">
+									<tr>
+										<td class="Waku01"><span id="ctl00_cphdrBody_uclDetailGengo4_lblGengoMemo">Ｐｌｅａｓｅ　ｒｅｆｅｒ　ｔｏ　ｏｕｒ　ｗｅｂ−ｓｉｔｅ．<br>ｈｔｔｐｓ：／／ｎｉｔｔａｄｅｎｔａｌ．ｓａｋｕｒａ．ｎｅ．ｊｐ／ｅｎｇｌｉｓｈｉ／ｉｎｄｅｘ．ｈｔｍ</span></td>
+									</tr>
+								</table>
+        </div>
+    
+							</div>
+
+						</div> 
+                                
+                                <div id="ctl00_cphdrBody_uclDetailKenshin4_pnlKenshin">
+							
+    <div id="ctl00_cphdrBody_uclDetailKenshin4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0506"><span id="ctl00_cphdrBody_uclDetailKenshin4_lblTitle" class="FontSize120p"><b><font color="#333333">健康診断、健康相談の実施</font></b></span></a>
+        <br />    
+    
+							</div>
+    <!-- 健康診断・人間ドック・健康相談等 -->
+    <div class="Indent01">
+        <table id="ctl00_cphdrBody_uclDetailKenshin4_tblKenshinJyoho" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610">
+								<tr>
+									<td class="Waku01Color ArrangeCenter" rowspan="2" width="33%">項目名</td><td class="Waku01Color ArrangeCenter" rowspan="2" width="4%">予<br>約</td><td class="Waku01Color ArrangeCenter" colspan="8">実施している曜日</td><td class="Waku01Color ArrangeCenter" rowspan="2" width="14%">受付時間</td>
+								</tr><tr>
+									<td class="Waku01Color ArrangeCenter" width="4%">月</td><td class="Waku01Color ArrangeCenter" width="4%">火</td><td class="Waku01Color ArrangeCenter" width="4%">水</td><td class="Waku01Color ArrangeCenter" width="4%">木</td><td class="Waku01Color ArrangeCenter" width="4%">金</td><td class="Waku01Color ArrangeCenter" width="4%">土</td><td class="Waku01Color ArrangeCenter" width="4%">日</td><td class="Waku01Color ArrangeCenter" width="4%">祝</td>
+								</tr><tr>
+									<td class="Waku01Color ArrangeLeft" rowspan="2" width="33%">健康診査</td><td class="Waku01 ArrangeCenter" width="4%">要</td><td class="Waku01 ArrangeCenter" width="4%">−</td><td class="Waku01 ArrangeCenter" width="4%">−</td><td class="Waku01 ArrangeCenter" width="4%">−</td><td class="Waku01 ArrangeCenter" width="4%">−</td><td class="Waku01 ArrangeCenter" width="4%">−</td><td class="Waku01 ArrangeCenter" width="4%">−</td><td class="Waku01 ArrangeCenter" width="4%">−</td><td class="Waku01 ArrangeCenter" width="4%">−</td><td class="Waku01 ArrangeCenter" valign="middle" width="14%">−</td>
+								</tr><tr>
+									<td class="Waku01Color ArrangeLeft" colspan="3" width="12%">特記事項</td><td class="Waku01 ArrangeLeft FontSize90p" colspan="7" width="55%">−</td>
+								</tr><tr>
+									<td class="Waku01Color ArrangeLeft" rowspan="2" width="33%">健康相談</td><td class="Waku01 ArrangeCenter" width="4%">要</td><td class="Waku01 ArrangeCenter" width="4%">−</td><td class="Waku01 ArrangeCenter" width="4%">−</td><td class="Waku01 ArrangeCenter" width="4%">−</td><td class="Waku01 ArrangeCenter" width="4%">−</td><td class="Waku01 ArrangeCenter" width="4%">−</td><td class="Waku01 ArrangeCenter" width="4%">−</td><td class="Waku01 ArrangeCenter" width="4%">−</td><td class="Waku01 ArrangeCenter" width="4%">−</td><td class="Waku01 ArrangeCenter" valign="middle" width="14%">−</td>
+								</tr><tr>
+									<td class="Waku01Color ArrangeLeft" colspan="3" width="12%">特記事項</td><td class="Waku01 ArrangeLeft FontSize90p" colspan="7" width="55%">−</td>
+								</tr>
+							</table>
+    </div>
+
+						</div>
+                                <div id="ctl00_cphdrBody_uclDetailJininHaichi4_pnlJininhaichi">
+							
+    <div id="ctl00_cphdrBody_uclDetailJininHaichi4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0601"><span id="ctl00_cphdrBody_uclDetailJininHaichi4_lblTitle" class="FontSize120p"><b><font color="#333333">医療機関の人員配置</font></b></span></a>
+        <br />    
+    
+							</div>
+    <!-- 医師 -->
+    <div id="ctl00_cphdrBody_uclDetailJininHaichi4_pnlJininhaichi01">
+								 
+        <div class="Indent01">
+            <table id="ctl00_cphdrBody_uclDetailJininHaichi4_tblJininhaichiTitle01" cellspacing="0" cellpadding="0" border="0" width="610" style="border:0">
+									<tr>
+										<td class="ArrangeRight">単位：人</td>
+									</tr>
+								</table>
+            <table id="ctl00_cphdrBody_uclDetailJininHaichi4_tblJininhaichi01" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610" style="border:0">
+									<tr>
+										<td class="Waku01Color ArrangeCenter" rowspan="3" width="23%">職種</td><td id="ctl00_cphdrBody_uclDetailJininHaichi4_tdJujisya" class="Waku01Color ArrangeCenter" colspan="3" width="77%">現在の従事者数</td>
+									</tr><tr>
+										<td id="ctl00_cphdrBody_uclDetailJininHaichi4_tdSoSouSu1" class="Waku01Color ArrangeCenter" rowspan="2" width="10%" style="border-bottom-width : 1px;border-bottom-style : solid;border-bottom-color : #999999;border-right-width:0px;">総数</td><td id="ctl00_cphdrBody_uclDetailJininHaichi4_tdSoSouSu2" class="Waku01Color ArrangeCenter" colspan="2" style="border-left-width:0px;"><img src="/ap/qq/image/spacer.gif" width="1" height="1" style="border:0;" alt="" /></td>
+									</tr><tr>
+										<td id="ctl00_cphdrBody_uclDetailJininHaichi4_tdSoJoSu" class="Waku02Color ArrangeCenter" width="8%">常勤</td><td id="ctl00_cphdrBody_uclDetailJininHaichi4_tdSoHjSu" class="Waku01Color ArrangeCenter" width="9%">非常勤</td>
+									</tr><tr id="ctl00_cphdrBody_uclDetailJininHaichi4_trJininhaichi0">
+										<td class="Waku01Color" align="left" width="23%"><span id="ctl00_cphdrBody_uclDetailJininHaichi4_lblJininhaichiName0">歯科医師</span></td><td class="Waku01" align="right"><span id="ctl00_cphdrBody_uclDetailJininHaichi4_lblSoSouSu0">1</span></td><td class="Waku01" align="right"><span id="ctl00_cphdrBody_uclDetailJininHaichi4_lblJoSouSu0">1</span></td><td class="Waku01" align="right"><span id="ctl00_cphdrBody_uclDetailJininHaichi4_lblHjSouSu0">−</span></td>
+									</tr><tr id="ctl00_cphdrBody_uclDetailJininHaichi4_trJininhaichi1">
+										<td class="Waku01Color" align="left" width="23%"><span id="ctl00_cphdrBody_uclDetailJininHaichi4_lblJininhaichiName1">歯科衛生士</span></td><td class="Waku01" align="right"><span id="ctl00_cphdrBody_uclDetailJininHaichi4_lblSoSouSu1">4</span></td><td class="Waku01" align="right"><span id="ctl00_cphdrBody_uclDetailJininHaichi4_lblJoSouSu1">4</span></td><td class="Waku01" align="right"><span id="ctl00_cphdrBody_uclDetailJininHaichi4_lblHjSouSu1">−</span></td>
+									</tr><tr id="ctl00_cphdrBody_uclDetailJininHaichi4_trJininhaichi2">
+										<td class="Waku01Color" align="left" width="23%"><span id="ctl00_cphdrBody_uclDetailJininHaichi4_lblJininhaichiName2">歯科技工士</span></td><td class="Waku01" align="right"><span id="ctl00_cphdrBody_uclDetailJininHaichi4_lblSoSouSu2">1</span></td><td class="Waku01" align="right"><span id="ctl00_cphdrBody_uclDetailJininHaichi4_lblJoSouSu2">1</span></td><td class="Waku01" align="right"><span id="ctl00_cphdrBody_uclDetailJininHaichi4_lblHjSouSu2">−</span></td>
+									</tr><tr id="ctl00_cphdrBody_uclDetailJininHaichi4_trJininhaichiSum">
+										<td class="Waku01 GoukeiCell" align="left" width="23%"><span id="ctl00_cphdrBody_uclDetailJininHaichi4_lblJininhaichiNameSum"><b>従事者合計</b></span></td><td class="Waku01 GoukeiCell" align="right"><span id="ctl00_cphdrBody_uclDetailJininHaichi4_lblSoSouSuSum">6</span></td><td class="Waku01 GoukeiCell" align="right"><span id="ctl00_cphdrBody_uclDetailJininHaichi4_lblJoSouSuSum">6</span></td><td class="Waku01 GoukeiCell" align="right"><span id="ctl00_cphdrBody_uclDetailJininHaichi4_lblHjSouSuSum">−</span></td>
+									</tr>
+								</table>
+        </div>
+    
+							</div>
+
+						</div>
+                                
+                                
+                                <div id="ctl00_cphdrBody_uclDetailNenkanKanjaSu4_pnlGairaiKanjya">
+							
+    <div id="ctl00_cphdrBody_uclDetailNenkanKanjaSu4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0614">    
+        <span id="ctl00_cphdrBody_uclDetailNenkanKanjaSu4_lblTitle" class="FontSize120p"><b><font color="#333333">患者数</font></b></span></a><br />
+    
+							</div>
+    
+    
+    <div id="ctl00_cphdrBody_uclDetailNenkanKanjaSu4_pnlDentalKanjaSu">
+								
+        <div class="Indent01">
+            <table id="ctl00_cphdrBody_uclDetailNenkanKanjaSu4_Table1" cellspacing="0" cellpadding="0" border="0" width="610" style="border:0">
+
+								</table>
+            <table id="ctl00_cphdrBody_uclDetailNenkanKanjaSu4_tblDentalKanjaSu" class="Waku01" cellspacing="0" cellpadding="2" border="0" width="610" style="border:0">
+									<tr>
+										<td id="ctl00_cphdrBody_uclDetailNenkanKanjaSu4_tdDentalKanjaSuTitle" class="Waku01Color ArrangeCenter" width="77%">前年度１日平均外来患者数</td><td id="ctl00_cphdrBody_uclDetailNenkanKanjaSu4_tdDentalKanjaSu" class="Waku01 ArrangeRight" width="23%">25人</td>
+									</tr>
+								</table>
+        </div>
+    
+							</div>
+
+						</div>
+                                
+                                <div id="ctl00_cphdrBody_uclDetailIryoTaisaku4_pnlIryoTaisaku">
+							
+    <div id="ctl00_cphdrBody_uclDetailIryoTaisaku4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0605"><span id="ctl00_cphdrBody_uclDetailIryoTaisaku4_lblTitle" class="FontSize120p"><b><font color="#333333">法令上の義務等（法令上の義務以外のものも含む）の医療安全対策</font></b></span></a>
+        <br />
+    
+							</div>
+    <!-- 法令に基づく義務以外の医療安全対策 -->
+    <div class="Indent01">
+        <table id="ctl00_cphdrBody_uclDetailIryoTaisaku4_tblIryoTaisaku" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610">
+								<tr id="ctl00_cphdrBody_uclDetailIryoTaisaku4_trAnzenBumon7Flg">
+									<td class="Waku01Color" width="40%">医療の安全管理のための指針の作成の有無</td><td class="Waku01" colspan="2" width="60%"><span id="ctl00_cphdrBody_uclDetailIryoTaisaku4_lblAnzenBumon7Flg">有り</span></td>
+								</tr><tr id="ctl00_cphdrBody_uclDetailIryoTaisaku4_trAnzenBumon8Flg">
+									<td class="Waku01Color" width="40%">医療安全管理対策マニュアルの作成有無</td><td class="Waku01" colspan="2" width="60%"><span id="ctl00_cphdrBody_uclDetailIryoTaisaku4_lblAnzenBumon8Flg">有り</span></td>
+								</tr>
+							</table>
+    </div>
+
+						</div>
+                                <div id="ctl00_cphdrBody_uclDetailInnaiTaisaku4_pnlInnaiTaisaku">
+							
+    <div id="ctl00_cphdrBody_uclDetailInnaiTaisaku4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0606"><span id="ctl00_cphdrBody_uclDetailInnaiTaisaku4_lblTitle" class="FontSize120p"><b><font color="#333333">法令上の義務以外の院内感染対策</font></b></span></a>
+        <br />    
+    
+							</div>
+
+    <!-- 法令に基づく義務以外の院内感染対策 -->
+    <div class="Indent01">
+        <table id="ctl00_cphdrBody_uclDetailInnaiTaisaku4_tblInnaiTaisaku" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610">
+								<tr id="ctl00_cphdrBody_uclDetailInnaiTaisaku4_trInnaikansenBumon10Flg">
+									<td class="Waku01Color" width="40%">院内感染防止対策の実施の有無</td><td class="Waku01" colspan="2" width="60%"><span id="ctl00_cphdrBody_uclDetailInnaiTaisaku4_lblInnaikansenBumon10Flg">有り</span></td>
+								</tr><tr id="ctl00_cphdrBody_uclDetailInnaiTaisaku4_trInnaikansenBumon8Flg">
+									<td class="Waku01Color" width="40%">院内感染対策マニュアルの作成の有無</td><td class="Waku01" colspan="2" width="60%"><span id="ctl00_cphdrBody_uclDetailInnaiTaisaku4_lblInnaikansenBumon8Flg">有り</span></td>
+								</tr><tr id="ctl00_cphdrBody_uclDetailInnaiTaisaku4_trInnaikansenBumon9Flg">
+									<td class="Waku01Color" width="40%">院内感染対策のための指針の作成の有無</td><td class="Waku01" colspan="2" width="60%"><span id="ctl00_cphdrBody_uclDetailInnaiTaisaku4_lblInnaikansenBumon9Flg">有り</span></td>
+								</tr>
+							</table>
+    </div>
+
+						</div>
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                            </td>
+                        </tr>
+                    </table>
+                
+					</div>
+            
+				</div>
+
+            <!-- 助産所 -->
+            
+
+            
+        </div>
+    
+			</div>
+    <input type="hidden" name="ctl00$cphdrBody$hdnChosaNendo" id="ctl00_cphdrBody_hdnChosaNendo" value="2022" />
+    <input type="hidden" name="ctl00$cphdrBody$hdnChosaNo" id="ctl00_cphdrBody_hdnChosaNo" value="1" />
+    <input type="hidden" name="ctl00$cphdrBody$hdnKikanKbn" id="ctl00_cphdrBody_hdnKikanKbn" value="3" />
+    <input type="hidden" name="ctl00$cphdrBody$hdnKikanCd" id="ctl00_cphdrBody_hdnKikanCd" value="3270093270" />
+    <input type="hidden" name="ctl00$cphdrBody$hdnCategory" id="ctl00_cphdrBody_hdnCategory" value="4" />
+    <input type="hidden" name="ctl00$cphdrBody$hdnShowQrCodeFlg" id="ctl00_cphdrBody_hdnShowQrCodeFlg" value="False" />
+    <input type="hidden" name="ctl00$cphdrBody$hdnKakaritsukeRegistedKikanCd" id="ctl00_cphdrBody_hdnKakaritsukeRegistedKikanCd" />
+
+    </td>
+			
+    </tr>
+    </table>
+    <br />
+    <!-- Placeholder End -->
+    
+		</div>
+    <!-- Contents End -->
+    
+	</div> 
+    
+     
+    
+</div>
+    <!-- Footer Start -->
+    <footer>
+        
+        <div class="copy">
+            <div class="inner_pages">
+                <p>当Webサイトで収集した情報については､管理責任者を置き､漏洩､改竄等の恐れのないよう厳重なセキュリティー保護体制を確立した上で､適切に管理を行ないます
+                    <br/>Copyright (C) 2020 大阪府健康医療部保健医療室　保健医療企画課 All rights reserved.</p>
+            </div>
+        </div>
+        
+        <div class="page_top">
+            <a href="#">
+                <img src="../../image/renew/common/page_up.png" id="ctl00_img1" alt="大阪府医療機関情報システム" />
+            </a>
+        </div>
+    </footer>
+    <!-- Footer End -->
+    </form>
+</body>
+
+
+
+</html>

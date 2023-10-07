@@ -1,0 +1,2945 @@
+
+
+
+
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" dir="ltr"><!-- InstanceBegin template="/Templates/base.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta http-equiv="Imagetoolbar" content="no" />
+  <title>長野県広域災害・救急医療情報システム「ながの医療情報Net」</title>
+<meta name="description" content="長野県広域災害・救急医療情報システム「ながの医療情報Net」" />
+<meta name="keywords" content="長野県,救急医療,広域災害,ながの医療情報Net" />
+<meta name="author" content="" />
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="http://www.qq.pref.nagano.lg.jp/favicon.ico" type="image/vnd.microsoft.icon">
+<script type="text/javascript">
+//<--!
+  var topPageUrl = 'http://www.qq.pref.nagano.lg.jp/';
+//-->
+</script>
+
+  <meta name="author" content="" />
+  <!-- Bootstrap -->
+  <link rel="stylesheet" HREF="http://www.qq.pref.nagano.lg.jp/static/css/styles.css?cdeb63ed72e1c1ffe894321cf30f0278" type="text/css" media="screen,tv,print" />
+  <link rel="stylesheet" HREF="http://www.qq.pref.nagano.lg.jp/static/css/qq_base.css?27d7ed44f2b11ab3b146eaa89c608bd2" type="text/css" media="screen,tv,print" />
+  <link rel="stylesheet" href="http://www.qq.pref.nagano.lg.jp/static/css/style_search_now.css?57ad42cf2c470b54ef492acdad533b65" type="text/css" media="screen,tv,print" />
+  <link rel="stylesheet" href="http://www.qq.pref.nagano.lg.jp/static/css/style_search_info.css?f79d5e5c93445b734deb825e225c4344" type="text/css" media="screen,tv,print" />
+
+  
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script SRC="http://www.qq.pref.nagano.lg.jp/static/lib/jquery-1.12.0.min.js?b2f71c943f2f14613bc100fc3ec59db2" type="text/javascript"></script>
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script SRC="http://www.qq.pref.nagano.lg.jp/static/lib/html5shiv.min.js?3044234175ac91f49b03ff999c592b85" type="text/javascript"></script>
+	  <script SRC="http://www.qq.pref.nagano.lg.jp/static/lib/respond.min.js?4019c5f3493663439e6dfb064e5d8c36" type="text/javascript"></script>
+	<![endif]-->
+
+  <script SRC="http://www.qq.pref.nagano.lg.jp/static/lib/bootstrap.min.js?d6c8c6d7b996538e355355c443f49b13" type="text/javascript"></script>
+  <script SRC="http://www.qq.pref.nagano.lg.jp/static/lib/retina.min.js?f1084330c600a079fde8e072e1e1b592" type="text/javascript"></script>
+  <script SRC="http://www.qq.pref.nagano.lg.jp/static/lib/common/singleton.js?df8bc4d801a79d98a6e3d2502b4e057e" type="text/javascript"></script>
+  <script SRC="http://www.qq.pref.nagano.lg.jp/static/lib/common/utility.js?932a57078c2b688893f22adafed92a31" type="text/javascript"></script>
+  <script SRC="http://www.qq.pref.nagano.lg.jp/static/lib/common/utility.bootstrap.js?c392ada99a3ebce01c549c8f1f278dbc" type="text/javascript"></script>
+  <script SRC="http://www.qq.pref.nagano.lg.jp/static/lib/common/utility.browser.js?1651241838f936e9aa17522cf949fb3e" type="text/javascript"></script>
+  <script SRC="http://www.qq.pref.nagano.lg.jp/static/lib/qq-common.js?29dbff997bf192725bfa8a8f1b2cd3bb" type="text/javascript"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+var qqCommon = new QQCommon();
+qqCommon.setCommonMenuLink(0, "http://www.qq.pref.nagano.lg.jp/pb_top/top_about_naganoiryo");
+qqCommon.setCommonMenuLink(1, "http://www.qq.pref.nagano.lg.jp/pb_top/top_available_info");
+qqCommon.setCommonMenuLink(2, "http://www.qq.pref.nagano.lg.jp/pb_top/top_link_list");
+qqCommon.setCommonMenuLink(3, "http://www.qq.pref.nagano.lg.jp/pb_top/top_site_map");
+qqCommon.setCommonMenuLink(4, "http://www.qq.pref.nagano.lg.jp/pb_top_interrogating/sendform");
+qqCommon.setCommonMenuLink(5, "http://www.qq.pref.nagano.lg.jp/pb_top/top_sitepolicy");
+
+$(document).ready(function () {
+	qqCommon.init();
+	// 共通メニュータップ時イベント登録処理
+	qqCommon.registCommonMenuEvent("header", "glyphicon-align-justify", "common-menu-accordion", "title-head-bg");
+
+	// Android標準ブラウザの場合は、Bootstrapのブルダウンメニューは使用しない
+	if(Utility.Browser.getInstance().isAndroidBrowser()){
+		var $mainContObj				= $("#mainContents");
+		var $mainContObjType01	= $mainContObj.find("div.row-fluid");
+		$mainContObjType01.find('select.form-control').removeClass('form-control').removeClass('input-sm').css({'width': '100%', 'height': '40px'});
+	}
+
+	if(Utility.Browser.getInstance().isIE8()){
+		var $a_datatoggle = $(".panel-title  a");
+		$a_datatoggle.removeAttr("data-toggle href");
+	}
+
+	$('div.panel-collapse').on('shown.bs.collapse', function (e) {
+		$(this).parent().find("span.glyphicon").first().removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
+		e.stopPropagation();
+	}).on('hidden.bs.collapse', function (e) {
+		$(this).parent().find("span.glyphicon").first().removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
+		e.stopPropagation();
+	});
+
+});
+
+// タイトルカラムクリック時処理
+function toggleTitle(obj, chkName){
+  if(!Utility.Bootstrap.getInstance().isXS()){
+    clickParent(chkName);
+    return;
+  }
+
+  var $parentObj = $(obj).parent();
+  // 科目の折りたたみ(スマホのみ)
+  if($parentObj.find("div.content-row").hasClass("hidden-xs")){
+    $parentObj.find("div.content-row").removeClass("hidden-xs");
+    $(obj).find("img.kamoku-arrow").attr("src", "http://www.qq.pref.nagano.lg.jp/static/images/sita.gif?69866138eb1fa33b79ebe4977212c546");
+  }else{
+    $parentObj.find("div.content-row").addClass("hidden-xs");
+    $(obj).find("img.kamoku-arrow").attr("src", "http://www.qq.pref.nagano.lg.jp/static/images/yoko.gif?4cee284023bb00ae4968924d522e6e2d");
+  }
+}
+
+// タイトルカラムクリック時処理（科目属性）
+function toggleTitleAttribute(obj, chkName){
+  var $parentObj = $(obj).parent();
+  // 科目の折りたたみ(スマホのみ)
+  if($parentObj.find("div.content-row").hasClass("hidden-xs")){
+    $parentObj.find("div.content-row").removeClass("hidden-xs");
+    $(obj).find("img.attribute-arrow").attr("src", "http://www.qq.pref.nagano.lg.jp/static/images/sita.gif?69866138eb1fa33b79ebe4977212c546");
+  }else{
+    $parentObj.find("div.content-row").addClass("hidden-xs");
+    $(obj).find("img.attribute-arrow").attr("src", "http://www.qq.pref.nagano.lg.jp/static/images/yoko.gif?4cee284023bb00ae4968924d522e6e2d");
+  }
+}
+
+//]]>
+</SCRIPT>
+
+  <script SRC="http://www.qq.pref.nagano.lg.jp/static/lib/99control.js?12bf59c0a140df381f16b8189a8f9899" type="text/javascript"></script>
+  <script SRC="http://www.qq.pref.nagano.lg.jp/static/lib/pb_md/pb_md_info/search.js?ac42023eddcce65e05cea6faffc0f406" type="text/javascript"></script>
+  <script SRC="http://www.qq.pref.nagano.lg.jp/static/lib/cookie_control.js?e1fa14113a631613d0e47065c96e30d1" type="text/javascript"></script>
+  <script type="text/javascript">
+//<![CDATA[
+
+function resizeContents(){
+  if(Utility.Bootstrap.getInstance().isXS()){ return; }
+
+  if(Utility.Browser.getInstance().isIE()){
+    if($("#collapse-tab_t02").hasClass("in")){
+      var $resizeObj = $("#collapse-tab_t02").find("div.hidden-xs").find("div.tbl_type03-week").find("div.cal-height");
+      for(var i = 0, len = $resizeObj.size(); i < len; i++){
+        var $oneObj = $resizeObj.eq(i);
+
+        var $divTitle4  = $oneObj.find("div.title4");
+        var $divTitle7  = $oneObj.find("div.title7");
+        var $divContent3  = $oneObj.find("div.content3");
+        var $divContent8  = $oneObj.find("div.content8");
+
+        if($divTitle4.size() > 0){ $divTitle4.css({"height" : ""}); }
+        if($divTitle7.size() > 0){ $divTitle7.css({"height" : ""}); }
+        if($divContent3.size() > 0){ $divContent3.css({"height" : ""}); }
+        if($divContent8.size() > 0){ $divContent8.css({"height" : ""}); }
+
+        var oneHeight = ($oneObj.css("height").replace("px", "") - 0) + "px";
+
+        if($divTitle4.size() > 0){ $divTitle4.css({"height" : oneHeight}); }
+        if($divTitle7.size() > 0){ $divTitle7.css({"height" : oneHeight}); }
+        if($divContent3.size() > 0){ $divContent3.css({"height" : oneHeight}); }
+        if($divContent8.size() > 0){ $divContent8.css({"height" : oneHeight}); }
+
+      }
+    }else if($("#collapse-tab_t05").hasClass("in")){
+      var $resizeObj = $("#collapse-tab_t05").find("div.hidden-xs").find("div.cal-height");
+      for(var i = 0, len = $resizeObj.size(); i < len; i++){
+        var $oneObj = $resizeObj.eq(i);
+
+        var $divContent30  = $oneObj.find("div.content30");
+        if($divContent30.size() > 0){ $divContent30.css({"height" : ""}); }
+        var oneHeight = ($oneObj.css("height").replace("px", "") - 0) + "px";
+        if($divContent30.size() > 0){ $divContent30.css({"height" : oneHeight}); }
+      }
+    }else if($("#collapse-tab_t06").hasClass("in")){
+      var $resizeObj = $("#collapse-tab_t06").find("div.hidden-xs").find("div.tbl_type03").find("div.cal-height");
+      for(var i = 0, len = $resizeObj.size(); i < len; i++){
+        var $oneObj = $resizeObj.eq(i);
+
+        var $divContent30  = $oneObj.find("div.content30");
+        if($divContent30.size() > 0){ $divContent30.css({"height" : ""}); }
+        var oneHeight = ($oneObj.css("height").replace("px", "") - 0) + "px";
+        if($divContent30.size() > 0){ $divContent30.css({"height" : oneHeight}); }
+      }
+    }
+  }
+  return;
+}
+
+$(document).ready(function () {
+  resizeContents();
+  // コンテンツリサイズイベント登録
+  qqCommon.registResizeContentsEvent(resizeContents);
+
+  var $accObj = $('#accordion');
+  $accObj.find('div.panel-collapse').on('shown.bs.collapse', function () {
+    $(this).prev().find("span.glyphicon").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
+  }).on('hidden.bs.collapse', function () {
+    $(this).prev().find("span.glyphicon").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
+  });
+
+  // アコーディオンタイトルタップ時処理
+  $accObj.find("div.panel-heading").on("click", function(){
+    var accShowFlag = $(this).parent().find("div.panel-collapse").hasClass("in");
+    if(accShowFlag){
+      return;
+    }
+    if($(this)[0].id == "heading-tab_t01"){ changeTab(1, true);}
+    else if($(this)[0].id == "heading-tab_t02"){ changeTab(2, true); }
+    else if($(this)[0].id == "heading-tab_t03"){ changeTab(3, true); }
+    else if($(this)[0].id == "heading-tab_t04"){ changeTab(4, true); }
+    else if($(this)[0].id == "heading-tab_t05"){ changeTab(5, true); }
+    else if($(this)[0].id == "heading-tab_t06"){ changeTab(6, true); }
+    else if($(this)[0].id == "heading-tab_t07"){ changeTab(7, true); }
+  });
+
+  if(Utility.Browser.getInstance().isTablet()){
+    $("#btn_type10").addClass("hidden-sm");
+  }
+});
+
+function changeTab(tabNum, accFlag){
+  if( !document.getElementById("tab_i0" + tabNum)) return 0;
+  for(var i = 1 ; i < 8 ; i++){
+    if(i == tabNum){
+      document.getElementById("tab_i0" + i).src = "../../../static/images/tab_s0" + i +"_on.gif";
+      document.getElementById("tab_u0" + i).bgColor = "#FFFFFF";
+      if(document.getElementById("tab_t0" + i)) document.getElementById("tab_t0" + i).style.display = "block";
+      if(accFlag != true){
+        $("#collapse-tab_t0" + i).addClass("in");
+      }
+      $("#tab_t0" + i + "-panel").removeClass("hidden-sm").removeClass("hidden-md").removeClass("hidden-lg");
+      $("#collapse-tab_t0" + i).css("height", "auto");
+    }else{
+      document.getElementById("tab_i0" + i).src = "../../../static/images/spacer.gif";
+      document.getElementById("tab_u0" + i).bgColor = "#999999";
+      if(document.getElementById("tab_t0" + i)) document.getElementById("tab_t0" + i).style.display = "none";
+      if(accFlag != true){
+        $("#collapse-tab_t0" + i).removeClass("in");
+      }
+      $("#tab_t0" + i + "-panel").addClass("hidden-sm").addClass("hidden-md").addClass("hidden-lg");
+    }
+  }
+  resizeContents();
+}
+
+// 外来受付時間切り替え処理
+function changeAcptime(deptseqid,totaldept){
+
+  for(var i = 1 ; i <= totaldept ; i++){
+    if(i == deptseqid){
+      document.getElementById("acptime_i" + i).style.display = "block";
+    }else{
+      document.getElementById("acptime_i" + i).style.display = "none";
+    }
+  }
+}
+
+// ルート検索用印刷画面表示
+function openRouteFileOutPage() {
+  
+    window.open('http://www.qq.pref.nagano.lg.jp/pb_dt_index/pb_dt_list/pb_dt_info/2633?fileout=2', '_blank', 'width=700,height=800,toolbar=yes,location=yes,directories=no,status=yes,menubar=yes,scrollbars=yes,resizable=yes');
+  
+}
+
+//]]>
+</script>
+<style type="text/css">
+   .kamoku li {
+       float:left;
+       width:130px;
+       height:20px
+   }
+</style>
+</head>
+<body onLoad="moveHeaderIcon('http://www.qq.pref.nagano.lg.jp/static/images/');">
+<FORM name="dtinfoform" method="post" action="http://www.qq.pref.nagano.lg.jp/pb_dt_index/pb_dt_list">
+<a name="Top"></a>
+    <div id="container" class="container-fluid">
+      
+		<!-- header-area Start -->
+		<div id="header-area" class="row center-block text-right">
+			
+
+
+
+<div id="header">
+	<div class="wrap" ID="HeaderTitle">
+	<img src="http://www.qq.pref.nagano.lg.jp/static/images/bk_top2.gif?cf083bcf95046bc59054748c52db122d" class="hidden-xs" />
+	</div>
+	<span class="glyphicon glyphicon-align-justify btn-lg hidden-sm hidden-md hidden-lg"></span>
+</div>
+<!-- Common Menu Start-->
+<div class="panel-group hidden-xs hidden-sm hidden-md hidden-lg" id="common-menu-accordion" role="tablist" aria-multiselectable="true">
+	<div class="panel panel-default">
+		<div class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+			<div class="panel-body">
+				<div class="btn-group-vertical">
+          <button type="button" class="btn btn-default btn-md"><p><strong>ながの医療情報Netとは？</strong></p></button>
+          <button type="button" class="btn btn-default btn-md"><p><strong>ご利用案内</strong></p></button>
+          <button type="button" class="btn btn-default btn-md"><p><strong>リンク集</strong></p></button>
+          <button type="button" class="btn btn-default btn-md"><p><strong>サイトマップ</strong></p></button>
+          <button type="button" class="btn btn-default btn-md"><p><strong>お問い合わせ</strong></p></button>
+          <button type="button" class="btn btn-default btn-md"><p><strong>サイトポリシー</strong></p></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Common Menu End-->
+
+			<div id="pageTitle" class="">
+								<div class="container-fluid">
+					<div id="panKuzu-row" class="row-fluid">
+						<div id="panKuzu">
+						<ul>
+							
+								
+								<li id="pankuzu01"><a href="http://www.qq.pref.nagano.lg.jp/">Home</a></li>
+								<li id="next">>></li>
+								
+							
+								
+								<li id="pankuzu01">歯科診療所の情報</li>
+								
+							
+						</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- titleImage-row Start -->
+				<div id="titleImage-row" class="row-fluid">
+		      <div id="titleImage">
+		        <img name="pageTitleImage" class="hidden-xs"											SRC="http://www.qq.pref.nagano.lg.jp/static/images/ttl111003_DentistDetailt.gif?8d10e4c03c46fb6293b23dc720b74dc7" alt="歯科診療所の情報">
+		        <img name="pageTitleImage" class="hidden-sm hidden-md hidden-lg"	SRC="http://www.qq.pref.nagano.lg.jp/static/images/title_Info_dental_clinic_320.png?2a95f2cb467daf288c4d2a025f626133" alt="歯科診療所の情報">
+		      </div>
+	      </div>
+		    <!-- titleImage-row End -->
+			</div>
+			<!-- /header -->
+		</div>
+		<!-- header-area End -->
+
+      <div id="contents">
+        <div id="mainContents">
+
+          <!-- ここからコンテンツ編集領域 -->
+          <div class="section">
+            <div class="section" id="section1">
+              <table width="100%">
+                <tr>
+                  <td style="text-align:right">2022年10月5日時点の情報</td>
+                </tr>
+              </table>
+              <h1 CLASS="mark1">地方職員共済組合　長野県支部診療所&emsp;（チホウショクインキョウサイクミアイナガノケンシブシンリョウジョ）</h1>
+              <table width="100%" height="40px">
+                <tr>
+                  <td width="64%">
+                    
+                      <img src="http://www.qq.pref.nagano.lg.jp/static/images/icon_Notreat.gif?b02c752d2e646ca2ca894f627660a942"></img>
+                      <b><font color="#FF0000">外来診療は受け付けていません。</font></b>
+                    
+                  </td>
+                  <td width="12%">
+                    <a href="javascript:void(0);" onclick="javascript:openRouteFileOutPage();" id="btn_type11" class="btn_type04 hidden-xs" style="text-align:right; float:right;"></a>
+                  </td>
+                  <td width="12%">
+                    <a href="javaScript:savcook('institutionid','dtinfoform')" id="btn_type03" class="btn_type04" style="float:right;"></a>
+                   </td>
+                  <td width="12%">
+                    <a href="javascript:void(0);" onclick="javascript:window.open('http://www.qq.pref.nagano.lg.jp/pb_dt_index/pb_dt_list/pb_dt_info/2633?fileout=1', '_blank', 'width=700,height=800,toolbar=yes,location=yes,directories=no,status=yes,menubar=yes,scrollbars=yes,resizable=yes');" id="btn_type10" class="btn_type04 hidden-xs" style="text-align:right; float:right;"></a>
+                  </td>
+                </tr>
+                
+                <script language="JavaScript">
+                <!--
+                if (!cookieTest()) document.write("<tr><td colspan=\"3\" align=\"right\"><font color=\"red\">※かかりつけ登録機能はCookieを利用します。 " +
+                          "Cookieの保存を有効にして下さい。ブラウザのツールオプションで変更可能です。</font></td></tr>");
+                // -->
+                </script>
+                
+              </table>
+
+              <!-- 詳細情報テーブル(全端末共通) Start -->
+              <div class="container-fluid tbl_type01" cellspacing="0">
+                <div class="row-fluid">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 thead">詳細情報</div>
+                </div>
+
+                <div class="row-fluid">
+                  <!-- 郵便番号などの情報部分 -->
+                  <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 td-row">
+                    <div class="row-fluid">
+                      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 title7">郵便番号</div>
+                      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 content2">〒380-0837</div>
+                    </div>
+                    <div class="row-fluid">
+                      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 title7">所在地フリガナ</div>
+                      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 content2">ナガノシミナミナガノアザハバシタ</div>
+                    </div>
+                    <div class="row-fluid">
+                      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 title7">所在地</div>
+                      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 content2">
+                        <div class="row-fluid" style="border-bottom-width:0px;">
+                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">長野市南長野幅下６９２－２</div>
+                          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            
+                            <a href="http://www.qq.pref.nagano.lg.jp/pb_dt_index/pb_dt_list/pb_dt_map/dental/2633" class="btn_type03" id="btn_type08"><img src="http://www.qq.pref.nagano.lg.jp/static/images/spacer.gif?df3e567d6f16d040326c7a0ea29a4f41"></a>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row-fluid">
+                      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 title7">電話番号</div>
+                      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 content2">
+                        （昼）026-232-0111 
+                      </div>
+                    </div>
+                    <div class="row-fluid">
+                      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 title7">FAX</div>
+                      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 content2">
+                        （昼）026-235-7365 
+                      </div>
+                    </div>
+                    <div class="row-fluid">
+                      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 title7">案内用ホームページアドレス</div>
+                      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 content2" style="word-break: break-word;">
+                        
+                        <a href="" TARGET="_blank"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- アイコンの部分 -->
+                  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 td">
+                    
+                      <img src="http://www.qq.pref.nagano.lg.jp/static/images/icon_P.gif?33da61c19df11346292fb12e9fd6f843" title="駐車場あり"></img>
+                    
+                    
+                    
+                    
+                      <img src="http://www.qq.pref.nagano.lg.jp/static/images/icon_Kuruma.gif?0e97f85b4baa86cadf2d95574c2005a6" title="車椅子等利用者に対する配慮"></img>
+                    
+                    
+                    
+                      <img src="http://www.qq.pref.nagano.lg.jp/static/images/icon_ABC.gif?01a064e538331dd26996522147b560c0" title="外国語対応が可能"></img>
+                    
+                    
+                      <img src="http://www.qq.pref.nagano.lg.jp/static/images/icon_Smoke.gif?faa8e447647104d0826529cc075087e0" title="受動喫煙防止対策"></img>
+                    
+                    <br>
+                    <a href="http://www.qq.pref.nagano.lg.jp/static/html/pb_icon.htm" target="000">アイコンの説明</a>
+                  </div>
+                </div>
+
+              </div>
+              <!-- 詳細情報テーブル(全端末共通) End -->
+
+
+              <br><font color="#FF0000">【注意】受診される際は、必ずあらかじめ各歯科診療所の窓口にご確認ください。</font>
+              <br/>
+              <table class="hidden-xs">
+                <tr>
+                  <td><a href="javascript:void(0);" class="tab_type01" id="tab_s01" onclick="changeTab('1')" title="開設者情報／診療科目／地図／外来受付時間／休診日／特記事項"><img id="tab_i01" src="http://www.qq.pref.nagano.lg.jp/static/images/tab_s01_on.gif?ed76a72a606498cbc7b0e9400a9c9149"></a></td>
+                  <td><a href="javascript:void(0);" class="tab_type01" id="tab_s02" onclick="changeTab('2')" title="名称／電話・FAX／メール／アクセス／外来区分／診療時間／外来受付時間"><img id="tab_i02" src="http://www.qq.pref.nagano.lg.jp/static/images/spacer.gif?df3e567d6f16d040326c7a0ea29a4f41"></img></a></td>
+                  <td><a href="javascript:void(0);" class="tab_type01" id="tab_s03" onclick="changeTab('3')" title="院内処方／障害者・車椅子等利用者に対する配慮／受動喫煙防止対策／医療に関する相談／外国人患者の受入れ体制"><img id="tab_i03" src="http://www.qq.pref.nagano.lg.jp/static/images/spacer.gif?df3e567d6f16d040326c7a0ea29a4f41"></img></a></td>
+                  <td><a href="javascript:void(0);" class="tab_type01" id="tab_s04" onclick="changeTab('4')" title="保険医療機関、公費負担医療機関及びその他の医療機関の種類／電子決済による料金の支払い"><img id="tab_i04" src="http://www.qq.pref.nagano.lg.jp/static/images/spacer.gif?df3e567d6f16d040326c7a0ea29a4f41"></img></a></td>
+                  <td><a href="javascript:void(0);" class="tab_type01" id="tab_s05" onclick="changeTab('5')" title="対応することができる疾患・治療の内容／専門外来"><img id="tab_i05" src="http://www.qq.pref.nagano.lg.jp/static/images/spacer.gif?df3e567d6f16d040326c7a0ea29a4f41"></img></a></td>
+                  <td><a href="javascript:void(0);" class="tab_type01" id="tab_s06" onclick="changeTab('6')" title="専門医・専門看護師／健康診断・相談／在宅医療／地域連携体制"><img id="tab_i06" src="http://www.qq.pref.nagano.lg.jp/static/images/spacer.gif?df3e567d6f16d040326c7a0ea29a4f41"></img></a></td>
+                  <td><a href="javascript:void(0);" class="tab_type01" id="tab_s07" onclick="changeTab('7')" title="人員配置／法令上の義務以外の院内感染対策／情報開示／患者満足度の調査／患者数"><img id="tab_i07" src="http://www.qq.pref.nagano.lg.jp/static/images/spacer.gif?df3e567d6f16d040326c7a0ea29a4f41"></img></a></td>
+                  <td width="100%"></td>
+                </tr>
+                <TR>
+                 <TD height="2px" BGCOLOR="#FFFFFF"  style="border-left:#999999 2px solid;" ID="tab_u01"></TD>
+                 <TD height="2px" BGCOLOR="#999999" ID="tab_u02"></TD>
+                 <TD height="2px" BGCOLOR="#999999" ID="tab_u03"></TD>
+                 <TD height="2px" BGCOLOR="#999999" ID="tab_u04"></TD>
+                 <TD height="2px" BGCOLOR="#999999" ID="tab_u05"></TD>
+                 <TD height="2px" BGCOLOR="#999999" ID="tab_u06"></TD>
+                 <TD height="2px" BGCOLOR="#999999" ID="tab_u07"></TD>
+                 <TD height="2px" BGCOLOR="#999999" ></TD>
+               </TR>
+              </table>
+
+
+              <div id="pb-md-info-tabs">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                  <!-- 「基本情報」タブ詳細 -->
+                  <div id="tab_t01-panel" class="panel panel-default">
+                    <div class="panel-heading hidden-sm hidden-md hidden-lg" role="tab" id="heading-tab_t01" data-toggle="collapse" data-parent="#accordion" data-target="#collapse-tab_t01">
+                      <span class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-tab_t01" aria-expanded="true" aria-controls="collapse-tab_t01">
+                          <span class="glyphicon glyphicon-chevron-up"></span>
+                          <strong>基本情報</strong>
+                        </a>
+                      </span>
+                    </div>
+                    <div id="collapse-tab_t01" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-tab_t01">
+                      <div class="panel-body tbl_type04" style="display:block;">
+                        <!-- 開設者名や駐車場の有無についてのテーブル(全端末共通) Start -->
+                        <div class="row-fluid" style="padding-right:0px;">
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tbl_type03s">
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 td-row" style="vertical-align:top; border-width:0px;">
+                                <div class="row-fluid">
+                                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 title1">開設者種別</div>
+                                    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 content2">共済組合及びその連合会</div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 title1">開設者名フリガナ</div>
+                                    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 content2">チホウショクインキョウサイクミアイナガノケンシブ</div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 title1">開設者名</div>
+                                    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 content2">地方職員共済組合長野県支部</div>
+                                </div>
+                                <!-- 駐車場 -->
+                                <div class="row-fluid">
+                                  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 title1">駐車場</div>
+                                  <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 content2">
+                                    
+                                      無料 1台 &nbsp;
+                                    
+                                    
+                                    
+                                  </div>
+                                </div>
+                                <!-- 診療科目 -->
+                                <div class="row-fluid">
+                                  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 title1">診療科目</div>
+                                  <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 content2">
+                                    <div class="row-fluid">
+                                      
+                                        
+                                          
+                                          
+                                            
+                                          
+                                          
+                                            <label class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="border-width:0px;">
+                                              <a href="javaScript:changeAcptime(1,1)">歯科</a>
+                                            </label>
+                                          
+                                        
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="hidden-xs hidden-sm hidden-md col-md-3 col-lg-3 td-row">
+                                <div class="row-fluid">
+                                  <div class="col-md-12 col-lg-12 content2 text-center">
+                                    
+                                      <a href="http://www.qq.pref.nagano.lg.jp/pb_dt_index/pb_dt_list/pb_dt_map/dental/2633">
+                                        <img src="http://www.qq.pref.nagano.lg.jp/static/images/map/icon/byoin.gif?1bd3b8f9e337647277dd4522ab766082" style="position:absolute;margin-left:90px;margin-top:65px" />
+                                        <img src="http://www.qq.pref.nagano.lg.jp/cm_map_image/pc_detail/2633" />
+                                      </a>
+                                    
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 開設者名や駐車場の有無についてのテーブル(全端末共通) End -->
+                        <span>※科目名をクリックすると、各診療科目の外来受付時間を表示します。</span>
+                        <br><br>
+
+                        
+                          
+                            <div id="acptime_i1" style="display:block;">
+                          
+                              <h4 class="mark1">歯科</h4>
+                              <div style="height:8px;"></div>
+
+                              <!-- 「外来受付時間テーブル」と「初診時の予約などの表示テーブル」の行(全端末共通) Start -->
+                              <div class="row-fluid" style="padding-right:0px;">
+                                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 tbl_type05" style="vertical-align:top;">
+                                  <!-- 外来受付時間テーブル -->
+                                  <div class="row-fluid">
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 title1"><strong>外来受付時間</strong></div>
+                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 title2"><img src="http://www.qq.pref.nagano.lg.jp/static/images/measure.gif?eaf82e1ea22fb4a8d4aeeb807702ae2b" class="hidden-xs"></div>
+                                  </div>
+                                  
+                                    <!-- 曜日 Start -->
+                                    <div class="row-fluid">
+                                      <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1 week">
+                                        月
+                                      </div>
+                                      
+                                        <div class="col-xs-8 col-sm-3 col-md-3 col-lg-3 content2" >
+                                          
+                                            09:00 ～ 12:00
+                                          
+                                          
+                                            <br/>
+                                            13:00 ～ 14:00
+                                          
+                                          
+                                        </div>
+                                        <div class="hidden-xs col-sm-8 col-md-8 col-lg-8 content5" style="padding-right:0px;"><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graphend.gif?cb276c05fcabd190ff8929ca0c72428e"/>
+                                        </div>
+                                      
+                                    </div>
+                                    <!-- 曜日 End -->
+                                  
+                                    <!-- 曜日 Start -->
+                                    <div class="row-fluid">
+                                      <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1 week">
+                                        火
+                                      </div>
+                                      
+                                        <div class="col-xs-8 col-sm-3 col-md-3 col-lg-3 content2" style="background-color:#E3EBF9;">
+                                          
+                                            09:00 ～ 12:00
+                                          
+                                          
+                                          
+                                        </div>
+                                        <div class="hidden-xs col-sm-8 col-md-8 col-lg-8 content5" style="background-color:#E3EBF9;padding-right:0px;"><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graphend.gif?cb276c05fcabd190ff8929ca0c72428e"/>
+                                        </div>
+                                      
+                                    </div>
+                                    <!-- 曜日 End -->
+                                  
+                                    <!-- 曜日 Start -->
+                                    <div class="row-fluid">
+                                      <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1 week">
+                                        水
+                                      </div>
+                                      
+                                        <div class="col-xs-8 col-sm-3 col-md-3 col-lg-3 content2" >
+                                          
+                                            09:00 ～ 12:00
+                                          
+                                          
+                                            <br/>
+                                            13:00 ～ 14:00
+                                          
+                                          
+                                        </div>
+                                        <div class="hidden-xs col-sm-8 col-md-8 col-lg-8 content5" style="padding-right:0px;"><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graphend.gif?cb276c05fcabd190ff8929ca0c72428e"/>
+                                        </div>
+                                      
+                                    </div>
+                                    <!-- 曜日 End -->
+                                  
+                                    <!-- 曜日 Start -->
+                                    <div class="row-fluid">
+                                      <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1 week">
+                                        木
+                                      </div>
+                                      
+                                        <div class="col-xs-8 col-sm-3 col-md-3 col-lg-3 content2" style="background-color:#E3EBF9;">
+                                          
+                                            09:00 ～ 12:00
+                                          
+                                          
+                                            <br/>
+                                            13:00 ～ 14:00
+                                          
+                                          
+                                        </div>
+                                        <div class="hidden-xs col-sm-8 col-md-8 col-lg-8 content5" style="background-color:#E3EBF9;padding-right:0px;"><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graphend.gif?cb276c05fcabd190ff8929ca0c72428e"/>
+                                        </div>
+                                      
+                                    </div>
+                                    <!-- 曜日 End -->
+                                  
+                                    <!-- 曜日 Start -->
+                                    <div class="row-fluid">
+                                      <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1 week">
+                                        金
+                                      </div>
+                                      
+                                        <div class="col-xs-8 col-sm-3 col-md-3 col-lg-3 content2" >
+                                          
+                                            09:00 ～ 12:00
+                                          
+                                          
+                                            <br/>
+                                            13:00 ～ 14:00
+                                          
+                                          
+                                        </div>
+                                        <div class="hidden-xs col-sm-8 col-md-8 col-lg-8 content5" style="padding-right:0px;"><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph4.gif?fdf966ea55b4fe752271da0d88676ac8"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph0.gif?188910e4ff9ac0031277addb17dfcd28"/><img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graphend.gif?cb276c05fcabd190ff8929ca0c72428e"/>
+                                        </div>
+                                      
+                                    </div>
+                                    <!-- 曜日 End -->
+                                  
+                                    <!-- 曜日 Start -->
+                                    <div class="row-fluid">
+                                      <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1 week">
+                                        土
+                                      </div>
+                                      
+                                        <div class="col-xs-8 col-sm-11 col-md-11 col-lg-11 content6">休診</div>
+                                      
+                                    </div>
+                                    <!-- 曜日 End -->
+                                  
+                                    <!-- 曜日 Start -->
+                                    <div class="row-fluid">
+                                      <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1 week">
+                                        日
+                                      </div>
+                                      
+                                        <div class="col-xs-8 col-sm-11 col-md-11 col-lg-11 content6">休診</div>
+                                      
+                                    </div>
+                                    <!-- 曜日 End -->
+                                  
+                                    <!-- 曜日 Start -->
+                                    <div class="row-fluid">
+                                      <div class="col-xs-4 col-sm-1 col-md-1 col-lg-1 week">
+                                        祝日
+                                      </div>
+                                      
+                                        <div class="col-xs-8 col-sm-11 col-md-11 col-lg-11 content6">休診</div>
+                                      
+                                    </div>
+                                    <!-- 曜日 End -->
+                                  
+                                </div>
+
+                                <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 tbl_type05 tbl_type05s" style="vertical-align:top;">
+                                  <!-- 初診時の予約などの表示テーブル -->
+                                  <div class="row-fluid">
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 head1">初診時の予約</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 content3">必要</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 head1">再診時の予約</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 content3">必要</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 head2">外来受付時間一時変更</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content3" style="vertical-align:top; min-height:30px;">
+                                      <font color="#FF0000">&nbsp;</font>
+                                    </div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 head2">その他休診日</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content3" style="vertical-align:top;">1月1日、1月2日、1月3日、8月13日、8月14日、8月15日、12月29日、12月30日、12月31日&nbsp;</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 head2">外来特記事項</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content4" style="vertical-align:top;word-break: break-word;">共済組合内診療所で一般外来を行わない。&nbsp;</div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- 「外来受付時間テーブル」と「初診時の予約などの表示テーブル」の行(全端末共通) End -->
+                            </div>
+                        
+
+                          <!-- 注意書き(全端末共通) -->
+                          <div class="row-fluid hidden-xs">
+                            <img src="http://www.qq.pref.nagano.lg.jp/static/images/graph6.gif?5f63ca1b3f9fd5155132bd454b26babf"/>：休診時間&nbsp;&nbsp;&nbsp;<img height="22" src="http://www.qq.pref.nagano.lg.jp/static/images/graph5.gif?d620490e3cc87111c0fa3258d2e7181a"/>：外来受付時間<br>※受付時間を表示しておりますので、診療時間と異なる場合があります。
+                            <br>
+                            <a href="#dentalHouse" onclick="changeTab('2')">すべての科目の診療時間・外来受付時間はこちらをクリックしてください。>></a>
+                          </div>
+
+                          <!-- 名称・住所等(全端末共通) Start -->
+                        <div class="row-fluid" style="margin-top:20px;">
+                          <h6 class="mark1">名称・住所等</h6>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tbl_type03">
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">開設者種別</div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1">共済組合及びその連合会</div>
+                          </div>
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">正式名称フリガナ</div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1">チホウショクインキョウサイクミアイナガノケンシブシンリョウジョ</div>
+                          </div>
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">正式名称</div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1">地方職員共済組合　長野県支部診療所</div>
+                          </div>
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">英語表記名称</div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1">Chihou Syokuin Kyousai Kumiai Naganoken Shibu shinryojyo</div>
+                          </div>
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">英語表記住所</div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1">692-2Ooaza-Minaminagano-Habashita,Nagano-city</div>
+                          </div>
+                          <div class="row-fluid">
+                              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">案内用電子メールアドレス</div>
+                              <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1"></div>
+                          </div>
+                        </div>
+                        <!-- 名称・住所等(全端末共通) End -->
+
+                        <!-- 管理者(全端末共通) Start -->
+                        <div class="row-fluid">
+                          <h6 class="mark1">管理者</h6>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tbl_type03">
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">管理者名フリガナ</div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1">テラサワ　タケミ</div>
+                          </div>
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">管理者名</div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1">寺澤　武美</div>
+                          </div>
+                        </div>
+                        <!-- 管理者(全端末共通) End -->
+
+                        <!-- 電話・FAX番号(全端末共通) Start -->
+                        <div class="row-fluid">
+                          <h6 class="mark1">電話・FAX番号</h6>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tbl_type03">
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">住民案内用電話番号（緊急医案内サービス用電話番号）</div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1">026-232-0111</div>
+                          </div>
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">夜間・休日住民案内用電話番号</div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1"></div>
+                          </div>
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">住民案内用FAX番号</div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1">026-235-7365</div>
+                          </div>
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">夜間・休日住民案内用FAX番号</div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1"></div>
+                          </div>
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">予約用電話番号</div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1">026-235-0111</div>
+                          </div>
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">予約用FAX番号</div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1"></div>
+                          </div>
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">予約用フリーダイヤル</div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1"></div>
+                          </div>
+                        </div>
+                        <!-- 電話・FAX番号(全端末共通) End -->
+
+                         <!-- 外来区分(全端末共通) Start -->
+                        <div class="row-fluid">
+                          <h6 class="mark1">外来区分</h6>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tbl_type03">
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">外来区分</div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1">その他一般外来を行わない</div>
+                          </div>
+                        </div>
+                        <!-- 外来区分(全端末共通) End -->
+
+
+                        <!-- 診療時間 -->
+                        <div><a name="MedicalHours"></a></div>
+                        <div class="row-fluid">
+                          <h6 class="mark1">診療時間</h6>
+                        </div>
+                        <!-- 診療時間(スマホ版) Start -->
+                        
+                        
+                          <div class="hidden-sm hidden-md hidden-lg" cellspacing="0">
+                            <div class="col-xs-12 tbl_type03-week">
+                              <div class="row-fluid">
+                                <div class="col-xs-12 content8">歯科</div>
+                              </div>
+                              
+                              
+                              <div class="row-fluid">
+                                <div class="col-xs-2 title4">月</div>
+                                <div class="col-xs-10 content3">
+                                  
+                                    
+                                      09:00 - 12:00
+                                    
+                                    
+                                      
+                                        <br/>
+                                      
+                                      13:00 - 14:00
+                                    
+                                    
+                                  
+                                </div>
+                              </div>
+                              
+                              
+                              <div class="row-fluid">
+                                <div class="col-xs-2 title4">火</div>
+                                <div class="col-xs-10 content3">
+                                  
+                                    
+                                      09:00 - 12:00
+                                    
+                                    
+                                    
+                                  
+                                </div>
+                              </div>
+                              
+                              
+                              <div class="row-fluid">
+                                <div class="col-xs-2 title4">水</div>
+                                <div class="col-xs-10 content3">
+                                  
+                                    
+                                      09:00 - 12:00
+                                    
+                                    
+                                      
+                                        <br/>
+                                      
+                                      13:00 - 14:00
+                                    
+                                    
+                                  
+                                </div>
+                              </div>
+                              
+                              
+                              <div class="row-fluid">
+                                <div class="col-xs-2 title4">木</div>
+                                <div class="col-xs-10 content3">
+                                  
+                                    
+                                      09:00 - 12:00
+                                    
+                                    
+                                      
+                                        <br/>
+                                      
+                                      13:00 - 14:00
+                                    
+                                    
+                                  
+                                </div>
+                              </div>
+                              
+                              
+                              <div class="row-fluid">
+                                <div class="col-xs-2 title4">金</div>
+                                <div class="col-xs-10 content3">
+                                  
+                                    
+                                      09:00 - 12:00
+                                    
+                                    
+                                      
+                                        <br/>
+                                      
+                                      13:00 - 14:00
+                                    
+                                    
+                                  
+                                </div>
+                              </div>
+                              
+                              
+                              <div class="row-fluid">
+                                <div class="col-xs-2 title4">土</div>
+                                <div class="col-xs-10 content3">
+                                  
+                                    休診
+                                  
+                                </div>
+                              </div>
+                              
+                              
+                              <div class="row-fluid">
+                                <div class="col-xs-2 title4">日</div>
+                                <div class="col-xs-10 content3">
+                                  
+                                    休診
+                                  
+                                </div>
+                              </div>
+                              
+                              
+                              <div class="row-fluid">
+                                <div class="col-xs-2 title4">祝</div>
+                                <div class="col-xs-10 content3">
+                                  
+                                    休診
+                                  
+                                </div>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        
+                        <!-- 診療時間(スマホ版) End -->
+                        <!-- 診療時間(タブレット・ＰＣ版) Start -->
+                        <div class="hidden-xs" cellspacing="0">
+                          <div class="col-sm-12 col-md-12 col-lg-12 tbl_type03-week">
+                            <div class="row-fluid cal-height">
+                              <div class="col-sm-2 col-md-2 col-lg-2 td">
+                                <div class="row-fluid">
+                                  <div class="col-sm-12 col-md-12 col-lg-12 title7">&nbsp;</div>
+                                </div>
+                              </div>
+                              <div class="col-sm-5 col-md-5 col-lg-5 td">
+                                <div class="row-fluid">
+                                  <div class="col-sm-3 col-md-3 col-lg-3 title4">月</div>
+                                  <div class="col-sm-3 col-md-3 col-lg-3 title4">火</div>
+                                  <div class="col-sm-3 col-md-3 col-lg-3 title4">水</div>
+                                  <div class="col-sm-3 col-md-3 col-lg-3 title4">木</div>
+                                </div>
+                              </div>
+                              <div class="col-sm-5 col-md-5 col-lg-5 td">
+                                <div class="row-fluid">
+                                  <div class="col-sm-3 col-md-3 col-lg-3 title4">金</div>
+                                  <div class="col-sm-3 col-md-3 col-lg-3 title4">土</div>
+                                  <div class="col-sm-3 col-md-3 col-lg-3 title4">日</div>
+                                  <div class="col-sm-3 col-md-3 col-lg-3 title4">祝</div>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <!-- 科目 Start -->
+                            <div class="row-fluid cal-height">
+                              <div class="col-sm-2 col-md-2 col-lg-2 content8" style="border-top:0px;">歯科</div>
+                              <div class="col-sm-5 col-md-5 col-lg-5 td">
+                                <div class="row-fluid">
+                                  
+                                    
+                                      <div class="col-sm-3 col-md-3 col-lg-3 content3" style="border-top:0px;">
+                                        
+                                          
+                                            09:00 - 12:00
+                                          
+                                          
+                                            
+                                              <br/>
+                                            
+                                            13:00 - 14:00
+                                          
+                                          
+                                        
+                                      </div>
+                                    
+                                  
+                                    
+                                      <div class="col-sm-3 col-md-3 col-lg-3 content3" style="border-top:0px;">
+                                        
+                                          
+                                            09:00 - 12:00
+                                          
+                                          
+                                          
+                                        
+                                      </div>
+                                    
+                                  
+                                    
+                                      <div class="col-sm-3 col-md-3 col-lg-3 content3" style="border-top:0px;">
+                                        
+                                          
+                                            09:00 - 12:00
+                                          
+                                          
+                                            
+                                              <br/>
+                                            
+                                            13:00 - 14:00
+                                          
+                                          
+                                        
+                                      </div>
+                                    
+                                  
+                                    
+                                      <div class="col-sm-3 col-md-3 col-lg-3 content3" style="border-top:0px;">
+                                        
+                                          
+                                            09:00 - 12:00
+                                          
+                                          
+                                            
+                                              <br/>
+                                            
+                                            13:00 - 14:00
+                                          
+                                          
+                                        
+                                      </div>
+                                    
+                                  
+                                    
+                                  
+                                    
+                                  
+                                    
+                                  
+                                    
+                                  
+                                </div>
+                              </div>
+                              <div class="col-sm-5 col-md-5 col-lg-5 td">
+                                <div class="row-fluid">
+                                  
+                                    
+                                  
+                                    
+                                  
+                                    
+                                  
+                                    
+                                  
+                                    
+                                      <div class="col-sm-3 col-md-3 col-lg-3 content3" style="border-top:0px;">
+                                        
+                                          
+                                            09:00 - 12:00
+                                          
+                                          
+                                            
+                                              <br/>
+                                            
+                                            13:00 - 14:00
+                                          
+                                          
+                                        
+                                      </div>
+                                    
+                                  
+                                    
+                                      <div class="col-sm-3 col-md-3 col-lg-3 content3" style="border-top:0px;">
+                                        
+                                          休診
+                                        
+                                      </div>
+                                    
+                                  
+                                    
+                                      <div class="col-sm-3 col-md-3 col-lg-3 content3" style="border-top:0px;">
+                                        
+                                          休診
+                                        
+                                      </div>
+                                    
+                                  
+                                    
+                                      <div class="col-sm-3 col-md-3 col-lg-3 content3" style="border-top:0px;">
+                                        
+                                          休診
+                                        
+                                      </div>
+                                    
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 科目 End -->
+                            
+                          </div>
+                        </div>
+                        <!-- 診療時間(タブレット・ＰＣ版) End -->
+                        <!-- 診療時間 おわり -->
+
+
+                        <!-- 外来受付時間 -->
+                        <div><a name="MedicalHours"></a></div>
+                        <div class="row-fluid">
+                          <h6 class="mark1">外来受付時間</h6>
+                        </div>
+                        <!-- 外来受付時間(スマホ版) Start -->
+                        
+                          <div class="hidden-sm hidden-md hidden-lg" cellspacing="0">
+                            <div class="col-xs-12 tbl_type03-week">
+                              <div class="row-fluid">
+                                <div class="col-xs-12 content8">歯科</div>
+                              </div>
+                              
+                              
+                              <div class="row-fluid">
+                                <div class="col-xs-2 title4">月</div>
+                                <div class="col-xs-10 content3">
+                                  
+                                    
+                                      09:00 - 12:00
+                                    
+                                    
+                                      
+                                        <br/>
+                                      
+                                      13:00 - 14:00
+                                    
+                                    
+                                  
+                                </div>
+                              </div>
+                              
+                              
+                              <div class="row-fluid">
+                                <div class="col-xs-2 title4">火</div>
+                                <div class="col-xs-10 content3">
+                                  
+                                    
+                                      09:00 - 12:00
+                                    
+                                    
+                                    
+                                  
+                                </div>
+                              </div>
+                              
+                              
+                              <div class="row-fluid">
+                                <div class="col-xs-2 title4">水</div>
+                                <div class="col-xs-10 content3">
+                                  
+                                    
+                                      09:00 - 12:00
+                                    
+                                    
+                                      
+                                        <br/>
+                                      
+                                      13:00 - 14:00
+                                    
+                                    
+                                  
+                                </div>
+                              </div>
+                              
+                              
+                              <div class="row-fluid">
+                                <div class="col-xs-2 title4">木</div>
+                                <div class="col-xs-10 content3">
+                                  
+                                    
+                                      09:00 - 12:00
+                                    
+                                    
+                                      
+                                        <br/>
+                                      
+                                      13:00 - 14:00
+                                    
+                                    
+                                  
+                                </div>
+                              </div>
+                              
+                              
+                              <div class="row-fluid">
+                                <div class="col-xs-2 title4">金</div>
+                                <div class="col-xs-10 content3">
+                                  
+                                    
+                                      09:00 - 12:00
+                                    
+                                    
+                                      
+                                        <br/>
+                                      
+                                      13:00 - 14:00
+                                    
+                                    
+                                  
+                                </div>
+                              </div>
+                              
+                              
+                              <div class="row-fluid">
+                                <div class="col-xs-2 title4">土</div>
+                                <div class="col-xs-10 content3">
+                                  
+                                    休診
+                                  
+                                </div>
+                              </div>
+                              
+                              
+                              <div class="row-fluid">
+                                <div class="col-xs-2 title4">日</div>
+                                <div class="col-xs-10 content3">
+                                  
+                                    休診
+                                  
+                                </div>
+                              </div>
+                              
+                              
+                              <div class="row-fluid">
+                                <div class="col-xs-2 title4">祝</div>
+                                <div class="col-xs-10 content3">
+                                  
+                                    休診
+                                  
+                                </div>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        
+                        <!-- 外来受付時間(スマホ版) End -->
+                        <!-- 外来受付時間(タブレット・ＰＣ版) Start -->
+                        <div class="hidden-xs" cellspacing="0">
+                          <div class="col-sm-12 col-md-12 col-lg-12 tbl_type03-week">
+                            <div class="row-fluid cal-height">
+                              <div class="col-sm-2 col-md-2 col-lg-2 td">
+                                <div class="row-fluid">
+                                  <div class="col-sm-12 col-md-12 col-lg-12 title7">&nbsp;</div>
+                                </div>
+                              </div>
+                              <div class="col-sm-5 col-md-5 col-lg-5 td">
+                                <div class="row-fluid">
+                                  <div class="col-sm-3 col-md-3 col-lg-3 title4">月</div>
+                                  <div class="col-sm-3 col-md-3 col-lg-3 title4">火</div>
+                                  <div class="col-sm-3 col-md-3 col-lg-3 title4">水</div>
+                                  <div class="col-sm-3 col-md-3 col-lg-3 title4">木</div>
+                                </div>
+                              </div>
+                              <div class="col-sm-5 col-md-5 col-lg-5 td">
+                                <div class="row-fluid">
+                                  <div class="col-sm-3 col-md-3 col-lg-3 title4">金</div>
+                                  <div class="col-sm-3 col-md-3 col-lg-3 title4">土</div>
+                                  <div class="col-sm-3 col-md-3 col-lg-3 title4">日</div>
+                                  <div class="col-sm-3 col-md-3 col-lg-3 title4">祝</div>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <!-- 科目 Start -->
+                            <div class="row-fluid cal-height">
+                              <div class="col-sm-2 col-md-2 col-lg-2 content8" style="border-top:0px;">歯科</div>
+                              <div class="col-sm-5 col-md-5 col-lg-5 td">
+                                <div class="row-fluid">
+                                  
+                                    
+                                      <div class="col-sm-3 col-md-3 col-lg-3 content3" style="border-top:0px;">
+                                        
+                                          
+                                            09:00 - 12:00
+                                          
+                                          
+                                            
+                                              <br/>
+                                            
+                                            13:00 - 14:00
+                                          
+                                          
+                                        
+                                      </div>
+                                    
+                                  
+                                    
+                                      <div class="col-sm-3 col-md-3 col-lg-3 content3" style="border-top:0px;">
+                                        
+                                          
+                                            09:00 - 12:00
+                                          
+                                          
+                                          
+                                        
+                                      </div>
+                                    
+                                  
+                                    
+                                      <div class="col-sm-3 col-md-3 col-lg-3 content3" style="border-top:0px;">
+                                        
+                                          
+                                            09:00 - 12:00
+                                          
+                                          
+                                            
+                                              <br/>
+                                            
+                                            13:00 - 14:00
+                                          
+                                          
+                                        
+                                      </div>
+                                    
+                                  
+                                    
+                                      <div class="col-sm-3 col-md-3 col-lg-3 content3" style="border-top:0px;">
+                                        
+                                          
+                                            09:00 - 12:00
+                                          
+                                          
+                                            
+                                              <br/>
+                                            
+                                            13:00 - 14:00
+                                          
+                                          
+                                        
+                                      </div>
+                                    
+                                  
+                                    
+                                  
+                                    
+                                  
+                                    
+                                  
+                                    
+                                  
+                                </div>
+                              </div>
+                              <div class="col-sm-5 col-md-5 col-lg-5 td">
+                                <div class="row-fluid">
+                                  
+                                    
+                                  
+                                    
+                                  
+                                    
+                                  
+                                    
+                                  
+                                    
+                                      <div class="col-sm-3 col-md-3 col-lg-3 content3" style="border-top:0px;">
+                                        
+                                          
+                                            09:00 - 12:00
+                                          
+                                          
+                                            
+                                              <br/>
+                                            
+                                            13:00 - 14:00
+                                          
+                                          
+                                        
+                                      </div>
+                                    
+                                  
+                                    
+                                      <div class="col-sm-3 col-md-3 col-lg-3 content3" style="border-top:0px;">
+                                        
+                                          休診
+                                        
+                                      </div>
+                                    
+                                  
+                                    
+                                      <div class="col-sm-3 col-md-3 col-lg-3 content3" style="border-top:0px;">
+                                        
+                                          休診
+                                        
+                                      </div>
+                                    
+                                  
+                                    
+                                      <div class="col-sm-3 col-md-3 col-lg-3 content3" style="border-top:0px;">
+                                        
+                                          休診
+                                        
+                                      </div>
+                                    
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 科目 End -->
+                            
+                          </div>
+                        </div>
+                        <!-- 外来受付時間(タブレット・ＰＣ版) End -->
+                        <!-- 外来受付時間 おわり -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 「基本情報」タブ詳細 おわり -->
+
+                  <!-- 「アクセス」タブ詳細 -->
+                  <div id="tab_t02-panel" class="panel panel-default hidden-sm hidden-md hidden-lg">
+                    <div class="panel-heading hidden-sm hidden-md hidden-lg" role="tab" id="heading-tab_t02" data-toggle="collapse" data-parent="#accordion" data-target="#collapse-tab_t02">
+                      <span class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-tab_t02" aria-expanded="true" aria-controls="collapse-tab_t02">
+                          <span class="glyphicon glyphicon-chevron-down"></span>
+                          <strong>アクセス</strong>
+                        </a>
+                      </span>
+                    </div>
+                    <div id="collapse-tab_t02" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-tab_t02">
+                      <div class="panel-body tbl_type04">
+
+                        <!-- 歯科診療所へのアクセス(全端末共通) Start -->
+                        <div class="row-fluid">
+                          <h6 class="mark1">診療所へのアクセス</h6>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tbl_type03">
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">主な利用交通手段</div>
+                            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1" style="word-break: break-word;">
+                            ＪＲ長野駅より約２０分（徒歩）で長野県庁西庁舎４階
+                            </div>
+                          </div>
+                          
+                            <div class="row-fluid">
+                              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">診療所の駐車場</div>
+                              <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1">
+                                
+                                  無料 1台 &nbsp;
+                                
+                                
+                                
+                              </div>
+                            </div>
+                          
+                        </div>
+                        <!-- 歯科診療所へのアクセス(全端末共通) End -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 「アクセス」タブ詳細 おわり -->
+
+                  <!-- 「院内サービス」タブ詳細 -->
+                  <div id="tab_t03-panel" class="panel panel-default hidden-sm hidden-md hidden-lg">
+                    <div class="panel-heading hidden-sm hidden-md hidden-lg" role="tab" id="heading-tab_t03" data-toggle="collapse" data-parent="#accordion" data-target="#collapse-tab_t03">
+                      <span class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-tab_t03" aria-expanded="true" aria-controls="collapse-tab_t03">
+                          <span class="glyphicon glyphicon-chevron-down"></span>
+                          <strong>院内サービス</strong>
+                        </a>
+                      </span>
+                    </div>
+                    <div id="collapse-tab_t03" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-tab_t03">
+                      <div class="panel-body tbl_type04">
+                      
+
+                        
+                          <!-- 院内処方の有無(全端末共通) Start -->
+                          <div class="row-fluid" style="margin-top:20px;">
+                            <h6 class="mark1">院内処方の有無</h6>
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tbl_type03" cellspacing="0">
+                            <div class="row-fluid">
+                              <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 title5">院内処方</div>
+                              <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 content6">あり</div>
+                            </div>
+                          </div>
+                          <!-- 院内処方の有無(全端末共通) End -->
+                        
+												
+                        
+
+                        
+                          <!-- 車椅子利用者に対するサービス内容(全端末共通) Start -->
+                          <div class="row-fluid">
+                            <h6 class="mark1">車椅子等利用者に対する配慮</h6>
+                          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tbl_type03" cellspacing="0">
+            
+            
+              
+                
+              
+              
+                <div class="row-fluid">
+                  <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 title5">施設のバリアフリー化の実施</div>
+                  
+                    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 content6">あり</div>
+                  
+              
+              </div>
+            
+            
+          </div>
+                          <!-- 車椅子利用者に対するサービス内容(全端末共通) End -->
+                        
+
+                        
+                          <!-- 受動喫煙を防止するための措置(全端末共通) Start -->
+                          <div class="row-fluid">
+                            <h6 class="mark1">受動喫煙防止対策</h6>
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tbl_type03" cellspacing="0">
+                            
+                              
+                                <div class="row-fluid">
+                                  <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 title5">施設内における全面禁煙の実施</div>
+                                  
+                                    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 content6">あり</div>
+                                  
+                              
+                              </div>
+                            
+                            
+                          </div>
+                          <!-- 受動喫煙を防止するための措置(全端末共通) End -->
+                        
+
+                        
+
+                        
+                          <!-- 対応することができる外国語の種類(全端末共通) Start -->
+                          <div class="row-fluid">
+                            <h6 class="mark1">外国人患者の受入れ体制</h6>
+                          </div>
+                          
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tbl_type03" cellspacing="0">
+                              <div class="thead">
+                                <div class="row-fluid">
+                                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 td">対応することができる外国語の種類</div>
+                                </div>
+                              </div>
+                              <div class="tbody">
+                                
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 title1">英語</div>
+                                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content1">
+                                      
+                                        会話の自信はないが図示や単語の羅列で診療が可能
+                                      
+                                    </div>
+                                  </div>
+                                
+                              </div>
+                            </div>
+                            <!-- 対応することができる外国語の種類(全端末共通) End -->
+                          
+
+                          
+                          
+                        
+                      
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 「院内サービス」タブ詳細 おわり -->
+
+                  <!-- 「費用負担等」タブ詳細 -->
+                  <div id="tab_t04-panel" class="panel panel-default hidden-sm hidden-md hidden-lg">
+                    <div class="panel-heading hidden-sm hidden-md hidden-lg" role="tab" id="heading-tab_t04" data-toggle="collapse" data-parent="#accordion" data-target="#collapse-tab_t04">
+                      <span class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-tab_t04" aria-expanded="true" aria-controls="collapse-tab_t04">
+                          <span class="glyphicon glyphicon-chevron-down"></span>
+                          <strong>費用負担等</strong>
+                        </a>
+                      </span>
+                    </div>
+                    <div id="collapse-tab_t04" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-tab_t04">
+                      <div class="panel-body tbl_type04">
+                      
+
+                        
+                          <!-- 保険医療機関、公費負担医療機関及びその他の医療機関の種類 Start -->
+                          <div class="row-fluid" style="margin-top:20px;">
+                            <h6 class="mark1">保険医療機関、公費負担医療機関及びその他の医療機関の種類</h6>
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tbl_type03" cellspacing="0">
+                            <div class="thead">
+                              <div class="row-fluid">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 td">医療機関の種類</div>
+                              </div>
+                            </div>
+                            <div class="tbody">
+                              
+                                <div class="row-fluid">
+                                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content5">保険医療機関</div>
+                                </div>
+                              
+                            </div>
+                          </div>
+                          <!-- 保険医療機関、公費負担医療機関及びその他の医療機関の種類 End -->
+                        
+
+                        
+
+                      
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 「費用負担等」タブ詳細 おわり -->
+
+                  <!-- 「診療内容」タブ詳細 -->
+                  <div id="tab_t05-panel" class="panel panel-default hidden-sm hidden-md hidden-lg">
+                    <div class="panel-heading hidden-sm hidden-md hidden-lg" role="tab" id="heading-tab_t05" data-toggle="collapse" data-parent="#accordion" data-target="#collapse-tab_t05">
+                      <span class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-tab_t05" aria-expanded="true" aria-controls="collapse-tab_t05">
+                          <span class="glyphicon glyphicon-chevron-down"></span>
+                          <strong>診療内容</strong>
+                        </a>
+                      </span>
+                    </div>
+                    <div id="collapse-tab_t05" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-tab_t05">
+                      <div class="panel-body tbl_type04">
+                      
+
+                        
+
+                          <!-- 対応することができる疾患・治療の内容 -->
+                          <div class="row-fluid">
+                            <div><a name="a001"></a></div>
+                            <h6 class="mark1">対応することができる疾患・治療の内容</h6>
+                          </div>
+                          <!-- 歯科領域 Start -->
+                          
+                            <!-- 歯科領域（スマホ版） -->
+                            <div class="hidden-sm hidden-md hidden-lg">
+                              <div class="col-xs-12 tbl_type03">
+                                <div class="thead">
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 td">歯科領域</div>
+                                  </div>
+                                </div>
+                                <div class="tbody">
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 title9">項目名</div>
+                                  </div>
+                                  
+                                    
+                                      <div class="row-fluid">
+                                        <div class="col-xs-12 content7">歯科領域の一次診療</div>
+                                      </div>
+                                    
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 歯科領域（タブレット・ＰＣ版） -->
+                            <div class="hidden-xs">
+                              <div class="col-sm-12 col-md-12 col-lg-12 tbl_type03">
+                                <div class="thead">
+                                  <div class="row-fluid">
+                                    <div class="col-sm-12 col-md-12 col-lg-12 td">歯科領域</div>
+                                  </div>
+                                </div>
+                                <div class="tbody">
+                                  <div class="row-fluid">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 title9">項目名</div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6 title10">項目名</div>
+                                  </div>
+                                    
+                                      
+                                      <div class="row-fluid">
+                                        <div class="col-sm-6 col-md-6 col-lg-6 content7">歯科領域の一次診療</div>
+                                      
+                                    
+                                    
+                                      <div class="col-sm-6 col-md-6 col-lg-6 content9"></div>
+                                      </div>
+                                    
+                                </div>
+                              </div>
+                            </div>
+                          
+                          <!-- 歯科領域 End -->
+
+                          <!-- 口腔外科領域 Start -->
+                          
+                            <!-- 口腔外科領域（スマホ版） -->
+                            <div class="hidden-sm hidden-md hidden-lg">
+                              <div class="col-xs-12 tbl_type03">
+                                <div class="thead">
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 td">口腔外科領域</div>
+                                  </div>
+                                </div>
+                                <div class="tbody">
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 title9">項目名</div>
+                                  </div>
+                                  
+                                    
+                                      <div class="row-fluid">
+                                        <div class="col-xs-12 content7">埋伏歯抜歯</div>
+                                      </div>
+                                    
+                                  
+                                    
+                                      <div class="row-fluid">
+                                        <div class="col-xs-12 content9">顎関節症治療</div>
+                                      </div>
+                                    
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 口腔外科領域（タブレット・ＰＣ版） -->
+                            <div class="hidden-xs">
+                              <div class="col-sm-12 col-md-12 col-lg-12 tbl_type03">
+                                <div class="thead">
+                                  <div class="row-fluid">
+                                    <div class="col-sm-12 col-md-12 col-lg-12 td">口腔外科領域</div>
+                                  </div>
+                                </div>
+                                <div class="tbody">
+                                  <div class="row-fluid">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 title9">項目名</div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6 title10">項目名</div>
+                                  </div>
+                                    
+                                      
+                                      <div class="row-fluid">
+                                        <div class="col-sm-6 col-md-6 col-lg-6 content7">埋伏歯抜歯</div>
+                                      
+                                    
+                                      
+                                        <div class="col-sm-6 col-md-6 col-lg-6 content9">顎関節症治療</div>
+                                      </div>
+                                      
+                                    
+                                    
+                                </div>
+                              </div>
+                            </div>
+                          
+                          <!-- 口腔外科領域 End -->
+                          
+
+                        
+
+                      
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 「診療内容」タブ詳細 おわり -->
+
+                  <!-- 「提供サービス」タブ詳細 -->
+                  <div id="tab_t06-panel" class="panel panel-default hidden-sm hidden-md hidden-lg">
+                    <div class="panel-heading hidden-sm hidden-md hidden-lg" role="tab" id="heading-tab_t06" data-toggle="collapse" data-parent="#accordion" data-target="#collapse-tab_t06">
+                      <span class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-tab_t06" aria-expanded="true" aria-controls="collapse-tab_t06">
+                          <span class="glyphicon glyphicon-chevron-down"></span>
+                          <strong>提供サービス</strong>
+                        </a>
+                      </span>
+                    </div>
+                    <div id="collapse-tab_t06" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-tab_t06">
+                      <div class="panel-body tbl_type04">
+
+                        
+
+
+                        
+
+                        
+                          <!-- 健康診査及び健康相談の実施 -->
+                          <div class="row-fluid">
+                            <div><a name="a006"></a></div>
+                            <h6 class="mark1">健康診査及び健康相談の実施</h6>
+                          </div>
+
+                          <!-- 「健康診査及び健康相談の実施」のテーブル -->
+                          <!-- スマホ版 -->
+                          <div class="hidden-sm hidden-md hidden-lg">
+                            
+                            
+                              
+                                <div class="col-xs-12 tbl_type03">
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 title30">項目名</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 content30 text-center">健康診査</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 title30">予約</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 content30 text-center">
+                                      
+                                        要
+                                      
+                                    </div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 title30">実施している曜日</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-6 title-row30">
+                                      <div class="row-fluid" style="border-top-width:0px; border-bottom-width:0px;">
+                                        <div class="col-xs-3">月</div>
+                                        <div class="col-xs-3">火</div>
+                                        <div class="col-xs-3">水</div>
+                                        <div class="col-xs-3">木</div>
+                                      </div>
+                                    </div>
+                                    <div class="col-xs-6 title-row30">
+                                      <div class="row-fluid" style="border-top-width:0px; border-bottom-width:0px;">
+                                        <div class="col-xs-3">金</div>
+                                        <div class="col-xs-3">土</div>
+                                        <div class="col-xs-3">日</div>
+                                        <div class="col-xs-3" style="border-right-width:1px;">祝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-6 content-row30">
+                                      <div class="row-fluid" style="border-bottom-width:0px;">
+                                        
+                                          
+                                            <div class="col-xs-3">○</div>
+                                          
+                                        
+                                          
+                                            <div class="col-xs-3">○</div>
+                                          
+                                        
+                                          
+                                            <div class="col-xs-3">○</div>
+                                          
+                                        
+                                          
+                                            <div class="col-xs-3">○</div>
+                                          
+                                        
+                                          
+                                        
+                                          
+                                        
+                                          
+                                        
+                                          
+                                        
+                                      </div>
+                                    </div>
+                                    <div class="col-xs-6 content-row30">
+                                      <div class="row-fluid" style="border-bottom-width:0px;">
+                                        
+                                          
+                                        
+                                          
+                                        
+                                          
+                                        
+                                          
+                                        
+                                          
+                                            <div class="col-xs-3">○</div>
+                                          
+                                        
+                                          
+                                            <div class="col-xs-3">－</div>
+                                          
+                                        
+                                          
+                                            <div class="col-xs-3">－</div>
+                                          
+                                        
+                                          
+                                            <div class="col-xs-3" style="border-right-width:1px;">－</div>
+                                          
+                                        
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 title30">受付時間</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 content30 text-center">
+                                      
+                                        09:00～12:00
+                                        
+                                          <br>
+                                          13:00～14:00
+                                        
+                                      
+                                      &nbsp;
+                                    </div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 title30">料金</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 content30 text-center">
+                                      
+                                      &nbsp;
+                                    </div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 title30">特記事項</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 content30 text-center" style="word-break: break-word;">&nbsp;</div>
+                                  </div>
+                                </div>
+                              
+                            
+                              
+                                <div class="col-xs-12 tbl_type03">
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 title30">項目名</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 content30 text-center">健康相談</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 title30">予約</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 content30 text-center">
+                                      
+                                        要
+                                      
+                                    </div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 title30">実施している曜日</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-6 title-row30">
+                                      <div class="row-fluid" style="border-top-width:0px; border-bottom-width:0px;">
+                                        <div class="col-xs-3">月</div>
+                                        <div class="col-xs-3">火</div>
+                                        <div class="col-xs-3">水</div>
+                                        <div class="col-xs-3">木</div>
+                                      </div>
+                                    </div>
+                                    <div class="col-xs-6 title-row30">
+                                      <div class="row-fluid" style="border-top-width:0px; border-bottom-width:0px;">
+                                        <div class="col-xs-3">金</div>
+                                        <div class="col-xs-3">土</div>
+                                        <div class="col-xs-3">日</div>
+                                        <div class="col-xs-3" style="border-right-width:1px;">祝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-6 content-row30">
+                                      <div class="row-fluid" style="border-bottom-width:0px;">
+                                        
+                                          
+                                            <div class="col-xs-3">○</div>
+                                          
+                                        
+                                          
+                                            <div class="col-xs-3">○</div>
+                                          
+                                        
+                                          
+                                            <div class="col-xs-3">○</div>
+                                          
+                                        
+                                          
+                                            <div class="col-xs-3">○</div>
+                                          
+                                        
+                                          
+                                        
+                                          
+                                        
+                                          
+                                        
+                                          
+                                        
+                                      </div>
+                                    </div>
+                                    <div class="col-xs-6 content-row30">
+                                      <div class="row-fluid" style="border-bottom-width:0px;">
+                                        
+                                          
+                                        
+                                          
+                                        
+                                          
+                                        
+                                          
+                                        
+                                          
+                                            <div class="col-xs-3">○</div>
+                                          
+                                        
+                                          
+                                            <div class="col-xs-3">－</div>
+                                          
+                                        
+                                          
+                                            <div class="col-xs-3">－</div>
+                                          
+                                        
+                                          
+                                            <div class="col-xs-3" style="border-right-width:1px;">－</div>
+                                          
+                                        
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 title30">受付時間</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 content30 text-center">
+                                      
+                                        09:00～12:00
+                                        
+                                          <br>
+                                          13:00～14:00
+                                        
+                                      
+                                      &nbsp;
+                                    </div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 title30">料金</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 content30 text-center">
+                                      
+                                      &nbsp;
+                                    </div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 title30">特記事項</div>
+                                  </div>
+                                  <div class="row-fluid">
+                                    <div class="col-xs-12 content30 text-center" style="word-break: break-word;">&nbsp;</div>
+                                  </div>
+                                </div>
+                              
+                            
+                          </div>
+
+                          <!-- 健康診断や健康相談などの情報(PC・タブレット) Start -->
+                          <div class="hidden-xs">
+                            <div class="col-sm-12 col-md-12 col-lg-12 tbl_type03">
+                              <!-- 項目名など -->
+                              <div class="row-fluid">
+                                <div class="col-sm-1 col-md-1 col-lg-1 title30">項目名</div>
+                                <div class="col-sm-1 col-md-1 col-lg-1 title30">予約</div>
+                                <div class="col-sm-5 col-md-5 col-lg-5 title30" style="padding-top:0px; padding-bottom:0px; border-top-width:0px;">
+                                  <div class="row-fluid" style="border-top-width:0px; border-bottom-width:0px;">
+                                    <div class="col-sm-12 col-md-12 col-lg-12 title30">実施している曜日</div>
+                                  </div>
+                                  <div class="row-fluid" style="border-top-width:0px; border-bottom-width:0px;padding:0px;">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 title-row30">
+                                      <div class="row-fluid" style="border-top-width:0px; border-bottom-width:0px;">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">月</div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">火</div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">水</div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">木</div>
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6 title-row30">
+                                      <div class="row-fluid" style="border-top-width:0px; border-bottom-width:0px;">
+                                        <div class="col-sm-3 col-md-3 col-lg-3">金</div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">土</div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">日</div>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">祝</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-sm-2 col-md-2 col-lg-2 title30">受付時間</div>
+                                <div class="col-sm-1 col-md-1 col-lg-1 title30">料金</div>
+                                <div class="col-sm-2 col-md-2 col-lg-2 title30">特記事項</div>
+                              </div>
+                              <!-- 健康診断や健康相談などの情報 -->
+                              <!-- 健康診断 -->
+                              
+                              
+                                
+                                  <div class="row-fluid cal-height" style="height:100%;">
+                                    <div class="col-sm-1 col-md-1 col-lg-1 content30">健康診査</div>
+                                    <div class="col-sm-1 col-md-1 col-lg-1 content30 text-center">
+                                      
+                                        要
+                                      
+                                    </div>
+                                    <div class="col-sm-5 col-md-5 col-lg-5 content30" style="padding:0px;">
+                                      <div class="row-fluid">
+                                        <div class="col-sm-6 col-md-6 col-lg-6 content-row30">
+                                          <div class="row-fluid" style="border-bottom-width:0px;">
+                                            
+                                              
+                                                <div class="col-sm-3 col-md-3 col-lg-3 content30">○</div>
+                                              
+                                            
+                                              
+                                                <div class="col-sm-3 col-md-3 col-lg-3 content30">○</div>
+                                              
+                                            
+                                              
+                                                <div class="col-sm-3 col-md-3 col-lg-3 content30">○</div>
+                                              
+                                            
+                                              
+                                                <div class="col-sm-3 col-md-3 col-lg-3 content30">○</div>
+                                              
+                                            
+                                              
+                                            
+                                              
+                                            
+                                              
+                                            
+                                              
+                                            
+                                          </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-6 content-row30">
+                                          <div class="row-fluid" style="border-bottom-width:0px;">
+                                            
+                                              
+                                            
+                                              
+                                            
+                                              
+                                            
+                                              
+                                            
+                                              
+                                                <div class="col-sm-3 col-md-3 col-lg-3 content30">○</div>
+                                              
+                                            
+                                              
+                                                <div class="col-sm-3 col-md-3 col-lg-3 content30">－</div>
+                                              
+                                            
+                                              
+                                                <div class="col-sm-3 col-md-3 col-lg-3 content30">－</div>
+                                              
+                                            
+                                              
+                                                <div class="col-sm-3 col-md-3 col-lg-3 content30">－</div>
+                                              
+                                            
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-2 col-md-2 col-lg-2 content30 text-center">
+                                      
+                                        09:00～12:00
+                                        
+                                          <br>
+                                          13:00～14:00
+                                        
+                                      
+                                    </div>
+                                    <div class="col-sm-1 col-md-1 col-lg-1 content30 text-center">
+                                      
+                                    </div>
+                                    <div class="col-sm-2 col-md-2 col-lg-2 content30 text-center" style="word-break: break-word;"></div>
+                                  </div>
+                                
+                              
+                                
+                                  <div class="row-fluid cal-height" style="height:100%;">
+                                    <div class="col-sm-1 col-md-1 col-lg-1 content30">健康相談</div>
+                                    <div class="col-sm-1 col-md-1 col-lg-1 content30 text-center">
+                                      
+                                        要
+                                      
+                                    </div>
+                                    <div class="col-sm-5 col-md-5 col-lg-5 content30" style="padding:0px;">
+                                      <div class="row-fluid">
+                                        <div class="col-sm-6 col-md-6 col-lg-6 content-row30">
+                                          <div class="row-fluid" style="border-bottom-width:0px;">
+                                            
+                                              
+                                                <div class="col-sm-3 col-md-3 col-lg-3 content30">○</div>
+                                              
+                                            
+                                              
+                                                <div class="col-sm-3 col-md-3 col-lg-3 content30">○</div>
+                                              
+                                            
+                                              
+                                                <div class="col-sm-3 col-md-3 col-lg-3 content30">○</div>
+                                              
+                                            
+                                              
+                                                <div class="col-sm-3 col-md-3 col-lg-3 content30">○</div>
+                                              
+                                            
+                                              
+                                            
+                                              
+                                            
+                                              
+                                            
+                                              
+                                            
+                                          </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-6 content-row30">
+                                          <div class="row-fluid" style="border-bottom-width:0px;">
+                                            
+                                              
+                                            
+                                              
+                                            
+                                              
+                                            
+                                              
+                                            
+                                              
+                                                <div class="col-sm-3 col-md-3 col-lg-3 content30">○</div>
+                                              
+                                            
+                                              
+                                                <div class="col-sm-3 col-md-3 col-lg-3 content30">－</div>
+                                              
+                                            
+                                              
+                                                <div class="col-sm-3 col-md-3 col-lg-3 content30">－</div>
+                                              
+                                            
+                                              
+                                                <div class="col-sm-3 col-md-3 col-lg-3 content30">－</div>
+                                              
+                                            
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-2 col-md-2 col-lg-2 content30 text-center">
+                                      
+                                        09:00～12:00
+                                        
+                                          <br>
+                                          13:00～14:00
+                                        
+                                      
+                                    </div>
+                                    <div class="col-sm-1 col-md-1 col-lg-1 content30 text-center">
+                                      
+                                    </div>
+                                    <div class="col-sm-2 col-md-2 col-lg-2 content30 text-center" style="word-break: break-word;"></div>
+                                  </div>
+                                
+                              
+                            </div>
+                          </div>
+                          <!-- 健康診断や健康相談などの情報(PC・タブレット) End -->
+                        
+
+                        
+                        
+                      
+
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 「提供サービス」タブ詳細 おわり -->
+
+                  <!-- 「医療の実績・結果等」タブ詳細 -->
+                  <div id="tab_t07-panel" class="panel panel-default hidden-sm hidden-md hidden-lg">
+                    <div class="panel-heading hidden-sm hidden-md hidden-lg" role="tab" id="heading-tab_t07" data-toggle="collapse" data-parent="#accordion" data-target="#collapse-tab_t07">
+                      <span class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-tab_t07" aria-expanded="true" aria-controls="collapse-tab_t07">
+                          <span class="glyphicon glyphicon-chevron-down"></span>
+                          <strong>医療の実績・結果等</strong>
+                        </a>
+                      </span>
+                    </div>
+                    <div id="collapse-tab_t07" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-tab_t07">
+                      <div class="panel-body tbl_type04">
+                      
+
+                        
+                        <!-- 歯科診療所の人員配置 -->
+                        <div class="row-fluid">
+                          <h6 class="mark1">医療機関の人員配置</h6>
+                        </div>
+                        <!-- 歯科診療所の人員配置(スマホ版)Start -->
+												<!-- 医師 Start -->
+                        <div class="hidden-sm hidden-md hidden-lg">
+                          <div class="col-xs-12 tbl_type03">
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-12 title31">医師</div>
+                            </div>
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-4 title31" style="text-align:center; border-top-width:0px;">報告日<br>現在の<br>従事者数<br>(人)</div>
+                              <div class="col-xs-8 title-row31">
+                                <div class="row-fluid">
+                                  <div class="col-xs-4 title31" style="border-right-width: 0px;">総数</div>
+                                  <div class="col-xs-8 title-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31"></div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">0</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px;">常勤</div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">0</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px; border-bottom-width: 0px;">非常勤</div>
+                                      <div class="col-xs-5 content31" style="border-bottom-width: 0px; border-right-width: 0px;">0</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 医師 End -->
+                        <!-- 歯科医師 Start -->
+                        <div class="hidden-sm hidden-md hidden-lg">
+                          <div class="col-xs-12 tbl_type03">
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-12 title31">歯科医師</div>
+                            </div>
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-4 title31" style="text-align:center; border-top-width:0px;">報告日<br>現在の<br>従事者数<br>(人)</div>
+                              <div class="col-xs-8 title-row31">
+                                <div class="row-fluid">
+                                  <div class="col-xs-4 title31" style="border-right-width: 0px;">総数</div>
+                                  <div class="col-xs-8 title-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31"></div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">1</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px;">常勤</div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">0</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px; border-bottom-width: 0px;">非常勤</div>
+                                      <div class="col-xs-5 content31" style="border-bottom-width: 0px; border-right-width: 0px;">1</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 歯科医師 End -->
+												<!-- 薬剤師 Start -->
+                        <div class="hidden-sm hidden-md hidden-lg">
+                          <div class="col-xs-12 tbl_type03">
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-12 title31">薬剤師</div>
+                            </div>
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-4 title31" style="text-align:center; border-top-width:0px;">報告日<br>現在の<br>従事者数<br>(人)</div>
+                              <div class="col-xs-8 title-row31">
+                                <div class="row-fluid">
+                                  <div class="col-xs-4 title31" style="border-right-width: 0px;">総数</div>
+                                  <div class="col-xs-8 title-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31"></div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">0</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px;">常勤</div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">0</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px; border-bottom-width: 0px;">非常勤</div>
+                                      <div class="col-xs-5 content31" style="border-bottom-width: 0px; border-right-width: 0px;">0</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 薬剤師 End -->
+												<!-- 看護師及び准看護師 Start -->
+                        <div class="hidden-sm hidden-md hidden-lg">
+                          <div class="col-xs-12 tbl_type03">
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-12 title31">看護師及び准看護師</div>
+                            </div>
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-4 title31" style="text-align:center; border-top-width:0px;">報告日<br>現在の<br>従事者数<br>(人)</div>
+                              <div class="col-xs-8 title-row31">
+                                <div class="row-fluid">
+                                  <div class="col-xs-4 title31" style="border-right-width: 0px;">総数</div>
+                                  <div class="col-xs-8 title-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31"></div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">0</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px;">常勤</div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">0</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px; border-bottom-width: 0px;">非常勤</div>
+                                      <div class="col-xs-5 content31" style="border-bottom-width: 0px; border-right-width: 0px;">0</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 看護師及び准看護師 End -->
+												<!-- 助産師 Start -->
+                        <div class="hidden-sm hidden-md hidden-lg">
+                          <div class="col-xs-12 tbl_type03">
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-12 title31">助産師</div>
+                            </div>
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-4 title31" style="text-align:center; border-top-width:0px;">報告日<br>現在の<br>従事者数<br>(人)</div>
+                              <div class="col-xs-8 title-row31">
+                                <div class="row-fluid">
+                                  <div class="col-xs-4 title31" style="border-right-width: 0px;">総数</div>
+                                  <div class="col-xs-8 title-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31"></div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">0</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px;">常勤</div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">0</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px; border-bottom-width: 0px;">非常勤</div>
+                                      <div class="col-xs-5 content31" style="border-bottom-width: 0px; border-right-width: 0px;">0</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 助産師 End -->
+                        <!-- 歯科衛生士 Start -->
+                        <div class="hidden-sm hidden-md hidden-lg">
+                          <div class="col-xs-12 tbl_type03">
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-12 title31">歯科衛生士</div>
+                            </div>
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-4 title31" style="text-align:center; border-top-width:0px;">報告日<br>現在の<br>従事者数<br>(人)</div>
+                              <div class="col-xs-8 title-row31">
+                                <div class="row-fluid">
+                                  <div class="col-xs-4 title31" style="border-right-width: 0px;">総数</div>
+                                  <div class="col-xs-8 title-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31"></div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">1</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px;">常勤</div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">1</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px; border-bottom-width: 0px;">非常勤</div>
+                                      <div class="col-xs-5 content31" style="border-bottom-width: 0px; border-right-width: 0px;">0</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 歯科衛生士 End -->
+												<!-- 診療放射線技師 Start -->
+                        <div class="hidden-sm hidden-md hidden-lg">
+                          <div class="col-xs-12 tbl_type03">
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-12 title31">診療放射線技師</div>
+                            </div>
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-4 title31" style="text-align:center; border-top-width:0px;">報告日<br>現在の<br>従事者数<br>(人)</div>
+                              <div class="col-xs-8 title-row31">
+                                <div class="row-fluid">
+                                  <div class="col-xs-4 title31" style="border-right-width: 0px;">総数</div>
+                                  <div class="col-xs-8 title-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31"></div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">0</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px;">常勤</div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">0</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px; border-bottom-width: 0px;">非常勤</div>
+                                      <div class="col-xs-5 content31" style="border-bottom-width: 0px; border-right-width: 0px;">0</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 診療放射線技師 End -->
+												<!-- 理学療法士 Start -->
+                        <div class="hidden-sm hidden-md hidden-lg">
+                          <div class="col-xs-12 tbl_type03">
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-12 title31">理学療法士</div>
+                            </div>
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-4 title31" style="text-align:center; border-top-width:0px;">報告日<br>現在の<br>従事者数<br>(人)</div>
+                              <div class="col-xs-8 title-row31">
+                                <div class="row-fluid">
+                                  <div class="col-xs-4 title31" style="border-right-width: 0px;">総数</div>
+                                  <div class="col-xs-8 title-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31"></div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">0</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px;">常勤</div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">0</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px; border-bottom-width: 0px;">非常勤</div>
+                                      <div class="col-xs-5 content31" style="border-bottom-width: 0px; border-right-width: 0px;">0</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 理学療法士 End -->
+												<!-- 作業療法士 Start -->
+                        <div class="hidden-sm hidden-md hidden-lg">
+                          <div class="col-xs-12 tbl_type03">
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-12 title31">作業療法士</div>
+                            </div>
+                            <div class="row-fluid" style="height:100%;">
+                              <div class="col-xs-4 title31" style="text-align:center; border-top-width:0px;">報告日<br>現在の<br>従事者数<br>(人)</div>
+                              <div class="col-xs-8 title-row31">
+                                <div class="row-fluid">
+                                  <div class="col-xs-4 title31" style="border-right-width: 0px;">総数</div>
+                                  <div class="col-xs-8 title-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31"></div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">0</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px;">常勤</div>
+                                      <div class="col-xs-5 content31" style="border-right-width: 0px;">0</div>
+                                    </div>
+                                    <div class="row-fluid">
+                                      <div class="col-xs-7 title31" style="border-left-width: 1px; border-bottom-width: 0px;">非常勤</div>
+                                      <div class="col-xs-5 content31" style="border-bottom-width: 0px; border-right-width: 0px;">0</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 作業療法士 End -->
+                        <!-- 歯科診療所の人員配置(スマホ版)End -->
+
+                        <!-- 歯科診療所の人員配置(PC・タブレット)Start -->
+                        <div class="hidden-xs">
+                          <div class="col-sm-12 col-md-12 col-lg-12 tbl_type03">
+                            <div class="row-fluid">
+                              <div class="col-sm-3 col-md-3 col-lg-3 title31">職種</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9 title-row31">
+                                <div class="row-fluid">
+                                  <div class="col-sm-12 col-md-12 col-lg-12 title31-1">報告日現在の従事者数（人）</div>
+                                </div>
+                                <div class="row-fluid">
+                                  <div class="col-sm-12 col-md-12 col-lg-12 title-row31" style="border-width:0px;">
+                                    <div class="row-fluid">
+                                      <div class="col-sm-4 col-md-4 col-lg-4 title31-1" style="border-right-width:0px;">総数</div>
+                                      <div class="col-sm-8 col-md-8 col-lg-8 title-row31">
+                                        <div class="row-fluid">
+                                          <div class="col-sm-12 col-md-12 col-lg-12 title31-1" style="border-width:0px;">&nbsp;</div>
+                                        </div>
+                                        <div class="row-fluid">
+                                          <div class="col-sm-6 col-md-6 col-lg-6 title31">常勤</div>
+                                          <div class="col-sm-6 col-md-6 col-lg-6 title31">非常勤</div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+														<!-- 医師 -->
+                            <div class="row-fluid">
+                              <div class="col-sm-3 col-md-3 col-lg-3 title31">医師</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9 content-row31">
+                                <div class="row-fluid">
+                                  <div class="col-sm-4 col-md-4 col-lg-4 content-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31-left">0</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">0</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">0</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 歯科医師 -->
+                            <div class="row-fluid">
+                              <div class="col-sm-3 col-md-3 col-lg-3 title31">歯科医師</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9 content-row31">
+                                <div class="row-fluid">
+                                  <div class="col-sm-4 col-md-4 col-lg-4 content-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31-left">1</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">0</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">1</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+														<!-- 薬剤師 -->
+                            <div class="row-fluid">
+                              <div class="col-sm-3 col-md-3 col-lg-3 title31">薬剤師</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9 content-row31">
+                                <div class="row-fluid">
+                                  <div class="col-sm-4 col-md-4 col-lg-4 content-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31-left">0</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">0</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">0</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+														<!-- 看護師及び准看護師 -->
+                            <div class="row-fluid">
+                              <div class="col-sm-3 col-md-3 col-lg-3 title31">看護師及び准看護師</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9 content-row31">
+                                <div class="row-fluid">
+                                  <div class="col-sm-4 col-md-4 col-lg-4 content-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31-left">0</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">0</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">0</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+														<!-- 助産師 -->
+                            <div class="row-fluid">
+                              <div class="col-sm-3 col-md-3 col-lg-3 title31">助産師</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9 content-row31">
+                                <div class="row-fluid">
+                                  <div class="col-sm-4 col-md-4 col-lg-4 content-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31-left">0</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">0</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">0</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 歯科衛生士 -->
+                            <div class="row-fluid">
+                              <div class="col-sm-3 col-md-3 col-lg-3 title31">歯科衛生士</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9 content-row31">
+                                <div class="row-fluid">
+                                  <div class="col-sm-4 col-md-4 col-lg-4 content-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31-left">1</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">1</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">0</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+														<!-- 診療放射線技師 -->
+                            <div class="row-fluid">
+                              <div class="col-sm-3 col-md-3 col-lg-3 title31">診療放射線技師</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9 content-row31">
+                                <div class="row-fluid">
+                                  <div class="col-sm-4 col-md-4 col-lg-4 content-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31-left">0</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">0</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">0</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+														<!-- 理学療法士 -->
+                            <div class="row-fluid">
+                              <div class="col-sm-3 col-md-3 col-lg-3 title31">理学療法士</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9 content-row31">
+                                <div class="row-fluid">
+                                  <div class="col-sm-4 col-md-4 col-lg-4 content-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31-left">0</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">0</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">0</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+														<!-- 作業療法士 -->
+                            <div class="row-fluid">
+                              <div class="col-sm-3 col-md-3 col-lg-3 title31">作業療法士</div>
+                              <div class="col-sm-9 col-md-9 col-lg-9 content-row31">
+                                <div class="row-fluid">
+                                  <div class="col-sm-4 col-md-4 col-lg-4 content-row31">
+                                    <div class="row-fluid">
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31-left">0</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">0</div>
+                                      <div class="col-sm-4 col-md-4 col-lg-4 content31">0</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                        
+
+                        
+
+                        
+                        <!-- 情報開示に関する窓口の有無(全端末共通) Start -->
+                        <div class="row-fluid">
+                          <h6 class="mark1">情報開示に関する窓口の有無及び料金</h6>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tbl_type03">
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 title5">情報開示に関する窓口</div>
+                            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 content6">あり</div>
+                          </div>
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 title5">情報開示に関する料金</div>
+                            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 content6"></div>
+                          </div>
+                        </div>
+                        <!-- 情報開示に関する窓口の有無(全端末共通) End -->
+                        
+
+                        
+
+                        
+                        <!-- 情報開示に関する窓口の有無(全端末共通) Start -->
+                        <div class="row-fluid">
+                          <h6 class="mark1">診療情報提供の実施</h6>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tbl_type03">
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 title5">診療情報提供の実施の有無</div>
+                            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 content6">あり</div>
+                          </div>
+                        </div>
+                        <!-- 情報開示に関する窓口の有無(全端末共通) End -->
+                        
+
+
+                        
+                        <!-- 患者数(全端末共通) Start -->
+                        <div class="row-fluid">
+                          <h6 class="mark1">患者数</h6>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tbl_type03">
+                          <div class="row-fluid">
+                            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 title1">前年度１日平均外来患者数</div>
+                            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 content1">10人</div>
+                          </div>
+                        </div>
+                        <!-- 患者数(全端末共通) Start -->
+                        
+
+                      
+
+
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 「医療の実績・結果等」タブ詳細 おわり -->
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- ここまでがコンテンツ編集領域 -->
+
+          <!-- #BeginLibraryItem "/Library/pageTop.lbi" -->
+          <p class="pageTop"><a href="#Top"><img SRC="http://www.qq.pref.nagano.lg.jp/static/images/btn_gototop.gif?40403e95f7f7c62274052e447d46ffb3" alt="ページトップへ戻る" / WIDTH="104" HEIGHT="20"></a></p>
+          <!-- #EndLibraryItem --><!-- InstanceEndEditable -->
+        </div>
+        <!-- /mainContents -->
+      <!-- /contents -->
+      
+
+<SCRIPT language="JavaScript">
+function call_interrogating(){
+  window.open('http://www.qq.pref.nagano.lg.jp/pb_top_interrogating/sendform','interrogating','width=800, height=550,scrollbars=yes');
+}
+</SCRIPT>
+<!-- FOOTER START -->
+<div id="footer" class="hidden-xs">
+
+  <div class="infomation" ID="information">
+    <h2><a href="javascript:call_interrogating();"><img src="http://www.qq.pref.nagano.lg.jp/static/images/foot_soshiki.gif?72bf95e6875e9fb54570727929be455b" alt="このページに関するご意見ご感想はこちら" width="260" height="20" /></a></h2>
+    <div style="margin-left:10px;margin-top:5px;font-weight:bold;font-size:16px;">長野県健康福祉部医療政策課</div>
+    <dl>
+        <dt>住所</dt><dd>〒380-8570&nbsp;長野市大字南長野字幅下692-2</dd>
+				<dt>電話</dt><dd>026-235-7145</dd>
+        <dt>ファックス</dt><dd>026-223-7106</dd>
+        <dt>メール</dt><dd>iryo@pref.nagano.lg.jp</dd>
+    </dl>
+  </div>
+
+  <div class="wrap" ID="bottomTextLinks">
+    <dl><dd>
+      <ul>
+        <li><a href="http://www.qq.pref.nagano.lg.jp/pb_top/top_about_naganoiryo">ながの医療情報Netとは？</a></li>
+        <li><a href="http://www.qq.pref.nagano.lg.jp/pb_top/top_available_info">ご利用案内</a></li>
+        <li><a href="http://www.qq.pref.nagano.lg.jp/pb_top/top_link_list">リンク集</a></li>
+        <li><a href="http://www.qq.pref.nagano.lg.jp/pb_top/top_site_map">サイトマップ</a></li>
+        <li><a href="javascript:call_interrogating();">お問い合せ</a></li>
+        <li><a href="http://www.qq.pref.nagano.lg.jp/pb_top/top_sitepolicy">サイトポリシー</a></li>
+      </ul>
+    </dd></dl>
+  </div>
+</div>
+
+
+     </div>
+     
+
+
+<!-- FOOTER END -->
+<div id="copyRight">
+  <img SRC="http://www.qq.pref.nagano.lg.jp/static/images/footer_SP.png?a8c1f8335c7d0ade7936f492c31e1d98" alt="(C) 2016 OkayamaPrefecture." />
+</div>
+
+
+    <!-- /container -->
+    <input type="hidden" name="institutionid" value="2633">
+    
+    <input type="hidden" name="pb_token" value="0efa1bbb36c2e6818b986f3dc041c75504b0ca77">
+  </FORM>
+</body>
+<!-- InstanceEnd -->
+</html>

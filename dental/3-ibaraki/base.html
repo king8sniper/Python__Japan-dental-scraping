@@ -1,0 +1,1523 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/2012/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="noarchive">
+<link rel="stylesheet" type="text/css" href="/css/top.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/js/dojo/dijit/themes/claro/claro.css">
+<script type="text/javascript" src="/js/dojo/dojo/dojo.js" djConfig="parseOnLoad: true"></script>
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false&v=3.21&key=AIzaSyAoe6MU9I-eRhbqc91AsFP3v0FPoOrWYv4"></script>
+<script src="/js/common.js"></script>
+<script type="text/javascript" src="/js/google_analytics.js"></script>
+<title>いばらき医療機関情報ネット － 茨城県医療機能情報提供システム</title>
+</head>
+<body class="claro" style="padding:20px;backgounr:none;">
+
+<div class="kikanTitle" id="DetailsHeader">
+  <h3 class="kikanMidashi" style="font-weight:normal;">
+    <span style="font-weight:bold;font-size:28px;float:left;">北茨城市民病院</span>
+    <span style="font-size:12px;float:right;">
+      更新日：2023年3月22日<br>
+      <span class="button_green" onClick="ShowMap(1080000078);"><img src="/images/icon_map.png"> MAP</span>
+      <span class="button_white" onClick="window.print();"><img src="/images/icon_printer.png"> 印刷する</span>
+    </span>
+    <!-- アイコン表示 -->
+    <span style="float:right;margin-top:10px;margin-right:60px;">
+              <img src="/images/icn_syuwa.gif" alt="聴覚障害者への配慮あり" title="聴覚障害者への配慮あり" width="23px" height="23px">
+                    <img src="/images/icn_tenji.gif" alt="視覚障害者への配慮あり" title="視覚障害者への配慮あり" width="23px" height="23px">
+                    <img src="/images/icn_kurumaisu.gif" alt="車椅子利用者への配慮あり" title="車椅子利用者への配慮あり" width="23px" height="23px">
+                    <img src="/images/icn_shogaishatoire.gif" alt="車椅子対応トイレあり" title="車椅子対応トイレあり" width="23px" height="23px">
+                    <img src="/images/icn_parking.gif" alt="駐車場あり" title="駐車場あり" width="23px" height="23px">
+                    <img src="/images/icn_innaishoho.gif" alt="院内処方箋を発行" title="院内処方箋を発行" width="23px" height="23px">
+          </span>
+    <br style="clear:left;clear:right;">
+    <span style="font-size:14px;">
+      <div>〒&nbsp;319-1711&nbsp;&nbsp;北茨城市関南町関本下1050 </div>
+      <div>TEL:（昼）0293-46-1121&nbsp;&nbsp;（夜）0293-46-1121</div>
+    </span>
+    <br style="clear:left;clear:right;">
+  </h3>
+  <font style="color:#DD0000;font-size:12px;">※この内容に変更がある場合もございますので、詳しくは直接病院へお問い合わせ下さい。</font>
+  <br>
+    <input type="button" value=" かかりつけ医リストに登録 " style="height:24px;margin-top:5px;" onClick="registFamilyDoctor('1080000078');window.location.reload(true);" >
+  </div>
+
+<div class="menu_tab">
+  <ul>
+      <li><a href="/details/BaseInfo/sb/1080000078" title="基本情報" style="background-position:0% -42px;color:white;"><span style="background-position:100% -42px;color:white;"><img src="/images/tab/icon_home.png">基本情報</span></a></li>
+      <li><a href="/details/Access/sb/1080000078" title="医療機関へのアクセス" ><span ><img src="/images/tab/icon_car.gif">医療機関へのアクセス</span></a></li>
+      <li><a href="/details/Amenity/sb/1080000078" title="医療機関内サービス・アメニティ" ><span ><img src="/images/tab/icon_amenity.png">医療機関内サービス・アメニティ</span></a></li>
+  </ul>
+  <br style="clear:left;">
+  <ul>
+      <li><a href="/details/Cost/sb/1080000078" title="費用負担等" ><span ><img src="/images/tab/icon_hutan.png">費用負担等</span></a></li>
+      <li><a href="/details/Actual/sb/1080000078" title="医療の実績等" ><span ><img src="/images/tab/icon_zisseki.png">医療の実績等</span></a></li>
+      <li><a href="/details/IbarakiOnly/sb/1080000078" title="茨城県の独自項目" ><span ><img src="/images/tab/icon_ibaraki.gif">茨城県の独自項目</span></a></li>      <li><a href="/details/Contents/sb/1080000078" title="診療内容、提供保健・医療・介護サービス" ><span ><img src="/images/tab/icon_details.png">診療内容、提供保健・医療・介護サービス</span></a></li>
+  </ul>
+</div>
+</body>
+<div style="border:1px solid #aaaaaa;background-color:#ffffff;border-top:3px double #aaaaaa;float:left;margin-left:0px;width:95%;padding:10px 15px 15px 15px;">
+  <div class="item_title_bar">
+    <span class="barMidashi">医療機関名称</span>
+    <div class="button_openshut" onClick="setTblDisplay(this, tblIryouKikanMeisyou);">▲非表示</div>
+  </div>
+  <table class="input_info" id="tblIryouKikanMeisyou" style="margin-top:10px;margin-bottom:15px;width:100%;">
+    <tr>
+      <th style="width:200px;">名称（フリガナ）</th>
+      <td>キタイバラキシミンビョウイン</td>
+    </tr>
+    <tr>
+      <th style="width:200px;">名称</th>
+      <td>北茨城市民病院</td>
+    </tr>
+    <tr>
+      <th>略称（フリガナ）</th>
+      <td>キタイバラキシミンビョウイン</td>
+    </tr>
+    <tr>
+      <th>略称</th>
+      <td>北茨城市民病院</td>
+    </tr>
+    <tr>
+      <th>英語表記（ローマ字表記）</th>
+      <td>ＫＩＴＡＩＢＡＲＡＫＩ　ＣＩＴＹ　ＨＯＳＰＩＴＡＬ</td>
+    </tr>
+  </table>
+
+  <div class="item_title_bar">
+    <span class="barMidashi">医療機関の開設者</span>
+    <div class="button_openshut" onClick="setTblDisplay(this, tblKaisetsusya);">▲非表示</div>
+  </div>
+  <table class="input_info" id="tblKaisetsusya" style="margin-top:10px;margin-bottom:15px;width:100%;">
+        <tr>
+      <th style="width:200px;">開設者種別</th>
+      <td>市町村</td>
+    </tr>
+        <tr>
+      <th style="width:200px;">開設者名（フリガナ）</th>
+      <td>キタイバラキシチョウ　トヨダ　ミノル</td>
+    </tr>
+    <tr>
+      <th>開設者名</th>
+      <td>北茨城市長　豊田　稔</td>
+    </tr>
+  </table>
+
+  <div class="item_title_bar">
+    <span class="barMidashi">医療機関の管理者</span>
+    <div class="button_openshut" onClick="setTblDisplay(this, tblKanrisya);">▲非表示</div>
+  </div>
+  <table class="input_info" id="tblKanrisya" style="margin-top:10px;margin-bottom:15px;width:100%;">
+    <tr>
+      <th style="width:200px;">管理者名（フリガナ）</th>
+      <td>タブチ　タカフミ</td>
+    </tr>
+    <tr>
+      <th>管理者名</th>
+      <td>田渕　崇文</td>
+    </tr>
+  </table>
+
+  <div class="item_title_bar">
+    <span class="barMidashi">医療機関の所在地</span>
+    <div class="button_openshut" onClick="setTblDisplay(this, tblSyozaichi);">▲非表示</div>
+  </div>
+  <table class="input_info" id="tblSyozaichi" style="margin-top:10px;margin-bottom:15px;width:100%;">
+    <tr>
+      <th style="width:200px;">郵便番号</th>
+      <td>319-1711</td>
+    </tr>
+    <tr>
+      <th>所在地（フリガナ）</th>
+      <td>キタイバラキシセキナミチョウセキモトシモ</td>
+    </tr>
+    <tr>
+      <th>所在地</th>
+      <td>北茨城市関南町関本下1050</td>
+    </tr>
+    <tr>
+      <th>英語表記</th>
+      <td>１０５０ＳＥＫＩＭＯＴＯＳＩＭＯ，ＳＥＫＩＮＡＭＩ－ＣＨＯ，ＫＩＴＡＩＢＡＲＡＫＩ－ＣＩＴＹ</td>
+    </tr>
+  </table>
+
+  <div class="item_title_bar">
+    <span class="barMidashi">医療機関の電話番号及びＦＡＸ番号</span>
+    <div class="button_openshut" onClick="setTblDisplay(this, tblTelFax);">▲非表示</div>
+  </div>
+  <table class="input_info" id="tblTelFax" style="margin-top:10px;margin-bottom:15px;width:100%;">
+    <tr>
+      <th style="width:200px;">住民案内用電話番号</th>
+      <td>0293-46-1121</td>
+    </tr>
+    <tr>
+      <th>夜間・休日住民案内用電話番号</th>
+      <td>0293-46-1121</td>
+    </tr>
+    <tr>
+      <th>住民案内用ＦＡＸ番号</th>
+      <td>0293-46-6526</td>
+    </tr>
+    <tr>
+      <th>予約用電話番号</th>
+      <td>0293-46-1121</td>
+    </tr>
+  </table>
+
+    <div class="item_title_bar">
+    <span class="barMidashi">病床種別及び病床数</span>
+    <div class="button_openshut" onClick="setTblDisplay(this, tblByousyou);">▲非表示</div>
+  </div>
+  <table class="input_info" id="tblByousyou" style="margin-top:10px;margin-bottom:15px;width:100%;">
+    <tr>
+      <th rowspan="2" style="text-align:center;">&nbsp;</th>
+      <th rowspan="2" style="text-align:center;width:100px;">一般病床</th>
+      <th colspan="3" style="text-align:center;width:100px;border-bottom:none;">療養病床</th>
+            <th rowspan="2" style="text-align:center;width:100px;">精神病床</th>
+      <th rowspan="2" style="text-align:center;width:100px;">結核病床</th>
+      <th rowspan="2" style="text-align:center;width:100px;">感染症病床</th>
+            <th rowspan="2" style="text-align:center;">計</th>
+    </tr>
+    <tr>
+      <th style="text-align:center;width:100px;border-top:none;">&nbsp;</th>
+      <th style="text-align:center;width:100px;">うち医療保険適用</th>
+      <th style="text-align:center;width:100px;">うち介護保険適用</th>
+    </tr>
+    <tr>
+      <th style="width:200px;">届出又は許可病床数</th>
+      <td style="text-align:center;">137&nbsp;床</td>
+      <td style="text-align:center;">46&nbsp;床</td>
+      <td style="text-align:center;">46&nbsp;床</td>
+      <td style="text-align:center;">0&nbsp;床</td>
+            <td style="text-align:center;">0&nbsp;床</td>
+      <td style="text-align:center;">0&nbsp;床</td>
+      <td style="text-align:center;">0&nbsp;床</td>
+            <td style="text-align:center;">183&nbsp;床</td>
+    </tr>
+  </table>
+  
+    <div class="item_title_bar">
+    <span class="barMidashi">外来区分</span>
+    <div class="button_openshut" onClick="setTblDisplay(this, tblGairaiKubun);">▲非表示</div>
+  </div>
+  <table class="input_info" id="tblGairaiKubun" style="margin-top:10px;margin-bottom:15px;width:100%;">
+    <tr>
+      <th style="width:200px;">外来区分</th>
+              <td>一般外来を行う医療機関 </td>
+          </tr>
+  </table>
+  
+  <div class="item_title_bar">
+    <span class="barMidashi">診療科目、診療日及び診療時間（外来受付時間）など</span>
+    <div class="button_openshut" onClick="setTblDisplay(this, getObjs('table', ['tblShinryouKamoku', 'tblShinryouJikan', 'tblShinryouGairaiTokki']).concat([labelSTime, labelUTime]));">▲非表示</div>
+  </div>
+  <table class="input_info" id=tblShinryouKamoku style="margin-top:10px;margin-bottom:15px;width:100%;">
+    <tr>
+            <th style="text-align:center;"><br></th>
+      <th style="text-align:center;">標榜</th>
+            <th style="text-align:center;">初診時の予約</th>
+      <th style="text-align:center;">再診時の予約</th>
+            <th style="text-align:center;">女性医師の有無</th>
+                  <th style="text-align:center;">専門医の有無</th>
+          </tr>
+        <tr>
+            <td>内科</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">○</td>
+                  <td style="text-align:center;">○</td>
+          </tr>
+        <tr>
+            <td>外科</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+                  <td style="text-align:center;">○</td>
+          </tr>
+        <tr>
+            <td>小児科</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+                  <td style="text-align:center;">○</td>
+          </tr>
+        <tr>
+            <td>皮膚科</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">○</td>
+                  <td style="text-align:center;">○</td>
+          </tr>
+        <tr>
+            <td>泌尿器科</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+                  <td style="text-align:center;">○</td>
+          </tr>
+        <tr>
+            <td>産婦人科</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">○</td>
+                  <td style="text-align:center;">－</td>
+          </tr>
+        <tr>
+            <td>眼科</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+                  <td style="text-align:center;">○</td>
+          </tr>
+        <tr>
+            <td>耳鼻いんこう科</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">○</td>
+                  <td style="text-align:center;">○</td>
+          </tr>
+        <tr>
+            <td>歯科口腔外科</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+                  <td style="text-align:center;">－</td>
+          </tr>
+        <tr>
+            <td>呼吸器科</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+                  <td style="text-align:center;">○</td>
+          </tr>
+        <tr>
+            <td>整形外科</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+                  <td style="text-align:center;">○</td>
+          </tr>
+        <tr>
+            <td>脳神経外科</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+                  <td style="text-align:center;">○</td>
+          </tr>
+        <tr>
+            <td>消化器内科</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+      <td style="text-align:center;">－</td>
+            <td style="text-align:center;">－</td>
+                  <td style="text-align:center;">－</td>
+          </tr>
+        <tr>
+            <td>消化器外科</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+      <td style="text-align:center;">－</td>
+            <td style="text-align:center;">－</td>
+                  <td style="text-align:center;">－</td>
+          </tr>
+        <tr>
+            <td>循環器内科</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+      <td style="text-align:center;">○</td>
+            <td style="text-align:center;">－</td>
+                  <td style="text-align:center;">○</td>
+          </tr>
+      </table>
+  <div id="labelSTime"><b>＜診療時間＞</b></div>
+  <table class="input_info" id=tblShinryouJikan15 style="margin-top:3px;margin-bottom:15px;width:100%;">
+    <tr>
+            <th colspan="2" style="width:205px;">区分</th>
+            <th style="text-align:center;">月</th>
+      <th style="text-align:center;">火</th>
+      <th style="text-align:center;">水</th>
+      <th style="text-align:center;">木</th>
+      <th style="text-align:center;">金</th>
+      <th style="text-align:center;">土</th>
+      <th style="text-align:center;">日</th>
+      <th style="text-align:center;">祝</th>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">内科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">外科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">小児科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">13:30～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">13:30～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:30～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:30～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">皮膚科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">泌尿器科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">産婦人科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">眼科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">13:30～17:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">13:30～17:00</td>
+      <td style="font-size:90%;text-align:center;">13:30～17:00</td>
+      <td style="font-size:90%;text-align:center;">13:30～17:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">耳鼻いんこう科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">13:30～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">13:30～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">歯科口腔外科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">呼吸器科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">整形外科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">13:30～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:30～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:30～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:30～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:30～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbnbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">脳神経外科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">消化器内科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">消化器外科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">循環器内科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">09:00～12:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">14:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">14:00～17:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+      </table>
+  <div id="labelUTime"><b>＜外来受付時間＞</b></div>
+  <table class="input_info" id=tblShinryouJikan15 style="margin-top:3px;margin-bottom:15px;width:100%;">
+    <tr>
+            <th colspan="2" style="width:205px;">区分</th>
+            <th style="text-align:center;">月</th>
+      <th style="text-align:center;">火</th>
+      <th style="text-align:center;">水</th>
+      <th style="text-align:center;">木</th>
+      <th style="text-align:center;">金</th>
+      <th style="text-align:center;">土</th>
+      <th style="text-align:center;">日</th>
+      <th style="text-align:center;">祝</th>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">内科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">外科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">小児科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">皮膚科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">泌尿器科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">13:00～15:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">産婦人科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">眼科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">耳鼻いんこう科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">13:00～14:30</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">13:00～14:30</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">歯科口腔外科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">呼吸器科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">整形外科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">13:00～15:00</td>
+      <td style="font-size:90%;text-align:center;">13:00～15:00</td>
+      <td style="font-size:90%;text-align:center;">13:00～15:00</td>
+      <td style="font-size:90%;text-align:center;">13:00～15:00</td>
+      <td style="font-size:90%;text-align:center;">13:00～15:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">脳神経外科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">13:00～14:30</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">消化器内科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">消化器外科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+        <tr>
+            <th style="width:173px;" nowrap rowspan="3">循環器内科</th>
+      <th style="width:20px;">１</th>
+            <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">08:30～11:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>２</th>
+            <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">14:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">13:00～16:00</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+            <th>３</th>
+            <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="font-size:90%;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+      </table>
+  <table class="input_info" id="tblShinryouGairaiTokki" style="margin-top:10px;margin-bottom:15px;width:100%;">
+    <tr>
+      <th style="width:200px;">外来特記事項</th>
+      <td>内科：午後の診療は予約のみ、循環器内科：午後の診療は予約のみ、金曜は第1午後・第３午前のみ、呼吸器科：金曜は第２のみ、小児科：午後の診療は予約のみ</td>
+    </tr>
+  </table>
+
+  <div class="item_title_bar">
+    <span class="barMidashi">休診日</span>
+    <div class="button_openshut" onClick="setTblDisplay(this, [tblKyuushinbi1,tblKyuushinbi2,tblKyuushinbi3,tblKyuushinbi4]);">▲非表示</div>
+  </div>
+  <table class="input_info" id="tblKyuushinbi1" style="margin-top:10px;margin-bottom:15px;width:100%;">
+    <tr>
+      <th style="width:200px;">毎週決まった曜日に休診</th>
+      <td>日</td>
+    </tr>
+  </table>
+  <table class="input_info" id="tblKyuushinbi2" style="margin-top:5px;margin-bottom:15px;width:100%;">
+    <tr>
+      <th rowspan="6" style="width:200px;" nowrap>決まった週に休診（定期週）</th>
+      <th style="width:40px;">&nbsp;</th>
+      <th style="text-align:center;">月</th>
+      <th style="text-align:center;">火</th>
+      <th style="text-align:center;">水</th>
+      <th style="text-align:center;">木</th>
+      <th style="text-align:center;">金</th>
+      <th style="text-align:center;">土</th>
+      <th style="text-align:center;">日</th>
+    </tr>
+    <tr>
+      <th style="text-align:center;">第１</th>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">休診</td>
+    </tr>
+    <tr>
+      <th style="text-align:center;">第２</th>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">休診</td>
+      <td style="text-align:center;">休診</td>
+    </tr>
+    <tr>
+      <th style="text-align:center;">第３</th>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">休診</td>
+    </tr>
+    <tr>
+      <th style="text-align:center;">第４</th>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">休診</td>
+      <td style="text-align:center;">休診</td>
+    </tr>
+    <tr>
+      <th style="text-align:center;">第５</th>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">&nbsp;－&nbsp;</td>
+      <td style="text-align:center;">休診</td>
+    </tr>
+  </table>
+  <table class="input_info" id="tblKyuushinbi3" style="margin-top:5px;margin-bottom:15px;width:100%;">
+    <tr>
+      <th style="width:200px;">祝日に休診</th>
+      <td>休診</th>
+    </tr>
+  </table>
+  <table class="input_info" id="tblKyuushinbi4" style="margin-top:5px;margin-bottom:15px;width:100%;">
+    <tr>
+      <th rowspan="5" style="width:200px;">その他の休診日</th>
+      <th style="width:40px;text-align:center;">１</th>
+      <td>12月29日～1月3日</td>
+    </tr>
+    <tr>
+      <th style="text-align:center;">２</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th style="text-align:center;">３</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th style="text-align:center;">４</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th style="text-align:center;">５</th>
+      <td></td>
+    </tr>
+  </table>
+</div>
+<br>
+
+<div style="width:95%;" align="right">
+  <a href="#DetailsHeader" onclick="scrollTo(0,0); return false;">▲ページトップへ</a>
+</div>
+
+<div align="center">
+  <div class="button_white" style="margin-top:10px;width:70px;" onClick="close_win()">
+    <img src="/images/icon_close.png"> 閉じる
+  </div>
+</div>
+<div style="clear:both;padding-top:20px;border-bottom:3px solid #102173;">
+</div>
+<div id="footer">
+このシステムで提供する医療機関の情報の権利は、茨城県に帰属し、無断使用、無断転載、他用途への利用を禁じます。<br/>
+本Webサイトへのリンクにつきましては、茨城県保健医療部保健政策課まで申し出てください。<br/>
+本Webサイトに関するご意見・お問い合わせは、<a href="http://www.pref.ibaraki.jp/soshiki/hokenfukushi/koso" target="_blank">茨城県保健医療部保健政策課</a>まで申し出てください。<br/>
+</body>
+</html>

@@ -1,0 +1,950 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta name="Keywords" content="NOTRANS">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>医療機関詳細(歯科診療所) - 医療ネットしずおか</title>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="静岡県のための医療機関・医療情報検索サイトです。" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+
+<link rel="stylesheet" href="/qq22/qqport/css/layout.css">
+<link rel="stylesheet" href="/qq22/qqport/css/general.css">
+<link rel="stylesheet" href="/qq22/qqport/css/common_top.css">
+
+<script src="/qq22/qqport/js/jquery.min.js"></script>
+<script src="/qq22/qqport/js/jquery.matchHeight.js"></script>
+<script src="/qq22/qqport/js/fontchange.js"></script>
+<script src="/qq22/qqport/js/jquery.cookie.js"></script>
+<script src="/qq22/qqport/js/jquery.rwdImageMaps.js"></script>
+<script src="/qq22/qqport/js/common.js"></script>
+<script type="text/javascript" src="/qq22/qqport/kenmintop/js/common.js"></script>
+
+<link rel="stylesheet" href="/qq22/qqport/css/import.css" media="all" type="text/css" />
+<script type="text/javascript" src="/qq22/qqport/kenmintop/js/cmn_hospital.js"></script>
+<script type="text/javascript" src="/qq22/qqport/js/cmn_defmsg.js"></script>
+<script type="text/javascript" src="/qq22/qqport/js/cmn_errmsg.js"></script>
+<script type="text/javascript" src="/qq22/qqport/js/tracker.js"></script><script type="text/javascript"  charset="utf-8" src="/qq22/qqport/kenmintop/js/jCookieTab-kenmin.js"></script>
+<script type="text/javascript"  charset="utf-8" src="/qq22/qqport/kenmintop/js/cmn_detail.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNG74klOpTb5wggt0W8PHxptK5719--gI&v=3"></script>
+<script type="text/javascript" src="/qq22/qqport/js/tracker.js"></script>
+
+<script type="text/javascript">
+var lat = "34.675067";
+var lng = "138.933684";
+var renderFLG=false;
+var directionsDisplay;
+var directionsService=new google.maps.DirectionsService();
+var map, objStartIcon, objStartMarker;
+</script>
+
+</head>
+
+<!--<body>-->
+<body onload="load_gaiyou();" class="detail">
+
+<noscript>このページではJavaScriptを使用しています。</noscript>
+<div id="wrap">
+<div id="content">
+
+<form method="post" action="/qq22/qqport/kenmintop/detail/fk1102.php" name="detail">
+<input type="hidden" name="act" value="" />
+<input type="hidden" name="sisetuid" value="13505" />
+
+<div id="contentInner">
+<h2 id="hospitalD">医療機関詳細</h2>
+<p class="closedetail" style="float: right; padding-right: 65px"><a href="#" onclick="window.close(); return false;" title="閉じる">閉じる</a></p>
+
+<div style= "color: #FF0000; "><b>※　この情報は、原則として年に1回、静岡県が機関からの報告を審査し掲載しています。<br>※　場合により内容に一部変更が生じている可能性もありますので、事前に機関に最新の情報をご確認ください。<br>※　特殊な文字は代替文字となっています。</br>
+</b>
+</div>
+<h3>臼井歯科医院</h3>
+<div class="contentBox01">
+<div class="FDRegister">
+<p>最終報告日：2023年01月25日</p>
+<p class="FDRegisterBtn"><a href="javascript:entry_kakarituke('13505');" title="かかりつけ医登録">かかりつけ医登録</a></p>
+</div>
+
+<ul class="lst02">
+<li class="name"><span>ウスイシカイイン</span><br />臼井歯科医院</li>
+<li class="add">415-0026<br /><span>シモダシロクチョウメ４５４－３</span><br />下田市六丁目４５４－３&nbsp;&nbsp;<a href="javascript:opnKikanDetailMap('13505','fk9020','/qq22');"><img src='/qq22/qqport/img/icon-tansyuku-map.gif' alt='地図を表示します（アイコン）'></a></li>
+<li class="tel">（昼・夜）0558-22-2528　<br>（FAX）0558-22-2528</li>
+<li>ホームページ：<a href="" title="臼井歯科医院"></a></li>
+<li>交通アクセス：伊豆急行線　下田駅より大賀茂方面へ徒歩２０分。
+東海バス　岩下バス停より大賀茂方面へ徒歩２分。</li>
+</ul>
+</div>
+
+<ul id="tabhead">
+<li id="head-tab0" class="on"><a id="anchor-tabsika0" href="#" title="医療機関概要">医療機関概要</a></li>
+<li id="head-tab1"><a id="anchor-tabsika1" href="#" title="基本情報">基本情報</a></li>
+<li id="head-tab2"><a id="anchor-tabsika2" href="#" title="医療機関へのアクセス">医療機関への<br />アクセス</a></li>
+<li id="head-tab3"><a id="anchor-tabsika3" href="#" title="医療機関内サービス・アメニティ">医療機関内サービス・アメニティ</a></li>
+<li id="head-tab4"><a id="anchor-tabsika4" href="#" title="費用負担等">費用負担等</a></li>
+<li id="head-tab5"><a id="anchor-tabsika5" href="#" title="診療内容、提供保健・医療・介護サービス">診療内容、提供保健・医療・介護サービス</a></li>
+<li id="head-tab6"><a id="anchor-tabsika6" href="#" title="医療の実績等">医療の実績等</a></li>
+</ul>
+
+<div id="tabbody">
+<div id="body-tab0" class="current">
+<h4>医療機関概要</h4>
+<div class="tabwrap">
+<ul>
+<li><a href="#subject01g">診療科目、アクセス、設備</a></li>
+<li><a href="#subject09g">診療科目、診療時間など</a></li>
+<li><a href="#subject10g">休診日</a></li>
+</ul>
+
+
+<h5 id="subject01g">診療科目、アクセス、設備</h5>
+<table class="mapGrp">
+<tbody>
+<tr>
+<td class="td01">
+<table summary="医療機関概要" class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">診療科目</th>
+    <td>
+歯科、小児歯科    </td>
+  </tr>
+  <tr>
+    <th scope="row">駐車場</th>
+    <td>
+          有
+            （無料駐車場：5台）
+        </td>
+  </tr>
+  <tr>
+    <th scope="row">診療所までの主な利用交通手段</th>
+    <td>伊豆急行線　下田駅より大賀茂方面へ徒歩２０分。
+東海バス　岩下バス停より大賀茂方面へ徒歩２分。</td>
+  </tr>
+<!--  <tr>-->
+<!--    <th scope="row">病院内の売店<br />又は食堂</th>-->
+<!--    <td>院内売店の設置：-->
+<!--    -->
+<!--      無し-->
+<!--    -->
+<!--    <br />外来者用食堂の設置：-->
+<!--    -->
+<!--      無し-->
+<!--    -->
+<!--    </td>-->
+<!--  </tr>-->
+  <tr>
+    <th scope="row">喫煙対応</th>
+    <td>施設内における全面禁煙の実施：
+          有り
+        <br />喫煙所を設置：
+          無し
+        </td>
+    </tr>
+</table>
+</td>
+<td  class="td02">
+	<table id="maptable">
+		<tr>
+			<td>
+				<div id="map" style="width: 95%; height: 250px; background:#e5e5e5; display:inline-block;" ></div>
+			</td>
+		</tr>
+	</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+
+<h5 id="subject09g">診療科目、診療時間など</h5>
+<p align="right">最終更新日時：2016年05月17日</p>
+<font color="red">　　急な休診や科目毎の診療時間の違い等、実際とは異なる場合がございますので、必ず電話等にて事前にご確認願います。</font>
+<table summary="基本となる診療時間、外来受付時間一覧" class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">基本となる診療時間</th>
+    <td><span class="time01">09:00-12:00</span>　<span class="time02">-</span>　<span class="time03">-</span></td>
+  </tr>
+  <tr>
+    <th scope="row">基本となる外来受付時間</th>
+    <td><span class="time01">09:00-12:00</span>　<span class="time02">-</span>　<span class="time03">-</span></td>
+  </tr>
+</table>
+
+<table summary="初診時、再診時予約の有無" class="tabTblSty01">
+<thead>
+  <tr>
+    <th scope="col">診療科目</th>
+    <th scope="col">初診時の予約</th>
+    <th scope="col">再診時の予約</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th scope="row">歯科</th>
+    	    <td><img src="../../img/icon-haifun.gif" width="16" height="16" alt="歯科 初診時の予約 無し" /></td>
+        	    <td><img src="../../img/icon-maru-black1.gif" width="16" height="16" alt="歯科 再診時の予約 有り" /></td>
+      </tr>
+  <tr>
+    <th scope="row">小児歯科</th>
+    	    <td><img src="../../img/icon-haifun.gif" width="16" height="16" alt="小児歯科 初診時の予約 無し" /></td>
+        	    <td><img src="../../img/icon-maru-black1.gif" width="16" height="16" alt="小児歯科 再診時の予約 有り" /></td>
+      </tr>
+</tbody>
+</table>
+
+<table summary="外来受付時間等に関する特記事項" class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">外来受付時間等に関する特記事項</th>
+	<td><img src="../../img/icon-haifun.gif" width="16" height="16" alt="" /></td>
+  </tr>
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+
+<h5 id="subject10g">休診日</h5>
+<p align="right">最終更新日時：2016年05月17日</p>
+<table summary="毎週決まった曜日の休診一覧" class="tabTblSty03">
+  <tr>
+    <th rowspan="2" scope="col">毎週決まった曜日に休診</th>
+    <th scope="col" class="thead wSty01">月</th>
+    <th scope="col" class="thead wSty01">火</th>
+    <th scope="col" class="thead wSty01">水</th>
+    <th scope="col" class="thead wSty01">木</th>
+    <th scope="col" class="thead wSty01">金</th>
+    <th scope="col" class="thead wSty01">土</th>
+    <th scope="col" class="thead wSty01">日</th>
+    </tr>
+  <tr>
+    <td>－</td>
+    <td>－</td>
+    <td>休診</td>
+    <td>－</td>
+    <td>－</td>
+    <td>－</td>
+    <td>休診</td>
+    </tr>
+</table>
+
+<table summary="祝日に休診" class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">祝日に休診</th>
+    <td>休診</td>
+  </tr>
+</table>
+
+<table summary="その他の休診日一覧" class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">その他の休診日</th>
+    <td>1月1日、1月2日、1月3日、1月4日、8月14日、8月15日、12月29日、12月30日、12月31日</td>
+  </tr>
+</table>
+<font color="red">　※お盆及び年末年始の休診日は未登録か、登録されていても変更となる場合もありますので、予め確認して受診してください。</font>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+</div><!-- // END tabwrap -->
+<!-- // END body-tab0 -->
+</div>
+<!-------------------------------------------------------------------------------->
+
+<!--<div id="body-tab0" class="current">-->
+<div id="body-tab1" class="current">
+<h4>基本情報</h4>
+<div class="tabwrap">
+<ul>
+<li><a href="#subject02a">名称</a></li>
+<li><a href="#subject03a">開設者</a></li>
+<li><a href="#subject04a">管理者</a></li>
+<li><a href="#subject05a">所在地</a></li>
+<li><a href="#subject06a">電話番号及びFAX番号</a></li>
+<li><a href="#subject08a">外来区分</a></li>
+<li><a href="#subject09a">診療科目、診療日及び診療時間（外来受付時間）など</a></li>
+<li><a href="#subject10a">休診日</a></li>
+</ul>
+
+
+<h5 id="subject02a">歯科診療所の名称</h5>
+<p align="right">最終更新日時：2023年01月25日</p>
+<table summary="歯科診療所の正式名称、通称略称一覧" class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">正式名称フリガナ<br />
+      （医療法届出正式名称）</th>
+    <td>ウスイシカイイン</td>
+  </tr>
+  <tr>
+    <th scope="row">正式名称<br />
+      （医療法届出正式名称）</th>
+    <td>臼井歯科医院</td>
+  </tr>
+  <tr>
+    <th scope="row">略称フリガナ</th>
+    <td>ウスイシカイイン</td>
+  </tr>
+  <tr>
+    <th scope="row">略称</th>
+    <td>臼井歯科医院</td>
+  </tr>
+  <tr>
+    <th scope="row">英語表記<br />
+      （ローマ字表記）</th>
+    <td>Ｕｓｕｉ　Ｄｅｎｔａｌ　Ｃｌｉｎｉｃ</td>
+    </tr>
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+
+<h5 id="subject03a">歯科診療所の開設者</h5>
+<p align="right">最終更新日時：2023年01月25日</p>
+<table summary="歯科診療所の開設者名" class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">開設者種別</th>
+    <td>個人</td>
+  </tr>
+  <tr>
+    <th scope="row">開設者名（フリガナ）</th>
+    <td>ウスイ　ミチコ</td>
+  </tr>
+  <tr>
+    <th scope="row">開設者名</th>
+    <td>臼井　美智子</td>
+  </tr>
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+
+<h5 id="subject04a">歯科診療所の管理者</h5>
+<p align="right">最終更新日時：2023年01月25日</p>
+<table summary="歯科診療所の管理者" class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">管理者名（フリガナ）</th>
+    <td>ウスイ　ミチコ</td>
+  </tr>
+  <tr>
+    <th scope="row">管理者名</th>
+    <td>臼井　美智子</td>
+  </tr>
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+
+<h5 id="subject05a">歯科診療所の所在地</h5>
+<p align="right">最終更新日時：2023年01月25日</p>
+<table summary="歯科診療所の所在地詳細" class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">郵便番号</th>
+    <td>415-0026</td>
+  </tr>
+  <tr>
+    <th scope="row">所在地（フリガナ）</th>
+    <td>シモダシロクチョウメ４５４－３</td>
+  </tr>
+  <tr>
+    <th scope="row">所在地</th>
+    <td>下田市六丁目４５４－３</td>
+  </tr>
+  <tr>
+    <th scope="row">英語表記 (ローマ字表記)</th>
+    <td>６－４５４－３，ｓｈｉｍｏｄａ－ｃｉｔｙ</td>
+  </tr>
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+
+<h5 id="subject06a">歯科診療所の案内用の電話番号及びFAX番号</h5>
+<p align="right">最終更新日時：2023年01月25日</p>
+<table summary="歯科診療所の案内用の電話番号及びFAX番号一覧" class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">住民案内用電話番号</th>
+    <td>0558-22-2528</td>
+  </tr>
+  <tr>
+    <th scope="row">夜間・休日住民案内用電話番号</th>
+    <td>0558-22-2528</td>
+  </tr>
+  <tr>
+    <th scope="row">住民案内用FAX番号</th>
+    <td>0558-22-2528</td>
+  </tr>
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+
+
+<h5 id="subject08a">外来区分</h5>
+<p align="right">最終更新日時：2013年01月08日</p>
+<table summary="外来区分一覧" class="tabTblSty02">
+  <tr>
+    <th scope="row">一般</th>
+    <td><img src="../../img/icon-maru-black1.gif" width="16" height="16" alt="該当" /></td>
+  </tr>
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+<h5 id="subject09a">診療科目、診療日及び診療時間（外来受付時間）など</h5>
+<p align="right">最終更新日時：2016年05月17日</p>
+<table summary="基本となる診療時間、外来受付時間一覧" class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">基本となる診療時間</th>
+    <td><span class="time01">09:00-12:00</span>　<span class="time02">-</span>　<span class="time03">-</span></td>
+  </tr>
+  <tr>
+    <th scope="row">基本となる外来受付時間</th>
+    <td><span class="time01">09:00-12:00</span>　<span class="time02">-</span>　<span class="time03">-</span></td>
+  </tr>
+</table>
+
+<table summary="初診時、再診時予約の有無" class="tabTblSty01">
+<thead>
+  <tr>
+    <th scope="col">診療科目</th>
+<!--    <th scope="col">標榜</th>-->
+    <th scope="col">初診時の予約</th>
+    <th scope="col">再診時の予約</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th scope="row">歯科</th>
+    	    <td><img src="../../img/icon-haifun.gif" width="16" height="16" alt="歯科 初診時の予約 無し" /></td>
+        	    <td><img src="../../img/icon-maru-black1.gif" width="16" height="16" alt="歯科 再診時の予約 有り" /></td>
+      </tr>
+  <tr>
+    <th scope="row">小児歯科</th>
+    	    <td><img src="../../img/icon-haifun.gif" width="16" height="16" alt="小児歯科 初診時の予約 無し" /></td>
+        	    <td><img src="../../img/icon-maru-black1.gif" width="16" height="16" alt="小児歯科 再診時の予約 有り" /></td>
+      </tr>
+</tbody>
+</table>
+<table class="change" summary="診療時間一覧" >
+<caption>診療時間</caption>
+<thead>
+  <tr>
+    <th scope="col">診療科目</th>
+    <th scope="col" class="wWeek">月</th>
+    <th scope="col" class="wWeek">火</th>
+    <th scope="col" class="wWeek">水</th>
+    <th scope="col" class="wWeek">木</th>
+    <th scope="col" class="wWeek">金</th>
+    <th scope="col" class="wWeek">土</th>
+    <th scope="col" class="wWeek">日</th>
+    <th scope="col" class="wWeek">祝</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th scope="row">歯科</th>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">-</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">-</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">-</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+  </tr>
+  <tr>
+    <th scope="row">小児歯科</th>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">-</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">-</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">-</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+  </tr>
+</tbody>
+</table>
+<table class="change" summary="外来受付時間一覧" >
+  <caption>外来受付時間</caption>
+<thead>
+  <tr>
+    <th scope="col">診療科目</th>
+    <th scope="col" class="wWeek">月</th>
+    <th scope="col" class="wWeek">火</th>
+    <th scope="col" class="wWeek">水</th>
+    <th scope="col" class="wWeek">木</th>
+    <th scope="col" class="wWeek">金</th>
+    <th scope="col" class="wWeek">土</th>
+    <th scope="col" class="wWeek">日</th>
+    <th scope="col" class="wWeek">祝</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th scope="row">歯科</th>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">-</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">-</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">-</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+  </tr>
+  <tr>
+    <th scope="row">小児歯科</th>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">-</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">09:00-12:00</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">-</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+    <td><span class="time01">-</span><br />
+      <span class="time02">-</span><br />
+      <span class="time03">-</span></td>
+  </tr>
+</tbody>
+</table>
+<table summary="外来受付時間等に関する特記事項" class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">外来受付時間等に関する特記事項</th>
+	<td><img src="../../img/icon-haifun.gif" width="16" height="16" alt="" /></td>
+  </tr>
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+
+<h5 id="subject10a">休診日</h5>
+<p align="right">最終更新日時：2016年05月17日</p>
+<table summary="毎週決まった曜日の休診一覧" class="tabTblSty03">
+  <tr>
+    <th rowspan="2" scope="col">毎週決まった曜日に休診</th>
+    <th scope="col" class="thead wSty01">月</th>
+    <th scope="col" class="thead wSty01">火</th>
+    <th scope="col" class="thead wSty01">水</th>
+    <th scope="col" class="thead wSty01">木</th>
+    <th scope="col" class="thead wSty01">金</th>
+    <th scope="col" class="thead wSty01">土</th>
+    <th scope="col" class="thead wSty01">日</th>
+    </tr>
+  <tr>
+    <td>－</td>
+    <td>－</td>
+    <td>休診</td>
+    <td>－</td>
+    <td>－</td>
+    <td>－</td>
+    <td>休診</td>
+    </tr>
+</table>
+<table summary="祝日に休診"  class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">祝日に休診</th>
+    <td>休診</td>
+  </tr>
+</table>
+
+<table summary="その他の休診日一覧"  class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">その他の休診日</th>
+    <td>1月1日、1月2日、1月3日、1月4日、8月14日、8月15日、12月29日、12月30日、12月31日</td>
+  </tr>
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+</div><!-- // END tabwrap -->
+<!-- // END body-tab1 --></div>
+
+<!-------------------------------------------------------------------------------->
+
+<!--<div id="body-tab1">-->
+<div id="body-tab2">
+<h4>医療機関へのアクセス</h4>
+<div class="tabwrap">
+<ul>
+		<!-- 2012/02/07 kai 福井対応 -->
+<li><a href="#subject01b">交通手段</a></li>
+<li><a href="#subject02b">駐車場</a></li>
+</ul>
+
+<!-- 2012/02/07 kai 福井対応 vvv -->
+<h5 id="subject01b">診療所までの主な利用交通手段</h5>
+<p align="right">最終更新日時：2013年01月08日</p>
+<table summary="診療所までの主な利用交通手段"  class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">診療所までの主な利用交通手段</th>
+    <td>伊豆急行線　下田駅より大賀茂方面へ徒歩２０分。<br />
+東海バス　岩下バス停より大賀茂方面へ徒歩２分。</td>
+  </tr>
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+<!-- 2012/02/07 kai 福井対応 ^^^-->
+
+<!-- 2012/02/07 kai 福井対応 vvv -->
+<h5 id="subject02b">歯科診療所の駐車場</h5>
+<p align="right">最終更新日時：2013年01月08日</p>
+<table summary="歯科診療所の駐車場の有無"  class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">駐車場がある<br />
+      （契約駐車場も含む）</th>
+    <td>有り</td>
+  </tr>
+  <tr>
+    <th scope="row">駐車場台数</th>
+    <td>無料駐車場：5台</td>
+  </tr>
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+<!-- 2012/02/07 kai 福井対応 ^^^-->
+
+
+</div><!-- // END tabwrap -->
+<!-- // END body-tab2 --></div>
+
+<!-------------------------------------------------------------------------------->
+
+<!--<div id="body-tab2">-->
+<div id="body-tab3">
+<h4>医療機関内サービス・アメニティ</h4>
+<div class="tabwrap">
+<ul>
+<li><a href="#subject01c">院内処方</a></li>
+		<!-- 2012/02/07 kai 福井対応 -->
+<li><a href="#subject03c">車椅子利用者への配慮</a></li>
+	<!-- 2012/02/07 kai 福井対応 -->
+<li><a href="#subject04c">受動喫煙防止措置</a></li>
+<li><a href="#subject09c">対応することができる外国語</a></li>
+</ul>
+
+<h5 id="subject01c">院内処方の有無</h5>
+<p align="right">最終更新日時：2013年01月08日</p>
+<table summary="院内処方の有無"  class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">院内処方</th>
+    	    <td>有り</td>
+	  </tr>
+<!--  <tr>-->
+<!--    <th scope="row">院外処方</th>-->
+<!--    -->
+<!--	    <td>無し</td>-->
+<!--	-->
+<!--  </tr>-->
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+
+<!-- 2012/02/07 kai 福井対応 vvv -->
+<!-- 2012/02/07 kai 福井対応 ^^^ -->
+
+<!-- 2012/02/07 kai 福井対応 vvv -->
+<h5 id="subject03c">車椅子利用者への配慮</h5>
+<p align="right">最終更新日時：2013年01月08日</p>
+<table summary="車椅子利用者への配慮"  class="tabTblSty05">
+  <tr>
+    <th scope="row">車椅子利用者への配慮（施設内のバリアフリー化の実施）</th>
+    	   	<td>有り</td>
+        <th scope="row">車椅子対応トイレ</th>
+    	    		    <td><img src="../../img/icon-haifun.gif" width="16" height="16" alt="" /></td>
+		      </tr>
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+<!-- 2012/02/07 kai 福井対応 ^^^ -->
+
+<!-- 2012/02/07 kai 福井対応 vvv -->
+<h5 id="subject04c">受動喫煙を防止するための措置</h5>
+<p align="right">最終更新日時：2013年01月08日</p>
+<table summary="受動喫煙を防止するための措置"  class="tabTblSty05">
+  <tr>
+    <th scope="row">施設内における全面禁煙の実施</th>
+        	<td>有り</td>
+	    <th scope="row">喫煙室の設置</th>
+    	    <td><img src="../../img/icon-haifun.gif" width="16" height="16" alt="" /></td>
+      </tr>
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+<!-- 2012/02/07 kai 福井対応 ^^^ -->
+
+<!-- 2012/02/07 kai 福井対応 vvv -->
+<!-- 2012/02/07 kai 福井対応 ^^^ -->
+
+
+<h5 id="subject09c">対応することができる外国語の種類</h5>
+<p align="right">最終更新日時：2013年01月08日</p>
+<table summary="対応することができる外国語の種類一覧"  class="txt-l tabTblSty01">
+<tbody>
+  <tr>
+    <th scope="row">英語</th>
+    <td>会話の自信はないが図示や単語の羅列で対応が可能</td>
+  </tr>
+</tbody>
+</table>
+
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+</div><!-- // END tabwrap -->
+<!-- // END body-tab3 --></div>
+
+<!-------------------------------------------------------------------------------->
+
+<!--<div id="body-tab3">-->
+<div id="body-tab4">
+<h4>費用負担等</h4>
+<div class="tabwrap">
+<ul>
+		<!-- 2012/02/07 kai 福井対応 -->
+<li><a href="#subject01d">公費負担・各種指定医療機関</a></li>
+<li><a href="#subject04d">クレジットカードの取扱について</a></li>
+</ul>
+
+<!-- 2012/02/07 kai 福井対応 vvv -->
+<!--<h5 id="subject01d">医療保険又は公費負担の取扱い</h5>-->
+<h5 id="subject01d">公費負担・各種指定医療機関</h5>
+<p align="right">最終更新日時：2013年01月08日</p>
+<!--<h5 id="subject01d">保健医療機関、公費負担医療機関及びその他の病院の種類</h5>-->
+<table summary="公費負担・各種指定医療機関一覧"  class="tabTblSty06">
+<thead>
+  <tr>
+    <th scope="col" class="wSty01">項目名</th>
+    <th scope="col" class="wSty04">該当</th>
+    <th scope="col" class="wSty01">項目名</th>
+    <th scope="col" class="wSty04">該当</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th scope="row">保険医療機関</th>
+    	    <td>有り</td>
+        <th scope="row"></th>
+    	    	<td></td>
+      </tr>
+</tbody>
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+<!-- 2012/02/07 kai 福井対応 ^^^ -->
+
+<h5 id="subject04d">クレジットカードの取扱について</h5>
+<p align="right">最終更新日時：2013年01月08日</p>
+<!--<h5 id="subject04d">クレジットカードによる支払い</h5>-->
+<table summary="クレジットカード詳細"  class="txt-l tabTblSty01">
+  <tr>
+    <th scope="row">クレジットカードによる支払いが可能</th>
+    	    <td>不可</td>
+      </tr>
+  </table>
+
+
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+</div><!-- // END tabwrap -->
+<!-- // END body-tab3 --></div>
+
+
+<!--<div id="body-tab4">-->
+<div id="body-tab5">
+<h4>診療内容、提供保健・医療・介護サービス</h4>
+<div class="tabwrap">
+<ul>
+		<!-- 2012/02/07 kai 福井対応 -->
+<li><a href="#subject04e">治療内容</a></li>
+</ul>
+
+<!-- 2012/02/07 kai 福井対応 vvv -->
+<!-- 2012/02/07 kai 福井対応 ^^^ -->
+
+
+<h5 id="subject04e">対応することができる疾患・治療内容</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p align="right">最終更新日時：2023年01月25日</p>
+<table summary="歯科一覧"  class="txt-l tabTblSty01">
+<caption>歯科</caption>
+<thead>
+  <tr>
+    <th scope="col" class="wHalf01">項目名</th>
+    <th scope="col" class="wHalf01">項目名</th>
+   </tr>
+</thead>
+<tbody>
+  <tr>
+    <td align="left">歯科領域の一次診療</td>
+    <td align="left"></td>
+  </tr>
+</tbody>
+</table>
+
+
+
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+
+
+<!-- 2012/02/07 kai 福井対応 vvv -->
+<!---->
+<!-- 2012/02/07 kai 福井対応 ^^^ -->
+
+
+<!-- 2012/02/07 kai 福井対応 vvv -->
+<!-- 2012/02/07 kai 福井対応 ^^^ -->
+</div><!-- // tabwrap -->
+<!-- // END body-tab5 --></div>
+
+<!--<div id="body-tab5">-->
+<div id="body-tab6">
+<h4>医療の実績等</h4>
+<div class="tabwrap">
+<ul>
+		<!-- 2012/02/07 kai 福井対応 -->
+<li><a href="#subject01f">人員配置</a></li>
+		<!-- 2012/02/07 kai 福井対応 -->
+<li><a href="#subject07f">患者数</a></li>
+</ul>
+
+<!-- 2012/02/07 kai 福井対応 vvv -->
+<!-- 2012/02/07 kai 福井対応 ^^^ -->
+
+<h5 id="subject01f">歯科診療所の人員配置</h5>
+<p align="right">最終更新日時：2023年01月25日</p>
+<table summary="歯科診療所の人員配置  class="txt-r sclTbl sclTbl2">
+<thead>
+<tr>
+<td colspan="4" class="captionSub">単位：人</td>
+</tr>
+<tr>
+    <th rowspan="3" scope="col">職種</th>
+    <th colspan="3" scope="col">報告日現在の従事者数（人）</th>
+    </tr>
+  <tr>
+    <th scope="col" rowspan="2" class="bdr-none-r">総数</th>
+    <th scope="col" colspan="2" class="bdr-none-l">&nbsp;</th>
+    </tr>
+  <tr>
+    <th scope="col">常勤</th>
+    <th scope="col">非常勤</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th scope="col">歯科医師</th>
+  <td>1.0</td>
+  <td>1</td>
+  <td>－</td>
+  </tr>
+</tbody>
+<tfoot><tr>
+  <th scope="row">従事者合計</th>
+  <td>1.0</td>
+  <td>1</td>
+  <td>－</td>
+</tr>
+</tfoot>
+<tbody>
+</tbody>
+
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+
+<!-- 2012/02/07 kai 福井対応 vvv -->
+<!-- 2012/02/07 kai 福井対応 ^^^ -->
+
+<!-- 2012/02/07 kai 福井対応 vvv -->
+<!-- 2012/02/07 kai 福井対応 ^^^ -->
+
+<!-- 2012/02/07 kai 福井対応 vvv -->
+<h5 id="subject07f">患者数</h5>
+<p align="right">最終更新日時：2023年01月25日</p>
+<table summary="患者数"  class="txt-r tabTblSty09">
+<thead>
+<tr>
+<td colspan="2" class="captionSub">単位：人</td>
+</tr>
+  <tr>
+    <th scope="row">&nbsp;</th>
+    <th scope="col">外来患者数</th>
+    </tr>
+</thead>
+<tbody>
+  <tr>
+    <th scope="row">前年度一日平均外来患者数</th>
+    <td>5.0</td>
+  </tr>
+</tbody>
+</table>
+<p class="goTabmenu"><a href="#tabhead">タブメニューへ</a></p>
+</div><!-- // tabwrap -->
+<!-- 2012/02/07 kai 福井対応 ^^^ -->
+<!-- // END body-tab5 --></div>
+<!-- // END tabbody --></div>
+
+<p class="closedetail"><a href="#" onclick="window.close(); return false;" title="閉じる">閉じる</a></p>
+
+<a href="#top" class="pageTop" id="pageTop"><img src="/qq22/qqport/img/topback.png" alt=""></a>
+</div>
+
+</form>
+</div>
+</div>
+</body>
+</html>

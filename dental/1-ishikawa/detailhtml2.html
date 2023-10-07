@@ -1,0 +1,1133 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179253273-1"></script>
+ <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+  gtag('config', 'UA-179253273-1');
+ </script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="imagetoolbar" content="no" />
+<title>和倉歯科クリニック｜石川県医療・薬局機能情報提供システム</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="stylesheet" type="text/css" media="screen,print" href="common/css/default.css">
+<link rel="stylesheet" type="text/css" href="common/css/fontsizenormal.css" title="fsnormal">
+<link rel="alternate stylesheet" type="text/css" href="common/css/fontsizesmall.css" title="fssmall">
+<link rel="alternate stylesheet" type="text/css" href="common/css/fontsizelarge.css" title="fslarge">
+<link rel="stylesheet" type="text/css" media="screen" href="common/css/tooltip.css">
+<link rel="stylesheet" type="text/css" media="screen" href="common/css/SpryTabbedPanelsDetail.css">
+<link rel="stylesheet" type="text/css" media="print" href="common/css/printdetail.css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<script type="text/javascript" src="common/js/fontpatch.js"></script>
+<script type="text/javascript" src="common/js/common.js"></script>
+<script type="text/javascript" src="common/js/scrollbak.js"></script>
+<script type="text/javascript" src="common/js/header.js"></script>
+<script type="text/javascript" src="common/js/address.js"></script>
+<script type="text/javascript" src="common/js/yearcopyright.js"></script>
+<script type="text/javascript" src="common/js/styleswitcher.js"></script>
+<script type="text/javascript" src="common/js/jquery.js"></script>
+<script type="text/javascript" src="common/js/SpryTabbedPanels.js"></script>
+<script type="text/javascript" src="common/js/gmap.key.selector.js"></script>
+<script type="text/javascript"><!--
+window.onload = function() {
+	new Spry.Widget.TabbedPanels("tabPanel1");//タブ切り替え
+
+	var y='37.075811';	//緯度
+	var x='136.925406';	//経度
+
+	if(y=='') { y=36.564945; }	//緯度
+	if(x=='') { x=136.653212; }	//経度
+
+	var z='15';
+	if('14' != ''){
+		z ='14';
+	}
+
+//v2
+//	if(GBrowserIsCompatible()) {
+//
+//		var map = new GMap(document.getElementById("map"));
+//		map.addControl(new GLargeMapControl());
+//		//map.addControl(new GMapTypeControl());
+//		map.centerAndZoom(new GPoint(x, y), 3);
+
+		var myOptions = {
+			      zoom: Number(z),
+			      center: new google.maps.LatLng(y,x),
+			      mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+		function addMarker(map, lat, lng, html) {
+//v2
+//			var point = new GPoint(lat, lng);
+//			var marker = new GMarker(point);
+//			GEvent.addListener(marker, "click", function() {
+//				marker.openInfoWindowHtml(html);
+//			});
+//			map.addOverlay(marker);
+//			marker.openInfoWindowHtml(html);
+
+			var point = new google.maps.LatLng(lng,lat);
+			var markerObj = new google.maps.Marker({
+				position: point,
+				map: map
+			});
+			google.maps.event.addListener(markerObj, "click", function() {
+				var popup = new google.maps.InfoWindow(
+				{
+					content:html
+				});
+				popup.open(map,markerObj);
+			});
+		}
+		//吹き出し部分
+		var msg = "\
+			<span class='r12'>\
+<table style=\"font-size:12px; line-height:13px\">\
+<tr><th>名称</th><td><span class=\"r10\">ワクラシカクリニッック<br></span>和倉歯科クリニック</td></tr>\
+<tr><th>郵便番号</th><td>〒 926-0846</td></tr>\
+<tr><th>所在地</th><td>七尾市石崎町タ部１１－３</td></tr>\
+<tr><th>電話番号(1)</th><td>0767-62-2244</td></tr>\
+<tr><th>FAX番号</th><td>0767-62-0744</td></tr>\
+<tr><th>案内用HP URL</th><td><a href=\""+'http://www.wakuradc.com/'+"\" target=\"_blank\">http://www.wakuradc.com/</a></td></tr>\
+<tr><th>案内用メールアドレス</th><td><a href=\"mailto:wakuradc@ark.ocn.ne.jp\">wakuradc@ark.ocn.ne.jp</a></td></tr>\
+</table>\
+			</span>\
+			";
+		addMarker(map, x, y, msg);
+//	}
+}
+// --></script>
+</head>
+<body id="headerbg2nd">
+<div align="center">
+<a name="pagetop"></a>
+
+
+
+<!-- ▼header -->
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
+headerbox();
+//-->
+</SCRIPT>
+<!-- ▲header -->
+
+
+
+<!-- ▼pankuzu -->
+<div id="pankuzuarea"><p class="r11"><a href="/">TOP</a> &gt; 和倉歯科クリニック</p></div>
+<!-- ▲pankuzu -->
+
+
+
+<!-- ▼basic -->
+<div id="basicarea">
+<table id="basic1">
+<tr>
+<td valign="bottom">
+<div id="basickana"><p class="r12">ワクラシカクリニッック</p></div>
+<div id="basicname"><h2 class="r21">和倉歯科クリニック</h2></div>
+</td>
+<td align="right" valign="bottom" nowrap>
+</td>
+</tr>
+</table>
+
+
+
+<table id="basic2" class="r12">
+<tr>
+<th rowspan="2">住所</th><td rowspan="2">〒926-0846<br>七尾市石崎町タ部１１－３</td>
+<th>TEL</th><td>0767-62-2244</td>
+</tr>
+<tr>
+<th>FAX</th><td>0767-62-0744</td>
+</tr>
+
+<tr>
+<th>ホームページアドレス</th><td colspan="3">
+<a href="http://www.wakuradc.com/" target="_blank">http://www.wakuradc.com/</a>
+</td>
+</tr>
+
+<tr>
+<th>メールアドレス</th><td colspan="3">
+<a href="mailto:wakuradc@ark.ocn.ne.jp">wakuradc@ark.ocn.ne.jp</a>
+</td>
+</tr>
+
+</table>
+
+
+
+</div>
+<!-- ▲basic -->
+
+
+
+<!-- ▼tab -->
+<div id="tabarea">
+<div class="TabbedPanels" id="tabPanel1">
+<ul class="TabbedPanelsTabGroup">
+<li class="TabbedPanelsTab" tabindex="0"><p class="r12"><br>基本情報</p></li>
+<li class="TabbedPanelsTab" tabindex="0"><p class="r12">交通<br>アクセス</p></li>
+<li class="TabbedPanelsTab" tabindex="0"><p class="r12">院内サービス<br>アメニティ</p></li>
+<li class="TabbedPanelsTab" tabindex="0"><p class="r12"><br>費用負担等</p></li>
+<li class="TabbedPanelsTab" tabindex="0"><p class="r12">提供サービス<br>医療連携体制</p></li>
+<li class="TabbedPanelsTab" tabindex="0"><p class="r12"><br>実績</p></li>
+</ul>
+<div class="TabbedPanelsContentGroup">
+
+
+<!-- ▽基本情報 -->
+<div class="TabbedPanelsContent">
+
+基本情報<BR>
+
+<!-- ↓病院の情報 -->
+<!-- ↓病院の情報 -->
+<div class="spacetop30"><h3 class="r14">病院の情報
+[歯科診療所]
+</h3></div>
+<div class="detail001">
+<table class="r12">
+
+
+
+<tr>
+<th>通称・略称</th>
+<td>
+<span class="r10">ワクラシカクリニッック<br></span>
+和倉歯科クリニック</td>
+</tr>
+
+<tr><th>英語表記</th><td>Wakura Dental Clinic</td></tr><tr><th>病院開設者氏名法人<br>の場合は法人名/代表者名</th><td>坂本　博史</td></tr><tr><th>病院管理者名</th><td>坂本　博史</td></tr><tr><th>所在地郵便番号</th><td>〒926-0846</td></tr>
+<!--
+<tr><th>該当エリア（市町村コード）</th>
+<td></td></tr>
+-->
+
+<tr><th>所在地</th><td>七尾市石崎町タ部１１－３</td></tr><tr><th>所在地(英語表記)</th><td>11-3,Ta,Ishizaki-machi,Nanao City</td></tr><tr><th>電話番号(1)</th><td>0767-62-2244</td></tr><tr><th>FAX番号(2)</th><td>0767-62-0744</td></tr>
+<tr>
+<th>案内用HP URL</th><td>
+<a href="http://www.wakuradc.com/" target="_blank">
+http://www.wakuradc.com/</a>
+</td>
+</tr>
+
+<tr>
+<th>案内用メールアドレス</th>
+<td>
+<a href="mailto:wakuradc@ark.ocn.ne.jp">
+wakuradc@ark.ocn.ne.jp</a>
+</td>
+</tr>
+
+</table>
+</div>
+
+<!-- ↓地図 -->
+<!-- ↓地図 -->
+<div class="detailmaparea">
+<div class="spacetop30"><h3 class="r14">地図</h3></div>
+<div id="detailmap">
+<div id="map" style="width:100%; height:400px;"></div>
+</div>
+</div>
+
+<!-- ↓診療科目 -->
+<!-- ↓診療科目 -->
+
+
+<div class="spacetop30"><h3 class="r14">診療科目</h3></div>
+<div class="detail006">
+<table class="r12">
+
+<tr>
+<th>科目名</th>
+<th>予約診療の有無</th>
+</tr>
+
+
+<tr>
+<td class="detail006bg" style="align:center; text-align:center;"">一般歯科</td>
+<td>
+無
+</td>
+</tr>
+<tr>
+
+
+<tr>
+<td class="detail006bg" style="align:center; text-align:center;"">矯正歯科</td>
+<td>
+無
+</td>
+</tr>
+<tr>
+
+
+
+</table>
+</div>
+
+
+
+<!-- ↓診療日及び診療時間 -->
+<!-- ↓診療日及び診療時間 -->
+<div class="spacetop30"><h3 class="r14">診療日及び診療時間</h3></div>
+<div class="detail007">
+<table class="r12">
+<tr>
+<th>月</th>
+<th>火</th>
+<th>水</th>
+<th>木</th>
+<th>金</th>
+<th>土</th>
+<th>日</th>
+<th>祝</th>
+</tr>
+
+
+
+
+<tr>
+<td colspan="8" class="detail007ka">
+<span class="textb">【</span>一般歯科／矯正歯科<span class="textb">】</span>　
+</td>
+</tr>
+<tr>
+<td>09:00-12:30<BR>14:00-18:30<BR></td>
+<td>09:00-12:30<BR>14:00-18:30<BR></td>
+<td>09:00-12:30<BR>14:00-18:30<BR></td>
+<td><span class="detail007kyushintxt">休診</span><BR><BR></td>
+<td>09:00-12:30<BR>14:00-18:30<BR></td>
+<td>09:00-12:30<BR>14:00-17:30<BR></td>
+<td><span class="detail007kyushintxt">休診</span><BR><BR></td>
+<td><span class="detail007kyushintxt">休診</span><BR><BR></td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+</div>
+
+
+
+<!-- ↓病床種別及び届出・許可病床数 -->
+<!-- ↓病床種別及び届出・許可病床数 -->
+
+
+
+
+
+</div>
+<!-- △基本情報 -->
+
+
+
+<!-- ▽交通・アクセス -->
+<div class="TabbedPanelsContent">
+
+交通アクセス<BR>
+
+<!-- ↓病院までの主な利用交通手段 -->
+<!-- ↓病院までの主な利用交通手段 -->
+<div class="spacetop30"><h3 class="r14">病院までの主な利用交通手段</h3></div>
+<div class="detail010">
+<table class="r12">
+<tr>
+<td>JR和倉温泉駅から徒歩1分<br></td>
+</tr>
+</table>
+</div>
+
+
+
+<!-- ↓病院の駐車場 -->
+<!-- ↓病院の駐車場 -->
+
+
+<div class="spacetop30"><h3 class="r14">病院の駐車場</h3></div>
+<div class="detail011">
+<table class="r12">
+
+<tr>
+<th>有無</th><td>有</td>
+</tr>
+
+<tr>
+<th>台数</th><td>7台</td>
+</tr>
+
+<tr>
+<th>料金</th><td>無料</td>
+</tr>
+
+
+</table>
+</div>
+
+
+
+<!-- ↓ 来診療日及び診療時間 -->
+<!-- ↓外来受付時間 -->
+<div class="spacetop30"><h3 class="r14">外来受付時間</h3></div>
+<div class="detail007">
+<table class="r12">
+<tr>
+<th>月</th>
+<th>火</th>
+<th>水</th>
+<th>木</th>
+<th>金</th>
+<th>土</th>
+<th>日</th>
+<th>祝</th>
+</tr>
+
+
+
+
+
+<tr>
+<td colspan="8" class="detail007ka">
+<span class="textb">【</span>一般歯科／矯正歯科<span class="textb">】</span>　
+</td>
+</tr>
+<tr>
+<td>09:00-12:30<BR>14:00-18:30<BR></td>
+<td>09:00-12:30<BR>14:00-18:30<BR></td>
+<td>09:00-12:30<BR>14:00-18:30<BR></td>
+<td><span class="detail007kyushintxt">休診</span><BR><BR></td>
+<td>09:00-12:30<BR>14:00-18:30<BR></td>
+<td>09:00-12:30<BR>14:00-17:30<BR></td>
+<td><span class="detail007kyushintxt">休診</span><BR><BR></td>
+<td><span class="detail007kyushintxt">休診</span><BR><BR></td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+</div>
+
+
+
+<!-- ↓予約診療の有無 -->
+<!-- ↓予約診療の有無 -->
+
+
+<div class="spacetop30"><h3 class="r14">予約診療の有無</h3></div>
+<div class="detail015">
+<table class="r12">
+
+<tr>
+<th>有無</th><td>有</td>
+</tr>
+
+<tr>
+<th>電話番号</th><td>0767-62-2244</td>
+</tr>
+
+
+<tr>
+<th>FAX</th><td>0767-62-0744</td>
+</tr>
+
+</table>
+</div>
+
+
+
+<!-- ↓時間外における対応 -->
+<!-- ↓時間外における対応 -->
+
+
+
+<!-- ↓面会の日及び時間帯 -->
+<!-- ↓ 面会の日及び時間帯 -->
+
+
+
+</div>
+<!-- △交通・アクセス -->
+
+
+
+<!-- ▽院内サービス・アメニティ -->
+<div class="TabbedPanelsContent">
+
+院内サービス・アメニティ<BR>
+
+<!-- ↓院内処方の有無 -->
+<!-- ↓院内処方の有無 -->
+
+
+<div class="spacetop30"><h3 class="r14">院内処方の有無</h3></div>
+<div class="detail019">
+<table class="r12">
+<tr>
+<td>有</td>
+</tr>
+</table>
+</div>
+
+
+
+<!-- ↓対応することができる外国語の種類 -->
+<!-- ↓対応することができる外国語の種類 -->
+
+
+<div class="spacetop30"><h3 class="r14">対応することができる外国語の種類</h3></div>
+<div class="detail021">
+<table class="r12">
+
+<tr>
+<th>外国語の対応</th>
+<td colspan="2">不可</td>
+</tr>
+
+<tr>
+<th>対応言語</th>
+<td style="padding:0px;">
+
+
+</td>
+</tr>
+
+
+
+
+</table>
+</div>
+
+
+
+<!-- ↓障害者に対するサービス内容 -->
+<!-- ↓障害者に対するサービス内容 -->
+
+
+<div class="spacetop30"><h3 class="r14">障害者に対するサービス内容</h3></div>
+<div class="detail022">
+<table class="r12">
+
+
+<tr>
+<th>対応状況</th><td>電話で障害の状況をおたずねしてできる限り対応します。<br></td>
+</tr>
+
+</table>
+</div>
+
+
+
+<!-- ↓障害者車椅子の利用者に対するサービス内容 -->
+<!-- ↓障害者車椅子の利用者に対するサービス内容 -->
+
+
+<div class="spacetop30"><h3 class="r14">車椅子の利用者に対するサービス内容</h3></div>
+<div class="detail023">
+<table class="r12">
+
+<tr>
+<th>施設のバリアフリー化の実施の有無</th><td>無</td>
+</tr>
+
+
+
+</table>
+</div>
+
+
+
+<!-- ↓受動喫煙を防止するための措置 -->
+<!-- ↓受動喫煙を防止するための措置 -->
+
+
+<div class="spacetop30"><h3 class="r14">受動喫煙を防止するための措置</h3></div>
+<div class="detail025">
+<table class="r12">
+<tr>
+<td>施設内における全面禁煙の実施</td>
+</tr>
+</table>
+</div>
+
+
+
+<!-- ↓医療に関する相談に対する体制の状況 -->
+<!-- ↓医療に関する相談に対する体制の状況 -->
+
+
+<div class="spacetop30"><h3 class="r14">医療に関する相談に対する体制の状況</h3></div>
+<div class="detail018">
+<table class="r12">
+
+<tr>
+<th>体制</th><td>意見箱の設置</td>
+</tr>
+
+
+</table>
+</div>
+
+
+
+<!-- ↓入院食の提供方法 -->
+<!-- ↓入院食の提供方法 -->
+
+
+
+<!-- ↓病院内の売店又は食堂の有無 -->
+<!-- ↓病院内の売店又は食堂の有無 -->
+
+
+
+</div>
+<!-- △院内サービス・アメニティ -->
+
+
+
+<!-- ▽費用負担等 -->
+<div class="TabbedPanelsContent">
+
+費用負担等<BR>
+
+<!-- ↓保険医療機関、公費負担医療機関及びその他の病院の種類 -->
+<!-- ↓保険医療機関、公費負担医療機関及びその他の病院の種類 -->
+
+
+<div class="spacetop30"><h3 class="r14">保険医療機関、公費負担医療機関及びその他の病院の種類</h3></div>
+<div class="detail026">
+<table class="r12">
+<tr>
+<td>
+<ul>
+<li>保険医療機関</li></ul>
+</td>
+</tr>
+</table>
+</div>
+
+
+
+<!-- ↓選定療養 -->
+<!-- ↓選定療養 -->
+
+
+
+<!-- ↓治験の実施の有無及び契約件数 -->
+<!-- ↓治験の実施の有無及び契約件数 -->
+
+
+
+<!-- ↓クレジットカードによる料金の支払の可否 -->
+<!-- ↓クレジットカードによる料金の支払の可否 -->
+
+
+<div class="spacetop30"><h3 class="r14">クレジットカードによる料金の支払の可否</h3></div>
+<div class="detail030">
+<table class="r12">
+<tr>
+<td>否　</td>
+</tr>
+</table>
+</div>
+
+
+
+<!-- ↓先進医療の実施の有無及び内容 -->
+<!-- ↓先進医療の実施の有無及び内容 -->
+
+
+
+</div>
+<!-- △費用負担等 -->
+
+
+
+<!-- ▽提供サービス・医療連携体制 -->
+<div class="TabbedPanelsContent">
+
+提供サービス・医療連携体制<BR>
+
+<!-- ↓医師、歯科医師、看護師その他の医療従事者の専門性に関する資格の種類及びその種類毎の人数 -->
+<!-- ↓医師、歯科医師、看護師その他の医療従事者の専門性に関する資格の種類及びその種類毎の人数 -->
+
+
+<div class="spacetop30"><h3 class="r14">医師、歯科医師、看護師その他の医療従事者の専門性に関する資格の種類及びその種類毎の人数</h3></div>
+<div class="detail031">
+<table class="r12">
+
+<tr>
+<th colspan="2">▼医師</th>
+</tr>
+
+
+
+
+
+
+</table>
+</div>
+
+
+
+<!-- ↓保有する施設設備 -->
+<!-- ↓保有する施設設備 -->
+
+
+
+<!-- ↓併設している介護施設 -->
+<!-- ↓併設している介護施設 -->
+
+
+
+<!-- ↓対応することができる疾患・治療内容 -->
+<!-- ↓対応することができる疾患・治療内容 -->
+
+
+
+<div class="spacetop30"><h3 class="r14">対応することができる疾患・治療内容</h3></div>
+<div class="detail034">
+<table class="r12">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+
+<th>歯科領域</th>
+
+<td>
+<ul>
+<li>歯科領域の一次診療</li></ul>
+</td>
+
+</tr>
+
+
+
+
+
+
+
+
+</table>
+</div>
+
+
+
+<!-- ↓対応することができる短期滞在手術 -->
+<!-- ↓対応することができる短期滞在手術 -->
+
+
+
+<!-- ↓専門外来の有無及び内容 -->
+<!-- ↓専門外来の有無及び内容 -->
+
+
+<div class="spacetop30"><h3 class="r14">専門外来の有無及び内容</h3></div>
+<div class="detail036">
+<table class="r12">
+<tr>
+<td>無　</td>
+</tr>
+</table>
+</div>
+
+
+
+<!-- ↓健康診査、健康相談の実施 -->
+<!-- ↓健康診査、健康相談の実施 -->
+
+
+<div class="spacetop30"><h3 class="r14">健康診査、健康相談の実施</h3></div>
+<div class="detail037">
+<table class="r12">
+<tr>
+<th>健康診査実施の有無と内容</th>
+<td>
+無<br>
+</td>
+</tr>
+
+
+
+
+<tr>
+<th>健康相談の有無と内容 </th>
+<td>
+無<br>
+</td>
+</tr>
+
+
+
+</table>
+</div>
+
+
+
+<!-- ↓対応することができる予防接種 -->
+<!-- ↓対応することができる予防接種 -->
+
+
+
+<!-- ↓対応することができる在宅医療 -->
+<!-- ↓対応することができる在宅医療 -->
+
+
+<div class="spacetop30"><h3 class="r14">対応することができる在宅医療</h3></div>
+<div class="detail039">
+<table class="r12">
+
+<tr>
+<th>在宅医療</th><td>
+<ul>
+<li>歯科訪問診療</li></ul>
+</td>
+</tr>
+
+
+
+
+
+
+<tr>
+<th>連携の有無</th><td>
+<ul>
+<li>病院との連携</li></ul>
+</td>
+</tr>
+
+</table>
+</div>
+
+
+
+<!-- ↓対応することができる介護サービス -->
+<!-- ↓対応することができる介護サービス -->
+
+
+
+<!-- ↓セカンド・オピニオンに関する状況 -->
+<!-- ↓セカンド・オピニオンに関する状況 -->
+
+
+
+<!-- ↓地域医療連携体制 -->
+<!-- ↓地域医療連携体制 -->
+
+
+
+<!-- ↓地域の保健医療サービス又は福祉サービスを提供する者との連携に対する窓口設置の有無 -->
+<!-- ↓地域の保健医療サービス又は福祉サービスを提供する者との連携に対する窓口設置の有無 -->
+
+
+
+</div>
+<!-- △提供サービス・医療連携体制 -->
+
+
+
+<!-- ▽実績 -->
+<div class="TabbedPanelsContent">
+
+実績<br>
+
+<!-- ↓病院の人員配置 -->
+<!-- ↓病院の人員配置 -->
+
+
+
+<div class="spacetop30"><h3 class="r14">病院の人員配置</h3></div>
+<div class="detail044">
+<table class="r12">
+<tr>
+<th class="detail044bgno">&nbsp;</th>
+<th>職種別人数（人）</th>
+<th>うち外来患者担当数（人）</th>
+<th>うち入院患者担当数（人）</th>
+</tr>
+
+<tr>
+<td class="detail044bg">歯科医師数</td>
+<td>1人</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="detail044bg">歯科衛生士数</td>
+<td>3人</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="detail044bg">歯科技工士数</td>
+<td>1人</td>
+<td></td>
+<td></td>
+</tr>
+
+</table>
+</div>
+
+
+
+<!-- ↓看護師の配置状況 -->
+<!-- ↓看護師の配置状況 -->
+
+
+
+<!-- ↓法令上の義務以外の医療安全対策 -->
+<!-- ↓法令上の義務以外の医療安全対策 -->
+
+
+
+<!-- ↓法令上の義務以外の院内感染対策 -->
+<!-- ↓法令上の義務以外の院内感染対策 -->
+
+
+
+<!-- ↓入院診療計画策定時における院内の連携体制の有無 -->
+<!-- ↓入院診療計画策定時における院内の連携体制の有無 -->
+
+
+
+<!-- ↓診療情報管理体制 -->
+<!-- ↓診療情報管理体制 -->
+
+
+
+<!-- ↓情報開示に関する窓口の有無 -->
+<!-- ↓情報開示に関する窓口の有無 -->
+
+
+<div class="spacetop30"><h3 class="r14">情報開示に関する窓口の有無</h3></div>
+<div class="detail050">
+<table class="r12">
+<tr>
+<td>無</td>
+</tr>
+</table>
+</div>
+
+
+
+<!-- ↓症例検討体制 -->
+<!-- ↓症例検討体制 -->
+
+
+
+<!-- ↓治療結果情報 -->
+<!-- ↓治療結果情報 -->
+
+
+
+<!-- ↓患者数 -->
+<!-- ↓患者数 -->
+
+
+<div class="spacetop30"><h3 class="r14">患者数</h3></div>
+<div class="detail053">
+<table class="r12">
+
+
+<tr>
+<th colspan="2">▼患者割合</th>
+</tr>
+<tr><td class="detail053bg">外来患者数</td><td>35人</td></tr>
+</table>
+</div>
+
+
+
+<!-- ↓平均在院日数 -->
+<!-- ↓平均在院日数 -->
+
+
+
+<!-- ↓患者満足度調査 -->
+<!-- ↓患者満足度調査 -->
+
+
+<div class="spacetop30"><h3 class="r14">患者満足度調査</h3></div>
+<div class="detail055">
+<table class="r12">
+<tr><th>患者満足度調査実施の有無</th><td>無</td></tr>
+<tr><th>患者満足度調査結果の提供の有無</th><td>無</td></tr>
+</table>
+</div>
+
+
+
+<!-- ↓情報開示に関する窓口の有無 -->
+<!-- ↓情報開示に関する窓口の有無 -->
+
+
+
+<!-- ↓（財）日本医療機能評価機構が定める産科医療補償制度標準補償約款と同一の産科医療補償約款に基づく補償の有無 -->
+<!-- ↓（財）日本医療機能評価機構が定める産科医療補償制度標準補償約款と同一の産科医療補償約款に基づく補償の有無 -->
+
+
+
+</div>
+<!-- △実績 -->
+
+
+
+</div>
+</div>
+</div>
+<!-- ▲tab -->
+
+
+<!-- ▼footer -->
+<div id="footerarea">
+<div id="footerline1">
+<div id="footeraddress"><p class="r11">
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
+footeraddress();
+//-->
+</SCRIPT>
+</p></div>
+<div id="footerbtnpagetop"><a href="#" onClick="softScrollBack();return false;"><img src="/img/btn_pagetop.gif" alt="ページの先頭へ戻る" width="112" height="20" id="btn_pagetop" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('btn_pagetop','','/img/btn_pagetopo.gif',1)"></a></div>
+<div style="clear:both;"></div>
+</div>
+<div id="footerline2">
+<div id="footercopy">
+<span class="r10">
+Copyright (C) 
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+<!--
+yearcopyright();
+//-->
+</SCRIPT>
+石川県医療・薬局機能情報提供システム All Rights Reserved.
+</span>
+</div>
+</div>
+</div>
+<!-- ▲footer -->
+
+
+
+
+</div>
+</body>
+</html>
+

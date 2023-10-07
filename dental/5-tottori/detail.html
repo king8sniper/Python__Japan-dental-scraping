@@ -1,0 +1,6450 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=edge,chrome=1">
+
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+
+<title>公表データ：とっとり医療情報ネット</title>
+
+
+<link href="../css/import.css" rel="Stylesheet" type="text/css" />
+<script src="../js/common.js" type="text/javascript"></script>
+
+
+
+
+        <link href="../Admin/js/ui/jquery-ui.css" rel="Stylesheet" type="text/css" />
+<!--[if lt IE 9]>
+        <script src="../Admin/js/html5shiv-printshiv.js"></script>
+        <![endif]-->
+        <script src="../Admin/js/ui/external/jquery/jquery.js"></script>
+        <script src="../Admin/js/ui/jquery-ui.js"></script>
+
+        <script type="text/javascript">
+            <!--
+            function on_events(_events, _id , _tab) {
+                document.form_events.events.value = _events;
+                document.form_events.ID.value = _id;
+                document.form_events.TAB.value = _tab;
+                document.form_events.submit();
+            }
+            /* --------------------------------------------------------------------------	*/
+            /* RELOAD */
+            /* --------------------------------------------------------------------------	*/
+            function reload() {
+                location.href = '/ComDisp/dental_03_view.php';
+            }
+
+            // -->
+        </script>
+        <script>
+            $(function(){
+                $("#tabs").tabs();
+                $("#tabs").bind('tabsactivate', function(event, ui) {
+                // クリックされたタブのインデックス
+                // インデックスは 0 から始まるので + 1
+                    //var tabsnum = ui.newTab.index() + 1;
+                    tabsnum = ui.newTab.index() + 1;
+                    if(tabsnum == 1) tabsname = "#tabs-kihon";
+                    else if(tabsnum == 2) tabsname = "#tabs-access";
+                    else if(tabsnum == 3) tabsname = "#tabs-service";
+                    else if(tabsnum == 4) tabsname = "#tabs-futan";
+                    else if(tabsnum == 5) tabsname = "#tabs-kaigo";
+                    else if(tabsnum == 6) tabsname = "#tabs-result";
+
+                    //alert(tabsname);
+                    //history.replaceState('','','hospital_03_view.php#'+tabsname);
+                    document.getElementById('TAB').value = tabsname;
+                })
+            });
+        </script>
+        
+    </head>
+    <body>
+    <header>
+
+<div class="header_h1">
+<h1><a href="./index.php" class="site_logo">とっとり医療情報ネット</a>
+
+<!-- ↓↓フォントサイズ拡大縮小↓↓ -->
+<div id="fontsize"><img src="./img/font_size01.gif" alt="文字サイズ：" width="100" height="30"><script type="text/javascript"><!--
+font_chgbtn();
+// --></script></div><!-- end #fontsize -->
+<!-- ↑↑フォントサイズ拡大縮小↑↑ -->
+
+
+<div id="yomiage_icon" >
+<script src="//f1-as.readspeaker.com/script/7312/ReadSpeaker.js?pids=embhl" type="text/javascript"></script>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td style="width:85px;"><div id="readspeaker_button1" class="rs_skip">
+<a rel="nofollow" accesskey="L" href="//app-as.readspeaker.com/cgi-bin/rsent?customerid=7312&amp;lang=ja_jp&amp;readid=container&amp;url=" target="_blank" onclick="readpage(this.href, 'xp1'); return false;">
+<img style="border-style: none;width:90px; height:30px; " src="img/yomiage_icon01.gif" alt="音声で読み上げる" title="音声で読み上げる" ></a>
+</div>
+</td>
+<td><div id="xp1" class="rs_preserve" style="margin-left:16px; margin-bottom:6px;"></div></td>
+</tr>
+</table>
+</div>
+
+</h1>
+</div>
+    
+
+
+    <h2>歯科診療所　公表データ</h2>
+    <nav>
+        <ul>
+
+            <li><a href="compare_01_list.php">比較リスト(0件)</a></li>
+            <li><a href="#">ヘルプ</a></li>
+        </ul>
+    </nav>
+</header>
+        <div id="container">
+            <form action="./dental_03_view.php" name="form_events" method="post">
+               <input type="hidden" name="events" value=""/>
+                <input type="hidden" name="ID" value=""/>
+                <input type="hidden" name="TAB" value="" id="TAB"/>
+                <div id="content">
+					<p><a href="../index.php">トップページ</a>&gt;<a href="search_01_input.php">歯科診療所の検索</a>&gt;<a href="search_02_list.php">検索結果一覧</a>&gt;<a href="#">公表データ</a></p>
+                    <article>
+                        <h1>公表データ</h1>
+                        <section>
+                            <h2>谷口歯科医院<span style="font-size:80%;">
+                            （最終更新日：2023年2月2日）
+                            </span></h2>
+
+                            <input type="button" value="比較リストへ追加" onclick="on_events('add_multi', '76');"/>
+
+     
+<!-- ============↓↓エラーメッセージ記述↓↓============ -->
+<!-- ============↑↑エラーメッセージ記述↑↑============ -->
+
+                            <div id="tabs">
+                                <ul>
+                                    <li><a href="#tabs-kihon">基本情報</a></li>
+                                    <li><a href="#tabs-access">診療所へのアクセス</a></li>
+                                    <li><a href="#tabs-service">院内サービス</a></li>
+                                    <li><a href="#tabs-futan">費用負担等</a></li>
+                                    <li><a href="#tabs-kaigo">診療内容、提供保険、医療・介護サービス</a></li>
+                                    <li><a href="#tabs-result">医療の実績・結果</a></li>
+                                </ul>
+                                <div class="compare_table">
+                                <a name="TOP"></a>
+<div id="tabs-kihon">
+    <p><a href="#診療所の名称">▼1.診療所の名称</a>&nbsp;<a href="#診療所の開設者">▼2.診療所の開設者</a>&nbsp;<a href="#診療所の管理者">▼3.診療所の管理者</a>&nbsp;<a href="#診療所の所在地">▼4.診療所の所在地</a>&nbsp;<a href="#電話番号ファクシミリ番号">▼5.電話番号・ファクシミリ番号</a>&nbsp;<a href="#外来患者数">▼6.外来患者数</a>&nbsp;<a href="#診療日">▼7.診療日(診療科目別)・診療時間(診療科目別)・外来受付時間等</a>&nbsp;<a href="#休診日">▼8.休診日</a></p>
+
+    <a name="診療所の名称"></a>
+    <table class="search_detail_table">
+	<caption>1. 診療所の名称</caption>
+	<tr>
+		<th>
+			(フリガナ)
+		</th>
+		<td>
+			タニグチシカイイン
+		</td>
+	</tr>
+	<tr>
+		<th>
+			診療所の名称
+		</th>
+		<td>
+			谷口歯科医院
+		</td>
+	</tr>
+	<tr>
+		<th>
+			英語表記(ローマ字表記可) 
+		</th>
+		<td>
+			Taniguchishikaiin
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+
+    <a name="診療所の開設者"></a>
+    <table class="search_detail_table">
+	<caption>2. 診療所の開設者</caption>
+	<tr>
+		<th>
+			(フリガナ)
+		</th>
+		<td>
+			タニグチキヨコ
+		</td>
+	</tr>
+	<tr>
+		<th>
+			名前
+		</th>
+		<td>
+			谷口　陽子
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+
+    <a name="診療所の管理者"></a>
+    <table class="search_detail_table">
+	<caption>3. 診療所の管理者</caption>
+	<tr>
+		<th>
+			(フリガナ)
+		</th>
+		<td>
+			タニグチキヨコ
+		</td>
+	</tr>
+	<tr>
+		<th>
+			名前
+		</th>
+		<td>
+			谷口　陽子
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+
+    <a name="診療所の所在地"></a>
+    <table class="search_detail_table">
+	<caption>4. 診療所の所在地</caption>
+	<tr>
+		<th>
+			郵便番号
+		</th>
+		<td>
+			6820723
+		</td>
+	</tr>
+	<tr>
+		<th>
+			(フリガナ) 
+		</th>
+		<td>
+			トウハクグンユリハマチョウヒサドメ
+		</td>
+	</tr>
+	<tr>
+		<th>
+			住所
+		</th>
+		<td>
+			東伯郡湯梨浜町久留１８１
+		</td>
+	</tr>
+	<tr>
+		<th>
+			地図情報
+		</th>
+		<td>
+			<a href="" target="_blank"></a>
+		</td>
+	</tr>
+	<tr>
+		<th>
+			英語表記(ローマ字表記可) 
+		</th>
+		<td>
+			181 Hisadome Yurihamacho Touhakugun
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+
+    <a name="電話番号ファクシミリ番号"></a>
+    <table class="search_detail_table">
+	<caption>5. 電話番号・ファクシミリ番号</caption>
+	<tr>
+		<th>
+			代表電話番号
+		</th>
+		<td>
+			0858-35-2071
+		</td>
+	</tr>
+	<tr>
+		<th>
+			夜間・休日用電話番号
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			ファクシミリ番号
+		</th>
+		<td>
+			0858-35-2312
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+
+    <a name="外来患者数"></a>
+    <table class="search_detail_table">
+	<caption>6. 外来患者数</caption>
+	<tr>
+		<th>
+			外来患者数(1日平均)
+		</th>
+		<td>
+			5
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+
+    <a name="診療日"></a>
+    <table class="search_detail_table">
+	<caption>7. 診療日(診療科目別)・診療時間(診療科目別)・外来受付時間等</caption>
+	<tr>
+		<th>
+			【診療科目】
+		</th>
+		<td>
+			歯科
+		</td>
+	</tr>
+	<tr>
+		<th>
+			　診療日
+		</th>
+		<td>
+			土
+		</td>
+	</tr>
+	<tr>
+		<th>
+			　診療時間
+		</th>
+		<td>
+			9:00～12:00
+		</td>
+	</tr>
+	<tr>
+		<th>
+			　外来受付時間
+		</th>
+		<td>
+			9:00～12:00
+		</td>
+	</tr>
+	<tr>
+		<th>
+			　初診受付日
+		</th>
+		<td>
+			土
+		</td>
+	</tr>
+	<tr>
+		<th>
+			　初診時の外来受付時間
+		</th>
+		<td>
+			9:00～12:00
+		</td>
+	</tr>
+	<tr>
+		<th>
+			　備考
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			【診療科目】
+		</th>
+		<td>
+			歯科
+		</td>
+	</tr>
+	<tr>
+		<th>
+			　診療日
+		</th>
+		<td>
+			月・火・水・木・金
+		</td>
+	</tr>
+	<tr>
+		<th>
+			　診療時間
+		</th>
+		<td>
+			9:00～12:00<BR>13:30～17:00
+		</td>
+	</tr>
+	<tr>
+		<th>
+			　外来受付時間
+		</th>
+		<td>
+			9:00～12:00<BR>13:30～17:00
+		</td>
+	</tr>
+	<tr>
+		<th>
+			　初診受付日
+		</th>
+		<td>
+			月・火・水・木・金・土
+		</td>
+	</tr>
+	<tr>
+		<th>
+			　初診時の外来受付時間
+		</th>
+		<td>
+			9:00～12:00<BR>13:30～17:00
+		</td>
+	</tr>
+	<tr>
+		<th>
+			　備考
+		</th>
+		<td>
+			土曜午後は休診  
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+    
+    <a name="休診日"></a>
+    <table class="search_detail_table">
+	<caption>8. 休診日</caption>
+	<tr>
+		<th>
+			休診日の有無
+		</th>
+		<td colspan='8' class='blue'>
+			有
+		</td>
+	</tr>
+	<tr>
+		<th>
+			曜日
+		</th>
+		<th>
+			月
+		</th>
+		<th>
+			火
+		</th>
+		<th>
+			水
+		</th>
+		<th>
+			木
+		</th>
+		<th>
+			金
+		</th>
+		<th>
+			土
+		</th>
+		<th>
+			日
+		</th>
+		<th>
+			祝
+		</th>
+	</tr>
+	<tr>
+		<th>
+			休診日(曜日)
+		</th>
+		<td>
+			
+		</td>
+		<td>
+			
+		</td>
+		<td>
+			
+		</td>
+		<td>
+			
+		</td>
+		<td>
+			
+		</td>
+		<td>
+			
+		</td>
+		<td>
+			休
+		</td>
+		<td>
+			休
+		</td>
+	</tr>
+	<tr>
+		<th>
+			その他休診日
+		</th>
+		<td colspan='8' class='blue'>
+			8/13,8/14,8/15,12/30,12/31,1/1,1/2,1/3
+		</td>
+	</tr>
+	<tr>
+		<th>
+			備考
+		</th>
+		<td colspan='8' class='blue'>
+			
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+</div><a name="TOP"></a>
+<div id="tabs-access">
+    <p><a href="#診療所までの主な利用交通手段">▼9.診療所までの主な利用交通手段</a>&nbsp;<a href="#診療所等の駐車場">▼10.診療所の駐車場</a>&nbsp;<a href="#案内用ホームページアドレス">▼11.案内用ホームページアドレス</a>&nbsp;<a href="#案内用電子メールアドレス">▼12.案内用電子メールアドレス</a>&nbsp;<a href="#予約診療実施の有無">▼13.予約診療実施の有無</a></p>
+
+    <table class="search_detail_table">
+	<caption>診療所の名称</caption>
+	<tr>
+		<th>
+			診療所の名称
+		</th>
+		<td>
+			谷口歯科医院
+		</td>
+	</tr>
+</table>
+
+    <a name="診療所までの主な利用交通手段"></a>
+    <table class="search_detail_table">
+	<caption>9. 診療所までの主な利用交通手段</caption>
+	<tr>
+		<th rowspan='2'>
+			最寄り駅
+		</th>
+		<th>
+			路線名
+		</th>
+		<td>
+			 山陰本線
+		</td>
+	</tr>
+	<tr>
+		<th>
+			駅名
+		</th>
+		<td>
+			倉吉駅
+		</td>
+	</tr>
+	<tr>
+		<th rowspan='3'>
+			バス
+		</th>
+		<th>
+			経路1
+		</th>
+		<td>
+			橋津線　長瀬東口下車スグ
+		</td>
+	</tr>
+	<tr>
+		<th>
+			経路2
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			経路3
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th rowspan='2'>
+			最寄り駅からの所要時間
+		</th>
+		<th>
+			自動車
+		</th>
+		<td>
+			15分
+		</td>
+	</tr>
+	<tr>
+		<th>
+			徒歩
+		</th>
+		<td>
+			分
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+
+    <a name="診療所等の駐車場"></a>
+    <table class="search_detail_table">
+	<caption>10. 診療所の駐車場</caption>
+	<tr>
+		<th>
+			駐車場の有無
+		</th>
+		<td>
+			有
+		</td>
+	</tr>
+	<tr>
+		<th>
+			有料 or 無料（診察時） 
+		</th>
+		<td>
+			無料
+		</td>
+	</tr>
+	<tr>
+		<th>
+			台数
+		</th>
+		<td>
+			6
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+
+    <a name="案内用ホームページアドレス"></a>
+    <table class="search_detail_table">
+	<caption>11. 案内用ホームページアドレス</caption>
+	<tr>
+		<th>
+			URL
+		</th>
+		<td>
+			<a href ="" target="_blank" ></a>
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+
+    <a name="案内用電子メールアドレス"></a>
+    <table class="search_detail_table">
+	<caption>12. 案内用電子メールアドレス</caption>
+	<tr>
+		<th>
+			メールアドレス
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+    
+    <a name="予約診療実施の有無"></a>
+    <table class="search_detail_table">
+	<caption>13. 予約診療実施の有無</caption>
+	<tr>
+		<th rowspan='2'>
+			予約診療実施の有無
+		</th>
+		<th>
+			初診
+		</th>
+		<td>
+			有
+		</td>
+	</tr>
+	<tr>
+		<th>
+			再診
+		</th>
+		<td>
+			有
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			診療科<br/>(全診療科 or 一部診療科で実施)
+		</th>
+		<td>
+			全診療科で実施（単科含む）
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+</div>
+<a name="TOP"></a>
+<div id="tabs-service">
+    <p><a href="#院内処方の有無">▼14.院内処方の有無</a>&nbsp;<a href="#対応することができる外国語の種類">▼15.外国人の患者の受入れ体制</a>&nbsp;<a href="#障がい者に対するサービス内容">▼16.障がい者に対するサービス内容</a>&nbsp;<a href="#車椅子利用者に対するサービス内容">▼17.車椅子等利用者に対するサービス内容</a>&nbsp;<a href="#受動喫煙を防止するための措置">▼18.受動喫煙を防止するための措置</a>&nbsp;<a href="#医療に関する相談員の配置の有無及び人数">▼19.医療に関する相談員の配置の有無及び人数</a></p>
+
+    <table class="search_detail_table">
+	<caption>診療所の名称</caption>
+	<tr>
+		<th>
+			診療所の名称
+		</th>
+		<td>
+			谷口歯科医院
+		</td>
+	</tr>
+</table>
+
+    <a name="院内処方の有無"></a>
+    <table class="search_detail_table">
+	<caption>14. 院内処方の有無</caption>
+	<tr>
+		<th>
+			有無
+		</th>
+		<td>
+			無
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+
+    <a name="対応することができる外国語の種類"></a>
+    <table class="search_detail_table">
+	<caption>15. 外国人の患者の受入れ体制</caption>
+	<tr>
+		<th rowspan='14'>
+			対応することができる外国語の種類
+		</th>
+		<th>
+			言語
+		</th>
+		<th>
+			対応レベル
+		</th>
+	</tr>
+	<tr>
+		<th>
+			英語 
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			ハングル
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			広東語
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			北京語
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			台湾語
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			スペイン語
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			ポルトガル語
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			タイ語
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			タガログ語
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			ドイツ語
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			フランス語
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			ロシア語
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			備考（その他）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			多言語音声翻訳機器の利用の有無
+		</th>
+		<th>
+			有無
+		</th>
+		<td>
+			無
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+
+    <a name="障がい者に対するサービス内容"></a>
+    <table class="search_detail_table">
+	<caption>16. 障がい者に対するサービス内容</caption>
+	<tr>
+		<th>
+			1. 手話による対応
+		</th>
+		<td>
+			－
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 施設内の情報の表示 
+		</th>
+		<td>
+			－
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 音声による情報の伝達
+		</th>
+		<td>
+			－
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 施設内点字ブロックの設置 
+		</th>
+		<td>
+			－
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 点字による表示
+		</th>
+		<td>
+			－
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+
+    <a name="車椅子利用者に対するサービス内容"></a>
+    <table class="search_detail_table">
+	<caption>17. 車椅子等利用者に対するサービス内容</caption>
+	<tr>
+		<th>
+			施設のバリアフリー化の実施
+		</th>
+		<td>
+			－
+		</td>
+	</tr>
+	<tr>
+		<th>
+			車椅子等利用者用駐車施設の有無
+		</th>
+		<td>
+			無
+		</td>
+	</tr>
+	<tr>
+		<th>
+			多機能トイレの設置
+		</th>
+		<td>
+			－
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+
+    <a name="受動喫煙を防止するための措置"></a>
+    <table class="search_detail_table">
+	<caption>18. 受動喫煙を防止するための措置</caption>
+	<tr>
+		<th>
+			1. 施設内における全面禁煙の実施
+		</th>
+		<td>
+			○
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 健康増進法第28条第13号に規定する特定屋外喫煙場所の設置
+		</th>
+		<td>
+			－
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+    
+    <a name="医療に関する相談員の配置の有無及び人数"></a>
+    <table class="search_detail_table">
+	<caption>19. 医療に関する相談員の配置の有無及び人数</caption>
+	<tr>
+		<th>
+			1. 医療に関する相談窓口の設置の有無
+		</th>
+		<td>
+			無
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 相談員数
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+</div><a name="TOP"></a>
+<div id="tabs-futan">
+    
+	<p><a href="#保険医療機関公費負担医療機関及びその他の病院等の種類">▼20.保険医療機関、公費負担医療機関及びその他の病院の種類</a>&nbsp;<a href="#クレジットカードによる料金の支払いの可否">▼21.電子決済による料金の支払いの可否</a></p>
+    <table class="search_detail_table">
+	<caption>診療所の名称</caption>
+	<tr>
+		<th>
+			診療所の名称
+		</th>
+		<td>
+			谷口歯科医院
+		</td>
+	</tr>
+</table>
+
+    <a name="保険医療機関公費負担医療機関及びその他の病院等の種類"></a>
+    <table class="search_detail_table">
+	<caption>20. 保険医療機関、公費負担医療機関及びその他の病院の種類</caption>
+	<tr>
+		<th>
+			1. 保険医療機関
+		</th>
+		<td>
+			○
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 自由診療のみを行う医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 労災保険指定医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 更生医療指定自立支援医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 育成医療指定自立支援医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 精神通院医療指定自立支援医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 身体障害者福祉法指定医の配置されている医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 精神保健及び精神障害者福祉に関する法律に基づく指定病院又は応急入院指定病院
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 精神保健指定医の配置されている医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 生活保護法指定医療機関
+		</th>
+		<td>
+			○
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 医療保護施設
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 結核指定医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. 指定養育医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. 指定療育機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			15. 指定小児慢性特定疾病医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			16. 難病の患者に対する医療等に関する法律に基づく指定医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			17. 戦傷病者特別援護法指定医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			18. 原子爆弾被害者指定医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			19. 原子爆弾被害者一般疾病医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			20. 感染症指定医療機関（特定・第一種・第二種）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			21. 公害医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			22. 母体保護法指定医の配置されている医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			23. 特定機能病院
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			24. 臨床研究中核病院
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			25. 地域医療支援病院
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			26. 災害拠点病院
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			27. へき地医療拠点病院
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			28. 小児救急医療拠点病院
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			29. 救命救急センター
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			30. 臨床研修施設 （単独型若しくは管理型）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			31. 特定行為研修指定研修機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			32. 臨床修練病院等
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			33. 臨床教授等病院
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			34. がん診療連携拠点病院
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			35. エイズ治療拠点病院
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			36. 肝疾患診療連携拠点病院
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			37. 特定疾患治療研究事業委託医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			38. 在宅療養支援診療所
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			39. 在宅療養支援歯科診療所
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			40. 在宅療養支援病院
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			41. 在宅療養後方支援病院
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			42. DPC対象病院
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			43. 無料低額診療事業実施医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			44. 総合周産期母子医療センター
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			45. 地域周産期母子医療センター
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			46. 不妊専門相談センター
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			47. 性犯罪・性暴力被害者のためのワンストップ支援センター
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			48. 外国人患者を受け入れる拠点的な医療機関
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+    
+    <a name="クレジットカードによる料金の支払いの可否"></a>
+    <table class="search_detail_table">
+	<caption>21. 電子決済による料金の支払いの可否</caption>
+	<tr>
+		<th>
+			電子決済サービスの可否
+		</th>
+		<td>
+			否
+		</td>
+	</tr>
+	<tr>
+		<th>
+			対応可能な電子決済サービス
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+</div><a name="TOP"></a>
+<div id="tabs-kaigo">
+	<p><a href="#医療従事者の専門性に関する資格の種類及び人数">▼22.医療従事者の専門性に関する資格の種類及びその種類毎の人数</a>
+		&nbsp;<a href="#対応することができる疾患又は治療の内容">▼23.対応することができる疾患又は治療の内容</a>
+		&nbsp;<a href="#専門外来の有無及び内容">▼24.専門外来の有無及び内容</a>
+		&nbsp;<a href="#健康診査及び健康相談の実施">▼25.健康診査及び健康相談の実施</a>
+		&nbsp;<a href="#対応することができる在宅医療">▼26.対応することができる在宅医療</a>
+		&nbsp;<a href="#地域医療連携体制">▼27.地域医療連携体制</a></p>
+     
+    <table class="search_detail_table">
+	<caption>診療所の名称</caption>
+	<tr>
+		<th>
+			診療所の名称
+		</th>
+		<td>
+			谷口歯科医院
+		</td>
+	</tr>
+</table>
+
+	<a name="医療従事者の専門性に関する資格の種類及び人数"></a>
+	<table class="search_detail_table">
+	<caption>22. 医療従事者の専門性に関する資格の種類及びその種類毎の人数</caption>
+	<tr>
+		<th>
+			1. 整形外科専門医(（公社）日本整形外科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 皮膚科専門医(（社）日本皮膚科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 麻酔科専門医(（公社）日本麻酔科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 放射線科専門医(（公社）日本医学放射線学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 眼科専門医(（公財）日本眼科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 産婦人科専門医(（公社）日本産科婦人科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 耳鼻咽喉科専門医(（一社）日本耳鼻咽喉科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 泌尿器科専門医(（一社）日本泌尿器科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 形成外科専門医(（一社）日本形成外科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 病理専門医(（一社）日本病理学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 総合内科専門医(（一社）日本内科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 外科専門医(（一社）日本外科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. 糖尿病専門医(（一社）日本糖尿病学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. 肝臓専門医(（一社）日本肝臓学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			15. 感染症専門医(（一社）日本感染症学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			16. 救急科専門医(（一社）日本救急医学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			17. 血液専門医(（一社）日本血液学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			18. 循環器専門医(（一社）日本循環器学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			19. 呼吸器専門医(（一社）日本呼吸器学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			20. 消化器病専門医(（一財）日本消化器病学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			21. 腎臓専門医(（一社）日本腎臓学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			22. 小児科専門医(（公社）日本小児科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			23. 内分泌代謝科専門医(（一社）日本内分泌学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			24. 消化器外科専門医(（一社）日本消化器外科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			25. 超音波専門医(（一社）日本超音波医学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			26. 細胞診専門医(（公社）日本臨床細胞学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			27. 透析専門医(（一社）日本透析医学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			28. 脳神経外科専門医(（一社）日本脳神経外科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			29. リハビリテーション科専門医(（公社）日本リハビリテーション医学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			30. 老年病専門医(（一社）日本老年医学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			31. 心臓血管外科専門医(特定非営利活動法人日本胸部外科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			32. 心臓血管外科専門医(特定非営利活動法人日本血管外科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			33. 心臓血管外科専門医(特定非営利活動法人日本心臓血管外科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			34. 呼吸器外科専門医(特定非営利活動法人日本胸部外科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			35. 呼吸器外科専門医(特定非営利活動法人日本呼吸器外科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			36. 消化器内視鏡専門医(（一社）日本消化器内視鏡学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			37. 小児外科専門医(特定非営利活動法人日本小児外科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			38. 神経内科専門医(（一社）日本神経学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			39. リウマチ専門医(（一社）日本リウマチ学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			40. 乳腺専門医(（一社）日本乳癌学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			41. 臨床遺伝専門医(（一社）日本人類遺伝学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			42. 漢方専門医(（一社）日本東洋医学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			43. レーザー専門医(特定非営利活動法人日本レーザー医学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			44. 気管支鏡専門医(特定非営利活動法人日本呼吸器内視鏡学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			45. アレルギー専門医(（一社）日本アレルギー学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			46. 核医学専門医(（一社）日本核医学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			47. 気管食道科専門医(特定非営利活動法人日本気管食道科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			48. 大腸肛門病専門医(（一社）日本大腸肛門病学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			49. 婦人科腫瘍専門医(特定非営利活動法人日本婦人科腫瘍学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			50. ペインクリニック専門医(（一社）日本ペインクリニック学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			51. 熱傷専門医(（一社）日本熱傷学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			52. 脳血管内治療専門医(特定非営利活動法人日本脳神経血管内治療学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			53. がん薬物療法専門医(特定非営利活動法人日本臨床腫瘍学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			54. 周産期（新生児）専門医(（一社）日本周産期・新生児医学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			55. 生殖医療専門医(（一社）日本生殖医学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			56. 小児神経専門医(（一社）日本小児神経学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			57. 心療内科専門医(特定非営利活動法人日本心療内科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			58. 一般病院連携精神医学専門医(（一社）日本総合病院精神医学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			59. 精神科専門医（（公社）日本精神神経学会）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			60. 口腔外科専門医(（公社）日本口腔外科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			61. 歯周病専門医(特定非営利活動法人日本歯周病学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			62. 歯科麻酔専門医(（一社）日本歯科麻酔学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			63. 小児歯科専門医(（一社）日本小児歯科学会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			64. 歯科放射線専門医（特定非営利活動法人日本歯科放射線学会）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			65. がん専門薬剤師（（一社）日本医療薬学会）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			66. がん看護専門看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			67. 小児看護専門看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			68. 精神看護専門看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			69. 地域看護専門看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			70. 母性看護専門看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			71. 老人看護専門看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			72. がん化学療法看護認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			73. がん性疼痛看護認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			74. 感染管理認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			75. 救急看護認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			76. 手術看護認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			77. 小児救急看護認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			78. 新生児集中ケア認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			79. 摂食・嚥下障害看護認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			80. 透析看護認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			81. 糖尿病看護認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			82. 乳がん看護認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			83. 訪問看護認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			84. 感染症看護専門看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			85. 急性・重症患者看護専門看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			86. 慢性疾患看護専門看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			87. 緩和ケア認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			88. 集中ケア認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			89. 認知症看護認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			90. 皮膚・排泄ケア認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			91. 不妊症看護認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			92. がん放射線療法看護認定看護師(（公社）日本看護協会)
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+</table>
+	<p><a href="#TOP">▲タブメニューへ戻る</a></p>
+	<a name="対応することができる疾患又は治療の内容"></a>
+	<table class="search_detail_table">
+	<caption>23. 対応することができる疾患又は治療の内容</caption>
+	<tr>
+		<th colspan='2' class='blue'>
+			(1) 皮膚・形成外科領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 皮膚・形成外科領域の一次診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 真菌検査（顕微鏡検査）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 皮膚生検
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 凍結療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 光線療法（紫外線・赤外線・ＰＵＶＡ）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 熱傷（中等症）の入院治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 顔面外傷の治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 皮膚悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 皮膚悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 良性腫瘍又は母斑その他の切除・縫合手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. マイクロサージェリーによる遊離組織移植
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 唇顎口蓋裂手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. アトピー性皮膚炎の治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(2) 神経・脳血管領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 神経・脳血管領域の一次診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 脳波検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 長期継続頭蓋内脳波検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 光トポグラフィー
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 脳磁図
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 頭蓋内圧持続測定
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 頸部動脈血栓内膜剥離術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8-1. 経皮的選択的脳血栓・塞栓溶解術（終日対応することができるものに限る）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8-2. 上記以外の経皮的選択的脳血栓・塞栓溶解術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 抗血栓療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10-1. 頭蓋内血腫除去術（終日対応することができるものに限る）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10-2. 上記以外の頭蓋内血腫除去術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11-1. 脳動脈瘤根治術（被包術、クリッピング）（終日対応することができるものに限る）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11-2. 上記以外の脳動脈瘤根治術（被包術、クリッピング）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 脳動静脈奇形摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. 脳血管内手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. 脳腫瘍摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			15. 脊髄腫瘍摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			16. 悪性脳腫瘍放射線療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			17. 悪性脳腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			18. 小児脳外科手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			19. 機能的脳神経手術（てんかん手術を含む）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(3) 精神科・神経科領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 精神科・神経科領域の一次診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 臨床心理・神経心理検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 精神療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 精神分析療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 心身医学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 終夜睡眠ポリグラフィー
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 禁煙指導（ニコチン依存症管理）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 思春期のうつ病又は躁うつ病
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 睡眠障害
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 摂食障害（拒食症・過食症）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. アルコール依存症
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 薬物依存症
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. 神経症性障害（強迫性障害、不安障害、パニック障害等）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. 認知症
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			15. 心的外傷後ストレス障害（PTSD）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			16. 発達障害（自閉症、学習障害等）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			17. 精神科ショート・ケア
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			18. 精神科デイ・ケア
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			19. 精神科ナイト・ケア
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			20. 精神科デイ・ナイト・ケア
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			21. 重度認知症患者デイ・ケア
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(4) 眼領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 眼領域の一次診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 硝子体手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 水晶体再建術（白内障手術）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 緑内障手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 網膜光凝固術（網膜剥離手術）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 斜視手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 角膜移植術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. コンタクトレンズ検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 小児視力障害診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(5) 耳鼻咽喉領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 耳鼻咽喉領域の一次診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 喉頭ファイバースコピー
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 純音聴力検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 補聴器適合検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 電気味覚検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 小児聴力障害診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 鼓室形成手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 副鼻腔炎手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 内視鏡下副鼻腔炎手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 舌悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 舌悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 舌悪性腫瘍放射線療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. 咽頭悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. 咽頭悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			15. 咽頭悪性腫瘍放射線療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			16. 喉頭悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			17. 喉頭悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			18. 喉頭悪性腫瘍放射線療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			19. 摂食機能障害の治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(6) 呼吸器領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 呼吸器領域の一次診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 気管支ファイバースコピー
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 肺悪性腫瘍摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 胸腔鏡下肺悪性腫瘍摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 肺悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 肺悪性腫瘍放射線療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 在宅持続陽圧呼吸療法（睡眠時無呼吸症候群治療）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 在宅酸素療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(7) 消化器系領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 消化器系領域の一次診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 上部消化管内視鏡検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 上部消化管内視鏡的切除術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 下部消化管内視鏡検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 下部消化管内視鏡的切除術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 虫垂切除術（乳幼児に係るものを除く）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 食道悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 食道悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 食道悪性腫瘍放射線療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 胃悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 腹腔鏡下胃悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 胃悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. 胃悪性腫瘍放射線療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. 大腸悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			15. 腹腔鏡下大腸悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			16. 大腸悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			17. 人工肛門の管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			18. 移植用部分小腸採取術（生体）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			19. 生体部分小腸移植術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			20. 移植用小腸再手術（死体）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			21. 同種死体小腸移植術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(8) 肝・胆道・膵臓領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 肝・胆道・膵臓領域の一次診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 肝生検
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 肝悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 肝悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 胆道悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 胆道悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 開腹による胆石症手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 腹腔鏡下胆石症手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 内視鏡的胆道ドレナージ
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 経皮経肝的胆道ドレナージ
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 膵悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 膵悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. 膵悪性腫瘍放射線療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. 体外衝撃波胆石破砕術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			15. 生体肝移植
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(9) 循環器系領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 循環器系領域の一次診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. ホルター型心電図検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3-1. 心臓カテーテル法による諸検査（終日対応することができるものに限る）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3-2. 上記以外の心臓カテーテル法による諸検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 心臓カテーテル法による血管内視鏡検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 冠動脈バイパス術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 経皮的冠動脈形成術（ＰＴＣＡ）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 経皮的冠動脈血栓吸引術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 経皮的冠動脈ステント留置術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 弁膜症手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 開心術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 大動脈瘤手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 下肢静脈瘤手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. ペースメーカー移植術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. ペースメーカー管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(10) 腎・泌尿器系領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 腎・泌尿器系領域の一次診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 膀胱鏡検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 腎生検
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 血液透析
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 夜間透析
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 腹膜透析（CAPD）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 体外衝撃波腎・尿路結石破砕術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 腎悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 腎悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 膀胱悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 膀胱悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 前立腺悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. 腹腔鏡下前立腺悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. 前立腺悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			15. 前立腺悪性腫瘍放射線療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			16. 生体腎移植
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			17. 尿失禁の治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(11) 産科領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 産科領域の一次診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 正常分娩
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 選択帝王切開術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 緊急帝王切開術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 卵管形成手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 卵管鏡下卵管形成術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. ハイリスク妊産婦共同管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(12) 婦人科領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 婦人科領域の一次診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 更年期障害治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 子宮筋腫摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 腹腔鏡下子宮筋腫摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 子宮悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 子宮悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 子宮悪性腫瘍放射線療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 卵巣悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 卵巣悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 卵巣悪性腫瘍放射線療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(13) 乳腺領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 乳腺領域の一次診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 乳腺悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 乳腺悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 乳腺悪性腫瘍放射線療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(14) 内分泌・代謝・栄養領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 内分泌・代謝・栄養領域の一次診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 内分泌機能検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. インスリン療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 糖尿病患者教育（食事療法、運動療法、自己血糖測定）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 糖尿病による合併症に対する継続的な管理・指導
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 甲状腺腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 甲状腺悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 甲状腺悪性腫瘍放射線療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 副腎悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 副腎腫瘍摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(15) 血管・免疫系領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 血液・免疫系領域の一次診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 骨髄生検
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. リンパ節生検
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 造血器腫瘍遺伝子検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 白血病化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 白血病放射線療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 骨髄移植
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 臍帯血移植
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. リンパ組織悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. リンパ組織悪性腫瘍放射線療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 血液凝固異常の診断・治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. エイズ診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. アレルギーの減感作療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(16) 筋・骨格系及び外傷領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 筋・骨格系及び外傷領域の一次診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 関節鏡検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 手の外科手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. アキレス腱断裂手術（筋・腱手術）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 骨折観血的手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 人工股関節置換術（関節手術）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 人工膝関節置換術（関節手術）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 脊椎手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 椎間板摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 椎間板ヘルニアに対する内視鏡下椎間板摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 軟部悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 軟部悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. 骨悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. 骨悪性腫瘍化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			15. 小児整形外科手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			16. 義肢装具の作成及び評価
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(17) リハビリ領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 視能訓練
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 摂食機能療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 心大血管疾患リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 脳血管疾患等リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 廃用症候群リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 運動器リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 呼吸器リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 難病患者リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 障害児リハビリテーション又は障害者リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. がん患者リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 認知症患者リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(18) 小児領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 小児領域の一次診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 小児循環器疾患
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 小児呼吸器疾患
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 小児腎疾患
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 小児神経疾患
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 小児アレルギー疾患
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 小児自己免疫疾患
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 小児糖尿病
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 小児内分泌疾患
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 小児先天性代謝疾患
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 小児血液疾患
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 小児悪性腫瘍
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. 小児外科手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. 小児の脳炎・髄膜炎
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			15. 小児の腸重積
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			16. 乳幼児の育児相談
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			17. 夜尿症の治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			18. 小児食物アレルギー負荷検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(19) 麻酔領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 麻酔科標榜医による麻酔（麻酔管理）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 全身麻酔
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 硬膜外麻酔
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 脊椎麻酔
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 神経ブロック
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 硬膜外ブロックにおける麻酔剤の持続注入
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(20) 緩和ケア領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 医療用麻薬によるがん疼痛治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 緩和的放射線療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. がんに伴う精神症状のケア
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(21) 放射線治療領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 対外照射
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. ガンマナイフによる定位放射線治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 直線加速器による定位放射線治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 粒子線治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 密封小線源照射
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 術中照射
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(22) 画像診断
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 画像診断管理（専ら画像診断を担当する医師による読影）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 遠隔画像診断
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. ＣＴ撮影
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. ＭＲＩ撮影
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. マンモグラフィー検査（乳房撮影）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. ポジトロン断層撮影（ＰＥＴ）、ポジトロン断層・コンピューター断層複合撮影又はポジトロン断層・磁気共鳴コンピューター断層複合撮影
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(23) 病理診断
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 病理診断（専ら病理診断を担当する医師による診断）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 病理迅速検査
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(24) 歯科領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 歯科領域の一次診療
+		</th>
+		<td>
+			◯
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 成人の歯科矯正治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 唇顎口蓋裂の歯科矯正治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 顎変形症の歯科矯正治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 障がい者等の歯科治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 摂食機能障害の治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(25) 口腔外科領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 埋伏歯抜歯
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 顎関節症治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 顎変形症治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 顎骨骨折治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 口唇・舌・口腔粘膜の炎症・外傷・腫瘍の治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 唇顎口蓋裂治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(26) その他
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 漢方医学
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 鍼灸治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 外来における化学療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 在宅における看取り
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+</table>
+	<p><a href="#TOP">▲タブメニューへ戻る</a></p>
+	<a name="専門外来の有無及び内容"></a>
+	<table class="search_detail_table">
+	<caption>24.専門外来の有無及び内容</caption>
+	<tr>
+		<th>
+			有無
+		</th>
+		<td>
+			無
+		</td>
+	</tr>
+	<tr>
+		<th>
+			内容
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+</table>
+	<p><a href="#TOP">▲タブメニューへ戻る</a></p>    
+	<a name="健康診査及び健康相談の実施"></a>
+	<table class="search_detail_table">
+	<caption>25.健康診査及び健康相談の実施</caption>
+	<tr>
+		<th rowspan='2'>
+			健康診査の実施の有無及び内容
+		</th>
+		<th>
+			有無
+		</th>
+		<td>
+			有
+		</td>
+	</tr>
+	<tr>
+		<th>
+			内容
+		</th>
+		<td>
+			ふしめ歯科検診、妊婦歯科検診、鳥取県後期高齢者歯科検診
+		</td>
+	</tr>
+	<tr>
+		<th rowspan='2'>
+			健康相談の実施の有無及び内容
+		</th>
+		<th>
+			有無
+		</th>
+		<td>
+			無
+		</td>
+	</tr>
+	<tr>
+		<th>
+			内容
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+</table>
+	<p><a href="#TOP">▲タブメニューへ戻る</a></p>
+	<a name="対応することができる在宅医療"></a>
+	<table class="search_detail_table">
+	<caption>26. 対応することができる在宅医療</caption>
+	<tr>
+		<th colspan='2' class='blue'>
+			(1) 在宅医療
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 往診（終日対応することができるものに限る）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 上記以外の往診
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 退院時共同指導
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 在宅患者訪問診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 在宅時医学総合管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 施設入居時等医学総合管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 在宅がん医療総合診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 救急搬送診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 在宅患者訪問看護・指導
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 同一建物居住者訪問看護・指導
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 在宅患者訪問点滴注射管理指導
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 在宅患者訪問リハビリテーション指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. 訪問看護指示
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. 介護職員等喀痰吸引等指示
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			15. 在宅患者訪問薬剤管理指導
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			16. 小児在宅患者訪問口腔リハビリテーション指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			17. 在宅患者連携指導
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			18. 在宅患者緊急時等カンファレンス
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			19. 在宅患者共同診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			20. 在宅患者訪問褥瘡管理指導
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			21. 歯科訪問診療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			22. 訪問歯科衛生指導
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			23. 歯科疾患在宅療養管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			24. 在宅患者歯科治療時医療管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			25. 在宅患者訪問口腔リハビリテーション指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(2) 在宅療養指導
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 退院前在宅療養指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 在宅自己注射指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 在宅小児低血糖症患者指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 在宅妊娠糖尿病患者指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 在宅自己腹膜灌流指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 在宅血液透析指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 在宅酸素療法指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 在宅中心静脈栄養法指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 在宅成分栄養経管栄養法指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 在宅小児経管栄養法指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 在宅自己導尿指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 在宅人工呼吸指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. 在宅持続陽圧呼吸療法指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. 在宅悪性腫瘍等患者指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			15. 在宅悪性腫瘍患者共同指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			16. 在宅寝たきり患者処置指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			17. 在宅自己疼痛管理指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			18. 在宅振戦等刺激装置治療指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			19. 在宅迷走神経電気刺激治療指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			20. 在宅仙骨神経刺激療法指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			21. 在宅肺高血圧症患者指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			22. 在宅気管切開患者指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			23. 在宅難治性皮膚疾患処置指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			24. 在宅植込型補助人工心臓（非拍動流型）指導管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(3) 診療内容
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 点滴の管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 中心静脈栄養
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 腹膜透析
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 酸素療法
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 経管栄養
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 疼痛の管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 褥瘡の管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 人工肛門の管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 人工膀胱の管理
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. レスピレーター
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. モニター測定
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 尿カテーテル
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. 気管切開部の処置
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. 在宅ターミナルケアの対応
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(4) 他施設との連携
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 病院との連携
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 診療所との連携
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 訪問看護ステーションとの連携
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 居宅介護支援事業所との連携
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 薬局との連携
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+</table>
+	<p><a href="#TOP">▲タブメニューへ戻る</a></p>    
+	<a name="地域医療連携体制"></a>
+	<table class="search_detail_table">
+	<caption>27.地域医療連携体制</caption>
+	<tr>
+		<th>
+			1.産婦人科又は産科以外の診療科での妊産婦に対する積極的な診療の実施の有無
+		</th>
+		<td>
+			 
+		</td>
+	</tr>
+</table>
+	<p><a href="#TOP">▲タブメニューへ戻る</a></p>    
+</div><a name="TOP"></a>
+<div id="tabs-result">
+    <p><a href="#診療所の人員配置(常勤換算後)">▼28.歯科診療所の人員配置(常勤換算後)</a>
+        &nbsp;<a href="#情報開示に関する体制">▼29.情報開示に関する体制</a>
+        &nbsp;<a href="#患者満足度の調査">▼30.患者満足度の調査</a>
+        &nbsp;<a href="#治療の実施件数">▼31.治療の実施件数</a>
+        &nbsp;<a href="#法令上の義務以外の院内感染対策">▼32．法令上の義務以外の院内感染対策</a></p>
+    
+    <table class="search_detail_table">
+	<caption>診療所の名称</caption>
+	<tr>
+		<th>
+			診療所の名称
+		</th>
+		<td>
+			谷口歯科医院
+		</td>
+	</tr>
+</table>
+
+    <a name="診療所の人員配置(常勤換算後)"></a>
+    <table class="search_detail_table">
+	<caption>28.歯科診療所の人員配置(常勤換算後) </caption>
+	<tr>
+		<th>
+			職種
+		</th>
+		<th>
+			総数
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1.医師
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2.歯科医師
+		</th>
+		<td>
+			1
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3.薬剤師
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4.看護師
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5.准看護師
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6.助産師
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7.歯科衛生士
+		</th>
+		<td>
+			1
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8.診療放射線技師
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9.理学療法士
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10.作業療法士
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+</table>
+    <p><a href="#TOP">▲タブメニューへ戻る</a></p>
+    <a name="情報開示に関する体制"></a>
+    <table class="search_detail_table">
+	<caption>29.情報開示に関する体制</caption>
+	<tr>
+		<th>
+			 情報開示に関する窓口の有無
+		</th>
+		<th>
+			無
+		</th>
+	</tr>
+	<tr>
+		<th>
+			 料金
+		</th>
+		<th>
+			
+		</th>
+	</tr>
+</table>
+    <p><a href="#">▲タブメニューへ戻る</a></p>
+    <a name="患者満足度の調査"></a>
+    <table class="search_detail_table">
+	<caption>30.患者満足度の調査</caption>
+	<tr>
+		<th>
+			患者満足度の調査の実施の有無
+		</th>
+		<td>
+			無
+		</td>
+	</tr>
+	<tr>
+		<th>
+			患者満足度の調査結果の提供の有無
+		</th>
+		<td>
+			無
+		</td>
+	</tr>
+</table>
+    <p><a href="#">▲タブメニューへ戻る</a></p>
+    <a name="治療の実施件数"></a>
+    <table class="search_detail_table">
+	<caption>31.治療の実施件数</caption>
+	<tr>
+		<th colspan='2' class='blue'>
+			(1) 皮膚・形成外科領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			8. 皮膚悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 唇顎口蓋裂手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(2) 神経・脳血管領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			7. 頸部動脈血栓内膜剥離術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8-1. 経皮的選択的脳血栓・塞栓溶解術（終日対応することができるものに限る）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8-2. 上記以外の経皮的選択的脳血栓・塞栓溶解術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10-1. 頭蓋内血腫除去術（終日対応することができるものに限る）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10-2. 上記以外の頭蓋内血腫除去術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11-1. 脳動脈瘤根治術（被包術、クリッピング）（終日対応することができるものに限る）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11-2. 上記以外の脳動脈瘤根治術（被包術、クリッピング）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 脳動静脈奇形摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. 脳血管内手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. 脳腫瘍摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			15. 脊髄腫瘍摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			18. 小児脳外科手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(4) 眼領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			2. 硝子体手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 水晶体再建術（白内障手術）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 緑内障手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 網膜光凝固術（網膜剥離手術）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 斜視手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 角膜移植術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(5) 耳鼻咽喉領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			7. 鼓室形成手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 副鼻腔炎手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 内視鏡下副鼻腔炎手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 舌悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. 咽頭悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			16. 喉頭悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(6) 呼吸器領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			3. 肺悪性腫瘍摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 胸腔鏡下肺悪性腫瘍摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(7) 消化器系領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			3. 上部消化管内視鏡的切除術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 下部消化管内視鏡的切除術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 虫垂切除術（乳幼児に係るものを除く）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 食道悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 胃悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 腹腔鏡下胃悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. 大腸悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			15. 腹腔鏡下大腸悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			18. 移植用部分小腸採取術（生体）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			19. 生体部分小腸移植術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			20. 移植用小腸再手術（死体）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			21. 同種死体小腸移植術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(8) 肝・胆道・膵臓領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			3. 肝悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 胆道悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 開腹による胆石症手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 腹腔鏡下胆石症手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 内視鏡的胆道ドレナージ
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 経皮経肝的胆道ドレナージ
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 膵悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. 体外衝撃波胆石破砕術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			15. 生体肝移植
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(9) 循環器系領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			5. 冠動脈バイパス術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 経皮的冠動脈形成術（ＰＴＣＡ）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 経皮的冠動脈血栓吸引術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 経皮的冠動脈ステント留置術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 弁膜症手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 開心術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 大動脈瘤手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 下肢静脈瘤手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. ペースメーカー移植術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(10) 腎・泌尿器系領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			7. 体外衝撃波腎・尿路結石破砕術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 腎悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 膀胱悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			12. 前立腺悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. 腹腔鏡下前立腺悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			16. 生体腎移植
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(11) 産科領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			2. 正常分娩
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 選択帝王切開術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 緊急帝王切開術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 卵管形成手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 卵管鏡下卵管形成術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(12) 婦人科領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			3. 子宮筋腫摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 腹腔鏡下子宮筋腫摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 子宮悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 卵巣悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(13) 乳腺領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			2. 乳腺悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(14) 内分泌・代謝・栄養領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			6. 甲状腺腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 副腎悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 副腎腫瘍摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(15) 血管・免疫系領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			7. 骨髄移植
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 臍帯血移植
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(16) 筋・骨格系及び外傷領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			4. アキレス腱断裂手術（筋・腱手術）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 骨折観血的手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 人工股関節置換術（関節手術）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 人工膝関節置換術（関節手術）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 脊椎手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 椎間板摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. 椎間板ヘルニアに対する内視鏡下椎間板摘出術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 軟部悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			13. 骨悪性腫瘍手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			15. 小児整形外科手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(17) リハビリ領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			3. 心大血管疾患リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 脳血管疾患等リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. 廃用症候群リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 運動器リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			7. 呼吸器リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			8. 難病患者リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			9. 障害児リハビリテーション又は障害者リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			10. がん患者リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			11. 認知症患者リハビリテーション
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(18) 小児領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			13. 小児外科手術
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			14. 小児の脳炎・髄膜炎
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			15. 小児の腸重積
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(19) 麻酔領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			1. 麻酔科標榜医による麻酔（麻酔管理）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			2. 全身麻酔
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 硬膜外麻酔
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 脊椎麻酔
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. 硬膜外ブロックにおける麻酔剤の持続注入
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(21) 放射線治療領域
+		</th>
+	</tr>
+	<tr>
+		<th>
+			2. ガンマナイフによる定位放射線治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			3. 直線加速器による定位放射線治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. 粒子線治療
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(22) 画像診断
+		</th>
+	</tr>
+	<tr>
+		<th>
+			3. ＣＴ撮影
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			4. ＭＲＩ撮影
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			5. マンモグラフィー検査（乳房撮影）
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>
+			6. ポジトロン断層撮影（ＰＥＴ）、ポジトロン断層・コンピューター断層複合撮影又はポジトロン断層・磁気共鳴コンピューター断層複合撮影
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+	<tr>
+		<th colspan='2' class='blue'>
+			(26) その他
+		</th>
+	</tr>
+	<tr>
+		<th>
+			4. 在宅における看取り
+		</th>
+		<td>
+			
+		</td>
+	</tr>
+</table>
+    <p><a href="#">▲タブメニューへ戻る</a></p>
+    <a name="法令上の義務以外の院内感染対策"></a>
+    <table class="search_detail_table">
+	<caption>32.法令上の義務以外の院内感染対策</caption>
+	<tr>
+		<th>
+			院内感染防止対策
+		</th>
+		<td>
+			無
+		</td>
+	</tr>
+</table>
+    <p><a href="#">▲タブメニューへ戻る</a></p>
+</div>
+                                </div><!-- end.compare_table -->
+                            </div>
+                        </section>
+                    </article>
+                </div>
+                <!-- <input type="button" value="▲ページの先頭に戻る" /> -->
+            </form>
+        </div>
+
+
+
+
+<div class="page_back"><a href="javascript:history.back();">もどる</a></div>
+
+</body>
+</html>

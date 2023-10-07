@@ -1,0 +1,475 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="ctl00_HgnrHead"><meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta http-equiv="Content-Script-Type" content="text/javascript" /><title>
+	機関詳細情報（府民向け） | 大阪府医療機関情報システム
+</title><link rel="stylesheet" href="../../css/font_family.css" /><link rel="stylesheet" href="../../css/ap_renew_normal.css" />
+    <script type="text/javascript" src="../../js/renew/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../js/renew/common_normal.js"></script>
+
+<script language="javascript" type="text/javascript">
+<!--
+var blnStatus = false;
+window.onpageshow = function() { blnStatus = false; }
+-->
+</script>
+<link href="../../App_Themes/PWResponsiveNormal/PWResponsiveNormal.css" type="text/css" rel="stylesheet" /><link href="/ap/co/WebCoParts/UserControl.css" type="text/css" rel="stylesheet" /><link href="/ap/qq/dtl/pwdetaillt.css" type="text/css" rel="stylesheet" /><script language="javascript" src="/ap/qq/dtl/pwdetaillt_002.js" type="text/javascript"></script></head>
+<body id="ctl00_HgnrBody">
+    <table class="NoScriptTable" id="noscript">
+    <tr>
+    <td>
+    このサイトでは、JavaScript を使用しています。<br />
+    ブラウザの設定で JavaScript を有効にするか、JavaScript に対応したブラウザをお使いください。
+    </td>
+    </tr>
+    </table>
+    <script>
+        var noscript = document.getElementById('noscript');
+        noscript.parentNode.removeChild(noscript);
+    </script>
+    
+    <form name="aspnetForm" method="post" action="./pwdetaillt01_002.aspx?chosanendo=2022&amp;chosano=1&amp;kikancd=3270021980" id="aspnetForm" onkeydown="if(event.keyCode==13){  if((event.srcElement||event.target).type!=&#39;submit&#39; &amp;&amp;     (event.srcElement||event.target).type!=&#39;textarea&#39;){      return false;   }}">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="396F5E8A" />
+<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="keMJpksIoJeuZSvy3Drka7qqefiHYHf8WVKOaHr8nlqgUIqYgeqniCkQwoeV+0U530tCHpTMdVLmRZXKg1Hs+3P6YmYS6knZR0RTNMQxx5UwfgR7PLUZ5OAl1mrTuXlRyy4wAXIwV6Z/56qCkvkRKedkZS3RqDixkDwpb1+oKcqBbeZMqLk3Gi0/kcBehc+26eQZSISOQRBc+tqqlgbXaJnTDKGwaf0lkoM3rm8X/OKNWydR3dEba7v5o4aLCjB4Q+2pS6fA5FCMH4w+ykEfM10hUzntpKhwPkxrX+BdHGhalF+OHIgAWL2mb/eJxMhOZfoyKaOdHIAmX3XWF/ebNw==" />
+    <a id="wtop"></a>
+    <!-- WebSV[1] --> 
+    <!-- Header Start -->
+    <header id="ctl00_tagHeader" class="site_header">
+        <div class="head_wrapper">
+            <div class="head_box">
+                <h1><a id="ctl00_hypHeaderTitle" href="http://www.mfis.pref.osaka.jp">大阪府医療機関情報システム</a></h1>
+                <h1 class="en">Osaka Medical Facilities Information System</h1>
+            </div>
+        </div>
+        <div id="renewal">
+            <div id="wrapper">
+                <!--パンくずリスト_START-->
+                <div id="breadcrumbs">
+                    <ul>
+                        
+                        <li id="ctl00_liService01" class="undefined__item">機関詳細情報（府民向け）</li>
+                    </ul>
+                </div>
+                <!--パンくずリスト_END-->
+            </div>
+        </div>
+    </header>
+    <!-- Header END -->
+    <div id="ctl00_pnlBody" class="NormalBody">
+	
+    <div id="ctl00_pnlContents">
+		
+    <!-- Contents Start -->
+    
+    <div id="ctl00_pnlPlaceholder">
+			
+    <!-- Placeholder Start -->
+    <br />
+    <table id="HtblBaseTable" class="BaseTable">
+    <tr>
+    <td id="ctl00_HtdBaseCell" class="BaseNormal" align="center">
+    
+    <!-- 機関詳細情報 -->
+    <div id="ctl00_cphdrBody_pnlKikanDetail">
+				
+        <div class="ArrangeLeft">
+            <!-- ボタンエリア -->
+            <table width="750" cellpadding="3" summary="ボタン">
+                <tr>
+                    <td class="ArrangeLeft">
+                        <input type="image" name="ctl00$cphdrBody$ibtnKakaritsuke" id="ctl00_cphdrBody_ibtnKakaritsuke" src="/ap/qq/image/ir_btn_01.gif" alt="かかりつけ医一覧に登録" border="0" />
+                        
+                        
+                        <input type="image" name="ctl00$cphdrBody$ibtnPrint" id="ctl00_cphdrBody_ibtnPrint" src="/ap/qq/image/ir_btn_03.gif" alt="印刷" onclick="return open_PrintImage(&#39;2022&#39;,&#39;1&#39;,&#39;3&#39;,&#39;3270021980&#39;);" border="0" />
+                    </td>
+                    <td class="ArrangeRight">
+                        <input type="image" name="ctl00$cphdrBody$ibtnClose" id="ctl00_cphdrBody_ibtnClose" src="/ap/qq/image/ir_btn_04.gif" alt="閉じる" onclick="window.close(); return false;" border="0" />
+                    </td>
+                </tr>
+            </table>
+            <!-- 機関基礎情報 -->
+            <table width="750" cellpadding="0" cellspacing="0" summary="機関基礎情報">
+                <tr>
+                    <td class="ImgWakuTL"></td>
+                    <td class="ImgWakuTC"></td>
+                    <td class="ImgWakuTR"></td>
+                </tr>
+                <tr>
+                    <td class="ImgWakuML"></td>
+                    <td class="ImgWakuMC">
+                        <table width="100%" style="table-layout: fixed;" cellpadding="5" summary=" ">
+                            <tr>
+                                <td class="FontSize120p ArrangeLeft StrongCell">
+                                    <span id="ctl00_cphdrBody_lblKikanRname">アイ歯科医院</span></td>
+                                	
+
+                                    <td class="FontSize80p ArrangeRight" colspan="2" style="width: 36%;">医療機関最終報告日
+                                    
+                                    <span id="ctl00_cphdrBody_lblLastUpdate">2023/02/21 10:04</span></td>
+                            </tr>
+                            
+                            
+                            
+                            
+
+                            
+                            
+                            
+                            
+                            <tr>
+                                <td class="ListLine" colspan="3"></td>
+                            </tr>
+                            <tr>
+                                <td class="FontSize80p ArrangeLeft" colspan="2">
+                                    <img src="/ap/qq/image/icon_06.gif" height="13" width="14" style="border: 0; margin-left: 3; margin-right: 3" alt="" />
+                                    <span id="ctl00_cphdrBody_lblKikanLocation">560-0003 豊中市東豊中町６丁目１７−１　ユーロハイツ１０１</span>
+                                    <br />
+                                    <img src="/ap/qq/image/icon_07.gif" height="13" width="15" style="border: 0; margin-left: 3; margin-right: 3" alt="" />
+                                    <span id="ctl00_cphdrBody_lblTel">（昼）06-6854-1181</span>
+                                </td>
+                                <td class="FontSize80p ArrangeRight" style="width: 8%;">
+                                    <a id="ctl00_cphdrBody_hypMap" href="/ap/qq/sho/pwsurmaplt01_001.aspx?chosanendo=2022&amp;chosano=1&amp;kikancd=3270021980&amp;gengokbn=J" target="_blank"><img src="/ap/qq/image/ico_map.gif" height="19" width="40" alt="周辺の地図" /></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="ImgWakuMR"></td>
+                </tr>
+                <tr>
+                    <td class="ImgWakuBL"></td>
+                    <td class="ImgWakuBC"></td>
+                    <td class="ImgWakuBR"></td>
+                </tr>
+            </table>
+            <br />
+            
+            <!-- リンクタブ -->
+            <table id="ctl00_cphdrBody_tblLinkTab" cellspacing="0" cellpadding="0" border="0" width="750">
+					<tr>
+						<td class="LinkTabOnTL"></td><td class="LinkTabOnTC"></td><td class="LinkTabOnTR"></td><td class="LinkTabOffTL"></td><td class="LinkTabOffTC"></td><td class="LinkTabOffTR"></td><td class="LinkTabOffTL"></td><td class="LinkTabOffTC"></td><td class="LinkTabOffTR"></td><td class="LinkTabOffTL"></td><td class="LinkTabOffTC"></td><td class="LinkTabOffTR"></td>
+					</tr><tr>
+						<td class="LinkTabOnML"></td><td class="LinkTabOnMC">基本情報</td><td class="LinkTabOnMR"></td><td class="LinkTabOffML"></td><td class="LinkTabOffMC"><a href="/ap/qq/dtl/pwdetaillt01_002.aspx?serviceid=pwdetaillt&amp;chosanendo=2022&amp;chosano=1&amp;kikankbn=3&amp;kikancd=3270021980&amp;qrcodeflg=False&amp;regist=1&amp;category=2">診療情報</a></td><td class="LinkTabOffMR"></td><td class="LinkTabOffML"></td><td class="LinkTabOffMC"><a href="/ap/qq/dtl/pwdetaillt01_002.aspx?serviceid=pwdetaillt&amp;chosanendo=2022&amp;chosano=1&amp;kikankbn=3&amp;kikancd=3270021980&amp;qrcodeflg=False&amp;regist=1&amp;category=3">医療機能情報</a></td><td class="LinkTabOffMR"></td><td class="LinkTabOffML"></td><td class="LinkTabOffMC"><a href="/ap/qq/dtl/pwdetaillt01_002.aspx?serviceid=pwdetaillt&amp;chosanendo=2022&amp;chosano=1&amp;kikankbn=3&amp;kikancd=3270021980&amp;qrcodeflg=False&amp;regist=1&amp;category=4">医療サービス情報</a></td><td class="LinkTabOffMR"></td>
+					</tr><tr>
+						<td class="LinkLine" colspan="21"></td>
+					</tr>
+				</table>
+
+            <!-- 病院・診療所 -->
+            
+
+            <!-- 歯科診療所 -->
+            <div id="ctl00_cphdrBody_pnlDentalKikan">
+					
+                <!-- 基本情報 -->
+                <div id="ctl00_cphdrBody_pnlDentalKikan01">
+						
+                    <table class="IryoTable" width="750" cellpadding="3" summary="基本情報">
+                        <tr>
+                            <td class="HeaderLinkBody">&nbsp;
+                        &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0101">名称</a>
+                                
+                                &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0105">所在地</a>
+                                &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0103">開設者</a>
+                                &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0104">管理者</a>
+                                &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0106">電話・ファクシミリ番号</a>
+                                &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0203">ホームページ</a>
+                                
+                                &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0207">最寄の駅からの交通手段</a>
+                                <br />&nbsp;&nbsp;&nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0202">駐車場</a>
+                                &nbsp;&nbsp;<img src="/ap/qq/image/list_09.gif" height="16" width="11" alt="" />&nbsp;<a href="#med0201">交通アクセス情報</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="IryoTable">
+                                <br />
+                                <div id="ctl00_cphdrBody_uclDetailKikanName4_pnlKikanName">
+							
+    <div id="ctl00_cphdrBody_uclDetailKikanName4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0101"><span id="ctl00_cphdrBody_uclDetailKikanName4_lblTitle" class="FontSize120p"><b><font color="#333333">医療機関名称</font></b></span></a> &nbsp; 
+        <span id="ctl00_cphdrBody_uclDetailKikanName4_lblComment"><b><font color="#CC0000">受診される場合は直接医療機関へご確認ください。</font></b></span> <br />
+    
+							</div>
+    <div class="Indent01">
+        <table id="ctl00_cphdrBody_uclDetailKikanName4_tblKikanName" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610" style="border:0">
+								<tr id="ctl00_cphdrBody_uclDetailKikanName4_trKikanKname">
+									<td id="ctl00_cphdrBody_uclDetailKikanName4_tdKikanKname" class="Waku01Color" width="23%">正式名称フリガナ</td><td class="Waku01" width="77%"><span id="ctl00_cphdrBody_uclDetailKikanName4_lblKikanKname">アイシカイイン</span></td>
+								</tr><tr id="ctl00_cphdrBody_uclDetailKikanName4_trKikanName">
+									<td class="Waku01Color" width="23%"><span id="ctl00_cphdrBody_uclDetailKikanName4_lblKikanNameTitle">正式名称(医療法届出正式名称)</span></td><td class="Waku01" width="77%"><span id="ctl00_cphdrBody_uclDetailKikanName4_lblKikanName">アイ歯科医院</span></td>
+								</tr><tr id="ctl00_cphdrBody_uclDetailKikanName4_trKikanRkname">
+									<td class="Waku01Color" width="144">略称フリガナ</td><td class="Waku01" width="519"><span id="ctl00_cphdrBody_uclDetailKikanName4_lblKikanRkname">アイシカイイン</span></td>
+								</tr><tr id="ctl00_cphdrBody_uclDetailKikanName4_trKikanRname">
+									<td class="Waku01Color" width="144">略称名</td><td class="Waku01" width="519"><span id="ctl00_cphdrBody_uclDetailKikanName4_lblKikanRname">アイ歯科医院</span></td>
+								</tr><tr id="ctl00_cphdrBody_uclDetailKikanName4_trKikanEname">
+									<td class="Waku01Color" width="23%">英語表記</td><td class="Waku01" width="77%"><span id="ctl00_cphdrBody_uclDetailKikanName4_lblKikanEname">ｉ　Ｄｅｎｔａｌ　Ｃｌｉｎｉｃ</span></td>
+								</tr>
+							</table>
+        
+    </div>
+
+
+						</div>
+                                
+                                <div id="ctl00_cphdrBody_uclDetailKikanLocation4_pnlKikanLocation">
+							
+    <div id="ctl00_cphdrBody_uclDetailKikanLocation4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0105"><span id="ctl00_cphdrBody_uclDetailKikanLocation4_lblTitle" class="FontSize120p"><b><font color="#333333">所在地</font></b></span></a><br />
+    
+							</div>
+    <div class="Indent01">
+        <table id="ctl00_cphdrBody_uclDetailKikanLocation4_tblKikanLocation" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610" style="border:0">
+								<tr id="ctl00_cphdrBody_uclDetailKikanLocation4_trYubinNo">
+									<td class="Waku01Color" width="23%"><span id="ctl00_cphdrBody_uclDetailKikanLocation4_lblPostalCode">郵便番号</span></td><td class="Waku01" width="77%"><span id="ctl00_cphdrBody_uclDetailKikanLocation4_lblYubinNo">560-0003</span></td>
+								</tr><tr id="ctl00_cphdrBody_uclDetailKikanLocation4_trLocationKname">
+									<td class="Waku01Color" width="23%"><span id="ctl00_cphdrBody_uclDetailKikanLocation4_lblLocationKnameTitle">住所フリガナ</span></td><td class="Waku01" width="77%"><span id="ctl00_cphdrBody_uclDetailKikanLocation4_lblLocationKname">トヨナカシヒガシトヨナカチョウ６−１７−１</span></td>
+								</tr><tr id="ctl00_cphdrBody_uclDetailKikanLocation4_trLocationName">
+									<td class="Waku01Color" width="23%"><span id="ctl00_cphdrBody_uclDetailKikanLocation4_lblLocationNameTitle">住所</span></td><td class="Waku01" width="77%"><span id="ctl00_cphdrBody_uclDetailKikanLocation4_lblLocationName">豊中市東豊中町６丁目１７−１　ユーロハイツ１０１</span></td>
+								</tr><tr id="ctl00_cphdrBody_uclDetailKikanLocation4_trLocationEname">
+									<td class="Waku01Color" width="23%">英語表記</td><td class="Waku01" width="77%"><span id="ctl00_cphdrBody_uclDetailKikanLocation4_lblLocationEname">６−１７−１　Ｙｕｒｏｈａｉｔｓｕ，１０１，ｈｉｇａｓｈｉｔｏｙｏｎａｋａ−ｃｈｏ，ｔｏｙｏｎａｋａ−ｓｈｉ</span></td>
+								</tr>
+							</table>
+
+        
+
+    </div>
+
+						</div> 
+                                <div id="ctl00_cphdrBody_uclDetailKikanKaisetsu4_pnlKikanKaisetsu">
+							
+    <div id="ctl00_cphdrBody_uclDetailKikanKaisetsu4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0103"><span id="ctl00_cphdrBody_uclDetailKikanKaisetsu4_lblTitle" class="FontSize120p"><b><font color="#333333">開設者名</font></b></span></a>
+        <br />    
+    
+							</div>
+    <!-- 機関の開設者 -->
+    <div class="Indent01">
+        <table id="ctl00_cphdrBody_uclDetailKikanKaisetsu4_tblKikanKaisetsu" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610">
+								<tr id="ctl00_cphdrBody_uclDetailKikanKaisetsu4_trKaisetsuKname">
+									<td class="Waku01Color" width="23%">開設者名フリガナ</td><td class="Waku01" width="77%"><span id="ctl00_cphdrBody_uclDetailKikanKaisetsu4_lblKaisetsuKname">ニシモト　シュウヘイ</span></td>
+								</tr><tr id="ctl00_cphdrBody_uclDetailKikanKaisetsu4_trKaisetsuName">
+									<td class="Waku01Color" width="23%"><span id="ctl00_cphdrBody_uclDetailKikanKaisetsu4_lblKaisetsuNameTitle">開設者名</span></td><td class="Waku01" width="77%"><span id="ctl00_cphdrBody_uclDetailKikanKaisetsu4_lblKaisetsuName">西本　周平</span></td>
+								</tr>
+							</table>
+    </div>
+
+						</div> 
+                                <div id="ctl00_cphdrBody_uclDetailKikanKanri4_pnlKikanKanri">
+							
+    <div id="ctl00_cphdrBody_uclDetailKikanKanri4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0104"><span id="ctl00_cphdrBody_uclDetailKikanKanri4_lblTitle" class="FontSize120p"><b><font color="#333333">管理者名</font></b></span></a>
+        <br />    
+    
+							</div> 
+    <!-- 機関の管理者 -->
+    <div class="Indent01">
+        <table id="ctl00_cphdrBody_uclDetailKikanKanri4_tblKikanKanri" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610" style="border:0">
+								<tr id="ctl00_cphdrBody_uclDetailKikanKanri4_trKanriKname">
+									<td class="Waku01Color" width="23%">管理者名フリガナ</td><td class="Waku01" width="77%"><span id="ctl00_cphdrBody_uclDetailKikanKanri4_lblKanriKname">ニシモト　シュウヘイ</span></td>
+								</tr><tr id="ctl00_cphdrBody_uclDetailKikanKanri4_trKanriName">
+									<td class="Waku01Color" width="23%"><span id="ctl00_cphdrBody_uclDetailKikanKanri4_lblKanriNameTitle">管理者名</span></td><td class="Waku01" width="77%"><span id="ctl00_cphdrBody_uclDetailKikanKanri4_lblKanriName">西本　周平</span></td>
+								</tr>
+							</table>
+    </div>
+
+						</div> 
+                                <div id="ctl00_cphdrBody_uclDetailKikanAnnai4_pnlKikanAnnai">
+							
+    <div id="ctl00_cphdrBody_uclDetailKikanAnnai4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0106"><span id="ctl00_cphdrBody_uclDetailKikanAnnai4_lblTitle" class="FontSize120p"><b><font color="#333333">府民案内用電話・ＦＡＸ番号</font></b></span></a>
+        <br />    
+    
+							</div>
+    <!-- 案内用電話番号・ファクシミリ番号 -->
+    <div class="Indent01">
+        <table id="ctl00_cphdrBody_uclDetailKikanAnnai4_tblKikanAnnai" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610">
+								<tr id="ctl00_cphdrBody_uclDetailKikanAnnai4_trTelD">
+									<td class="Waku01Color" width="23%"><span id="ctl00_cphdrBody_uclDetailKikanAnnai4_lblTelDTitle">電話番号</span></td><td class="Waku01" width="77%"><span id="ctl00_cphdrBody_uclDetailKikanAnnai4_lblTelD">06-6854-1181</span></td>
+								</tr><tr id="ctl00_cphdrBody_uclDetailKikanAnnai4_trFaxD">
+									<td class="Waku01Color" width="23%"><span id="ctl00_cphdrBody_uclDetailKikanAnnai4_lblFaxDTitle">ＦＡＸ番号</span></td><td class="Waku01" width="77%"><span id="ctl00_cphdrBody_uclDetailKikanAnnai4_lblFaxD">06-6854-1184</span></td>
+								</tr>
+							</table>
+    </div>
+
+						</div> 
+                                <div id="ctl00_cphdrBody_uclDetailKikanAccessUrl4_pnlKikanAccessUrl">
+							
+    <div id="ctl00_cphdrBody_uclDetailKikanAccessUrl4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0203"><span id="ctl00_cphdrBody_uclDetailKikanAccessUrl4_lblTitle" class="FontSize120p"><b><font color="#333333">ホームページアドレス</font></b></span></a>
+        <br />    
+    
+							</div>
+    <!-- 案内用ホームページアドレス -->
+    <div class="Indent01">
+        <table id="ctl00_cphdrBody_uclDetailKikanAccessUrl4_tblKikanAccessUrl" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610" style="border:0">
+								<tr id="ctl00_cphdrBody_uclDetailKikanAccessUrl4_trUrl">
+									<td class="Waku01Color" width="23%">ホームページアドレス</td><td class="Waku01" width="77%" nowrap="nowrap"><span id="ctl00_cphdrBody_uclDetailKikanAccessUrl4_lblKikanAccessUrl">http://www.i-sika.net</span></td>
+								</tr>
+							</table>
+    </div>
+
+						</div>
+                                
+                                <div id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_pnlKikanAccessRoute">
+							
+    <div id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0207"><span id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_lblTitle" class="FontSize120p"><b><font color="#333333">最寄り駅からの交通手段</font></b></span></a>
+        <br />    
+    
+							</div>
+
+    <div id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_pnlRoute">
+								
+        <div class="Indent01">
+    <!-- 記入例 -->
+            <table id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_tblRoute" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610">
+									<tr id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_trTrainRoute1">
+										<td class="Waku01Color ArrangeLeft" rowspan="5" width="10%">ルート１</td><td class="Waku01Color ArrangeLeft" width="10%">路線名</td><td class="Waku01 ArrangeLeft" colspan="2" width="35%"><span id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_lblTrainRouteName1">北大阪急行電鉄南北線</span></td><td class="Waku01Color ArrangeLeft" width="10%">駅名</td><td class="Waku01 ArrangeLeft" width="35%"><span id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_lblTrainStationName1">桃山台駅</span></td>
+									</tr><tr id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_trBusRoute1_1">
+										<td class="Waku01Color ArrangeLeft" rowspan="3" width="10%">バス</td><td class="Waku01 ArrangeCenter" rowspan="3" width="10%"><span id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_lblBusFlg1">○</span></td><td class="Waku01Color ArrangeLeft" width="25%">経路１</td><td class="Waku01 ArrangeLeft" colspan="2" width="45%"><span id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_lblBusRouteName1_1">阪急バス　阪急豊中駅行き東豊中小学校前バス停下車徒歩１０分</span></td>
+									</tr><tr id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_trBusRoute1_2">
+										<td class="Waku01Color ArrangeLeft" width="25%">経路２</td><td class="Waku01 ArrangeLeft" colspan="2" width="45%"><span id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_lblBusRouteName1_2">−</span></td>
+									</tr><tr id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_trBusRoute1_3">
+										<td class="Waku01Color ArrangeLeft" width="25%">経路３</td><td class="Waku01 ArrangeLeft" colspan="2" width="45%"><span id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_lblBusRouteName1_3">−</span></td>
+									</tr><tr id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_trTohoRoute1">
+										<td class="Waku01Color ArrangeLeft" width="10%">徒歩</td><td class="Waku01 ArrangeCenter" width="10%"><span id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_lblWalkingFlg1">○</span></td><td class="Waku01 ArrangeLeft" colspan="3" width="70%"><span id="ctl00_cphdrBody_uclDetailKikanAccessRoute4_lblWalkingTime1">20　分</span></td>
+									</tr>
+								</table>
+        </div>
+    
+							</div>
+
+						</div>
+                                <div id="ctl00_cphdrBody_uclDetailParking4_pnlParking">
+							
+    <div id="ctl00_cphdrBody_uclDetailParking4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0202"><span id="ctl00_cphdrBody_uclDetailParking4_lblTitle" class="FontSize120p"><b><font color="#333333">駐車場の有無</font></b></span></a>
+        <br />    
+    
+							</div>
+    <!-- 医療機関の駐車場の有無 -->
+    <div class="Indent01">
+        
+
+        <table id="ctl00_cphdrBody_uclDetailParking4_tblParking" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="335" style="border:0">
+								<tr id="ctl00_cphdrBody_uclDetailParking4_trParkingUmu">
+									<td id="ctl00_cphdrBody_uclDetailParking4_tdParkingUmuFlg" class="Waku01Color" width="82%">駐車場がある</td><td class="Waku01 ArrangeCenter" width="18%"><span id="ctl00_cphdrBody_uclDetailParking4_lblParkingUmu">○</span></td>
+								</tr><tr id="ctl00_cphdrBody_uclDetailParking4_trMuryoParkingSu">
+									<td id="ctl00_cphdrBody_uclDetailParking4_tdMuryoParkingSu" class="Waku01Color" width="82%">駐車場台数（無料）</td><td class="Waku01 ArrangeRight" width="18%"><span id="ctl00_cphdrBody_uclDetailParking4_lblMuryoParkingSu">2台</span></td>
+								</tr>
+							</table>
+    </div>
+    <div class="Indent01">
+        
+        
+    </div>
+
+						</div>
+                                <div id="ctl00_cphdrBody_uclDetailKikanAccessMemo4_pnlKikanAccessMemo">
+							
+    <div id="ctl00_cphdrBody_uclDetailKikanAccessMemo4_pnlTitle">
+								
+        <img src="/ap/qq/image/list_12.gif" width="14" height="14" style="border:0; margin-left:5px; margin-right:5px;" alt="" />
+        <a id="med0201"><span id="ctl00_cphdrBody_uclDetailKikanAccessMemo4_lblTitle" class="FontSize120p"><b><font color="#333333">交通アクセス情報</font></b></span></a> &nbsp;
+        <span id="ctl00_cphdrBody_uclDetailKikanAccessMemo4_lblComment"><b><font color="#CC0000">受診される場合は直接医療機関へご確認ください。</font></b></span>
+        <br />    
+    
+							</div>
+    <!-- 機関までの主な利用交通手段 -->
+    <div class="Indent01">
+        <table id="ctl00_cphdrBody_uclDetailKikanAccessMemo4_tblKikanAccessMemo" class="Waku01" cellspacing="0" cellpadding="3" border="0" width="610" style="border:0">
+								<tr>
+									<td class="Waku01Color" width="23%">交通アクセス情報</td><td class="Waku01" width="77%"><span id="ctl00_cphdrBody_uclDetailKikanAccessMemo4_lblKikanAccessMemo">豊中熊野郵便局西へ１００ｍ</span></td>
+								</tr>
+							</table>
+    </div>
+
+						</div>
+
+                                
+                            </td>
+                        </tr>
+                    </table>
+                
+					</div>
+                <!-- 診療情報 -->
+                
+                <!-- 医療機能情報 -->
+                
+                <!-- 医療サービス情報 -->
+                
+            
+				</div>
+
+            <!-- 助産所 -->
+            
+
+            
+        </div>
+    
+			</div>
+    <input type="hidden" name="ctl00$cphdrBody$hdnChosaNendo" id="ctl00_cphdrBody_hdnChosaNendo" value="2022" />
+    <input type="hidden" name="ctl00$cphdrBody$hdnChosaNo" id="ctl00_cphdrBody_hdnChosaNo" value="1" />
+    <input type="hidden" name="ctl00$cphdrBody$hdnKikanKbn" id="ctl00_cphdrBody_hdnKikanKbn" value="3" />
+    <input type="hidden" name="ctl00$cphdrBody$hdnKikanCd" id="ctl00_cphdrBody_hdnKikanCd" value="3270021980" />
+    <input type="hidden" name="ctl00$cphdrBody$hdnCategory" id="ctl00_cphdrBody_hdnCategory" value="1" />
+    <input type="hidden" name="ctl00$cphdrBody$hdnShowQrCodeFlg" id="ctl00_cphdrBody_hdnShowQrCodeFlg" value="False" />
+    <input type="hidden" name="ctl00$cphdrBody$hdnKakaritsukeRegistedKikanCd" id="ctl00_cphdrBody_hdnKakaritsukeRegistedKikanCd" />
+
+    </td>
+			
+    </tr>
+    </table>
+    <br />
+    <!-- Placeholder End -->
+    
+		</div>
+    <!-- Contents End -->
+    
+	</div> 
+    
+     
+    
+</div>
+    <!-- Footer Start -->
+    <footer>
+        
+        <div class="copy">
+            <div class="inner_pages">
+                <p>当Webサイトで収集した情報については､管理責任者を置き､漏洩､改竄等の恐れのないよう厳重なセキュリティー保護体制を確立した上で､適切に管理を行ないます
+                    <br/>Copyright (C) 2020 大阪府健康医療部保健医療室　保健医療企画課 All rights reserved.</p>
+            </div>
+        </div>
+        
+        <div class="page_top">
+            <a href="#">
+                <img src="../../image/renew/common/page_up.png" id="ctl00_img1" alt="大阪府医療機関情報システム" />
+            </a>
+        </div>
+    </footer>
+    <!-- Footer End -->
+    </form>
+</body>
+
+
+
+</html>
